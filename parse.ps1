@@ -1,4 +1,4 @@
-$WordFile = "C:\Codeprojects\ParseWordDocument\test1page.docx"
+$WordFile = "C:\Codeprojects\ParseWordDocument\test.docx"
 $QuestionSelector = "QUESTION"
 $ExplanationSelector = "Explanation"
 $OptionASelector = "A."
@@ -35,23 +35,25 @@ $paragraphs = $document.Paragraphs
 
 
 # buffer
-$buffer = @()
+$buffer = @{}
+$tempbuffer = @()
 $questionIndex = @()
+$questid = 0
 
 # Create question index
-for ($i=1; $i -lt $paragraphs.count; $i++) {
-  if ($paragraphs[$i].range.text.Contains($QuestionSelector)) {
+for ($i=1; $i -lt 500; $i++) {
+  write-host "starting round $($i)"
+  if (!$paragraphs[$i].range.text.Contains($QuestionSelector)) {
+    $tempbuffer += $paragraphs[$i].range.text
+
+  }
+  elseif ($paragraphs[$i].range.text.Contains($QuestionSelector)) {
     $questionIndex += $i
+    $questid ++
+    $buffer.add($questid,$tempbuffer)
+    $tempbuffer = @()
   } 
 } # End for loop
 
-for ($i=1; $i -lt $paragraphs.count; $i++) {
-  if ($i -notin $questionIndex ) {
-    $buffer += $paragraphs[$i].range.text
-  }
-  #$buffer += $_.range.text
-
-
-} # End for loop
-
-$buffer
+# Access buffer like this
+# $buffer[questionnumber][indexnumberofcontentinquestion] 
