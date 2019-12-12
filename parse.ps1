@@ -24,9 +24,7 @@ $Selector = New-Object psobject -Property @{
   ;filter = @(
     "*gratisexam*"
   )
-}
-
-
+} # End of Selector object
 
 # install PSWriteWord module to easier edit word document: "install-module -name PSWriteWord -Force"
 Import-Module PSWriteWord -Force
@@ -51,7 +49,7 @@ function NewQuestion (){ # Create new question object
   $question
 } # End of function NewQuestion
 
-function Like ( $str, $patterns ) {
+function Like ( $str, $patterns ) { # Perform like search in Array
   $patterns | ForEach-Object {
     if ($str -ilike $_ ) {
       return $true
@@ -64,7 +62,7 @@ $WordDocument = New-WordDocument ($folderPath + "new.docx")
 $OldWordDocument = Get-WordDocument -FilePath ($folderPath + $OldWord)
 $paragraphs = $OldWordDocument.Paragraphs
 
-# buffer
+# Prepare data structure
 $buffer = @{}
 $QuestionArray = @()
 $questionIndex = @()
@@ -72,10 +70,9 @@ $tempbuffer = @()
 $questid = -1
 
 
-# Create question index 
-# Access like this: "$buffer[questionnumber][indexnumberofcontentinquestion]""
+### Process Paragraphs and store them in $Buffer, store content per question in array in $Buffer ###
+  # Issue: this for loop can be combined with the next one if you find the time ;)
 for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
-  
   write-host "starting round $($i)"
 
   if ( !(Like $paragraphs[$i].text $Selector.question) ) {
@@ -97,12 +94,13 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
     $tempbuffer = @()
   } 
 } # End for loop
+# Access like this: "$buffer[questionnumber][indexnumberofcontentinquestion]""
 
 
-for ( $i=0; $i -lt $buffer.count; $i++ ) { # process questions
+### Process Buffer, store all the Question parts per Question in Objects, store Objects in $QuestionArray ###
+for ( $i=0; $i -lt $buffer.count; $i++ ) { 
 
-  # add new empty Question Object to array
-  $QuestionArray += NewQuestion
+  $QuestionArray += NewQuestion # Add new empty Question Object to array
 
   for ( $ii=0; $ii -lt $buffer[$i].count; $ii++ ) { # process parts of questions
     if ( $buffer[$i][$ii].length -lt 3 ) {
@@ -126,64 +124,42 @@ for ( $i=0; $i -lt $buffer.count; $i++ ) { # process questions
       $QuestionArray[$i].text += $buffer[$i][$ii]
     }
   } # End of process parts of questions
-  # Continueing with next question
 } # End of process questions
  
 
+### Write Question Parts in this order to Word File ###
 for ( $i=0; $i -lt $QuestionArray.count; $i++ ) {
-
   write-host "Add-Word: Starting round $($i)."
-  # Question Header
-  Add-WordText -WordDocument $WordDocument -Text "Q:$($i))" -Supress $true
 
-  # Empty line
-  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true
-
-  # 1. Question Text 
+  Add-WordText -WordDocument $WordDocument -Text "Q:$($i))" -Supress $true  # Question Number
+  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
+  # Question Text 
   $QuestionArray[$i].text | ForEach-Object {
-    
     Add-WordText -WordDocument $WordDocument -Text "$($_)" -Supress $true
   }
-  
+  # Question Image
   if ($QuestionArray[$i].image.Length -gt 1) {
-    # 2. Question Image
     $QuestionArray[$i].image | ForEach-Object {
       Add-WordPicture -WordDocument $WordDocument -ImagePath ("$($_)") -Supress $true
     }
   }
-
-  # Empty line
-  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true
-
-  # 3. Question Options
+  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
+  # Question Options
   $QuestionArray[$i].answers | ForEach-Object {
     Add-WordText -WordDocument $WordDocument -Text "$($_)" -Supress $true
   }
-
-  # Empty line
-  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true
-
-  # 4. Question Correct
+  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
+  # Question Correct
   $QuestionArray[$i].correct | ForEach-Object {
     Add-WordText -WordDocument $WordDocument -Text "$($_)" -Supress $true
   }
-  
-  # Empty line
-  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true
-
+  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
+  # Question Explanation
   if ($QuestionArray[$i].explanation.Length -gt 1) {
-    # 5. Question Explanation
     Add-WordText -WordDocument $WordDocument -Text "$($QuestionArray[$i].explanation)" -Supress $true
   }
-
-  # Empty line
-  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true
-
-}
-
-
-
+  Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
+} # End of Write Question Parts for loop
 
 # Save changes to New WordDocument
 Save-WordDocument $WordDocument -Language 'en-US' -Supress $true -OpenDocument
-
