@@ -2,6 +2,7 @@ $OldWord = "test.docx"
 $folderPath = "C:\Codeprojects\ParseWordDocument\"
 $imageFolder = "C:\Codeprojects\ParseWordDocument\test\word\media\"
 
+$reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
 $Selector = New-Object psobject -Property @{
   question = "QUESTION*"
   ;explanation = "https*"
@@ -21,7 +22,7 @@ $Selector = New-Object psobject -Property @{
     ,"*.png"
   )
   ;filter = @(
-    "*gratisexam"
+    "*gratisexam*"
   )
 }
 
@@ -41,10 +42,10 @@ function NewQuestion (){ # Create new question object
 
   $propertylist = @{
     text = @()
-    ;image = ""
+    ;image = @()
     ;answers = @()
     ;correct = @()
-    ;explanation = ""
+    ;explanation = @()
   }
   $question = New-Object psobject -Property $propertylist
   $question
@@ -98,7 +99,6 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
 } # End for loop
 
 
-
 for ( $i=0; $i -lt $buffer.count; $i++ ) { # process questions
 
   # add new empty Question Object to array
@@ -109,9 +109,11 @@ for ( $i=0; $i -lt $buffer.count; $i++ ) { # process questions
       # skip it
     }
     elseif ( Like $buffer[$i][$ii] $Selector.options ) { # Add part to Options Array
-      $QuestionArray[$i].answers += $buffer[$i][$ii].Replace(".", ":)")
+      $buffer[$i][$ii] -match $reg | out-null
+      $QuestionArray[$i].answers += ($Matches[1] + ":)" + $Matches[2])
     }
     elseif ( Like $buffer[$i][$ii] $Selector.correct ) { # Add part to Correct Array
+      $temp = $buffer[$i][$ii].Count
       $QuestionArray[$i].correct += $buffer[$i][$ii].Replace(" Answer:", ":")
     }
     elseif ( Like $buffer[$i][$ii] $Selector.imageFormat ) { # Add to image property
@@ -145,8 +147,9 @@ for ( $i=0; $i -lt $QuestionArray.count; $i++ ) {
   
   if ($QuestionArray[$i].image.Length -gt 1) {
     # 2. Question Image
-    Add-WordPicture -WordDocument $WordDocument -ImagePath ("$($QuestionArray[$i].image)") -Supress $true
-
+    $QuestionArray[$i].image | ForEach-Object {
+      Add-WordPicture -WordDocument $WordDocument -ImagePath ("$($_)") -Supress $true
+    }
   }
 
   # Empty line
@@ -183,3 +186,4 @@ for ( $i=0; $i -lt $QuestionArray.count; $i++ ) {
 
 # Save changes to New WordDocument
 Save-WordDocument $WordDocument -Language 'en-US' -Supress $true -OpenDocument
+
