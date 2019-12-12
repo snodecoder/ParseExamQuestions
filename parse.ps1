@@ -5,7 +5,7 @@ $imageFolder = "C:\Codeprojects\ParseWordDocument\test\word\media\"
 $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
 $Selector = New-Object psobject -Property @{
   question = "QUESTION*"
-  ;explanation = "https*"
+  ;explanation = "Explanation*"
   ;correct = "Correct Answer*"
   ;options = @(
     "A.*"
@@ -29,15 +29,8 @@ $Selector = New-Object psobject -Property @{
 # install PSWriteWord module to easier edit word document: "install-module -name PSWriteWord -Force"
 Import-Module PSWriteWord -Force
 
-# how to use PSWriteWord Module
-# $WordDocument = New-WordDocument $FilePath
-# Add-WordText -WordDocument $WordDocument -Text 'Adding a picture...' -Supress $true
-# Add-WordPicture -WordDocument $WordDocument -ImagePath $FilePathImage -Verbose
-# Save-WordDocument $WordDocument -Language 'en-US' -Supress $true -OpenDocument
-
 # Functions
 function NewQuestion (){ # Create new question object
-
   $propertylist = @{
     text = @()
     ;image = @()
@@ -69,11 +62,11 @@ $questionIndex = @()
 $tempbuffer = @()
 $questid = -1
 
-
 ### Process Paragraphs and store them in $Buffer, store content per question in array in $Buffer ###
   # Issue: this for loop can be combined with the next one if you find the time ;)
 for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
-  write-host "starting round $($i)"
+ 
+  # write-host "starting round $($i)" # Turn on for Debugging
 
   if ( !(Like $paragraphs[$i].text $Selector.question) ) {
     
@@ -99,7 +92,7 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
 
 ### Process Buffer, store all the Question parts per Question in Objects, store Objects in $QuestionArray ###
 for ( $i=0; $i -lt $buffer.count; $i++ ) { 
-
+  $textExplanation = $false
   $QuestionArray += NewQuestion # Add new empty Question Object to array
 
   for ( $ii=0; $ii -lt $buffer[$i].count; $ii++ ) { # process parts of questions
@@ -111,14 +104,17 @@ for ( $i=0; $i -lt $buffer.count; $i++ ) {
       $QuestionArray[$i].answers += ($Matches[1] + ":)" + $Matches[2])
     }
     elseif ( Like $buffer[$i][$ii] $Selector.correct ) { # Add part to Correct Array
-      $temp = $buffer[$i][$ii].Count
       $QuestionArray[$i].correct += $buffer[$i][$ii].Replace(" Answer:", ":")
     }
     elseif ( Like $buffer[$i][$ii] $Selector.imageFormat ) { # Add to image property
       $QuestionArray[$i].image += $buffer[$i][$ii]
     }
+    elseif ( $textExplanation ) { # Add to Explanation Array
+      $QuestionArray[$i].explanation += $buffer[$i][$ii]
+    }
     elseif ( Like $buffer[$i][$ii] $Selector.explanation ) { # Add to explanation property
       $QuestionArray[$i].explanation += $buffer[$i][$ii].Insert(0, "Sol: ")
+      $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
     }
     else { # Add to text array
       $QuestionArray[$i].text += $buffer[$i][$ii]
@@ -128,8 +124,8 @@ for ( $i=0; $i -lt $buffer.count; $i++ ) {
  
 
 ### Write Question Parts in this order to Word File ###
-for ( $i=0; $i -lt $QuestionArray.count; $i++ ) {
-  write-host "Add-Word: Starting round $($i)."
+for ( $i=1; $i -lt $QuestionArray.count; $i++ ) {
+  # write-host "Add-Word: Starting round $($i)." # Turn on for Debugging
 
   Add-WordText -WordDocument $WordDocument -Text "Q:$($i))" -Supress $true  # Question Number
   Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
@@ -155,8 +151,8 @@ for ( $i=0; $i -lt $QuestionArray.count; $i++ ) {
   }
   Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
   # Question Explanation
-  if ($QuestionArray[$i].explanation.Length -gt 1) {
-    Add-WordText -WordDocument $WordDocument -Text "$($QuestionArray[$i].explanation)" -Supress $true
+  $QuestionArray[$i].explanation | ForEach-Object {
+    Add-WordText -WordDocument $WordDocument -Text "$($_)" -Supress $true
   }
   Add-WordText -WordDocument $WordDocument -Text " " -Supress $true # Empty line
 } # End of Write Question Parts for loop
