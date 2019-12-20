@@ -220,7 +220,7 @@ elseif ($Outputformat -like "CSV") {
       }
       elseif ( Like $buffer[$i][$ii] $Selector.imageFormat ) { # Add to image property
         write-host $i
-        $QuestionArray[$i].image += ("<img src=../../../../upload/images/$($buffer[$i][$ii])" + " />")
+        $QuestionArray[$i].text += ("<img src=../../../../upload/images/$($buffer[$i][$ii])" + " />")
       }
       elseif ( $textExplanation ) { # Add to Explanation Array
         $QuestionArray[$i].explanation += $buffer[$i][$ii] + "<br><br>"
@@ -252,4 +252,3 @@ elseif ($Outputformat -like "CSV") {
 
 } # End of Process Buffer to CSV
 
-$QuestionArray | where { $_.correct.count -like 0}
