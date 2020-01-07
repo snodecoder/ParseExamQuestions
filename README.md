@@ -1,2 +1,0 @@
-# ParseWordDocument
-Python Project
