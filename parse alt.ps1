@@ -2,15 +2,18 @@ $OldWord = "742.docx"
 $folderPath = "C:\Codeprojects\ParseWordDocument\"
 $mediaFolder = "C:\Codeprojects\ParseWordDocument\docx\word\media\"
 $imageFolder = $folderPath + "images\"
-$Outputformat = "Word" # Enter 'CSV' or 'Word' if you would like CSV or DOCX output format
+$Outputformat = "CSV" # Enter 'CSV' or 'Word' if you would like CSV or DOCX output format
 $examNumber = "70-742"
 $CSVFormat = "QuestionType;Question;Description;correct option number;Option 1;Option 2;Option 3;Option 4;Option 5;Option 6;Option 7;Option 8;Option 9;Option 10;Option 11;Option 12;"
+$imageURLPrefix = "https://files.doorhetgeluid.nl/images/70-742/"
+
 
 $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
 $Selector = New-Object psobject -Property @{
   question = "QUESTION*"
   ;explanation = "Explanation*"
   ;correct = "Correct Answer*"
+  ;section = "Section*"
   ;options = @(
     "A.*"
     ,"B.*"
@@ -37,6 +40,7 @@ Import-Module PSWriteWord -Force
 function NewQuestion (){ # Create new question object
   $propertylist = @{
     type = @()
+    ;section = @()
     ;text = @()
     ;image = @()
     ;answers = @()
@@ -74,7 +78,9 @@ function ConvertAnswer($_) {
 } # End of function ConvertAnswer
 
 # Prepare Word Document
-$WordDocument = New-WordDocument ($folderPath + "new.docx")
+if ($Outputformat -like "Word") {
+    $WordDocument = New-WordDocument ($folderPath + "new-$($examNumber).docx")
+}
 $OldWordDocument = Get-WordDocument -FilePath ($folderPath + $OldWord)
 $paragraphs = $OldWordDocument.Paragraphs
 
@@ -83,12 +89,22 @@ $paragraphs = $OldWordDocument.Paragraphs
    New-Item -Path $folderPath -Name "images" -ItemType Directory
  }
 
+
+
+
+
+
+
+############### Store all the Question parts per Question in Objects, store Objects in $QuestionArray ###############
+
+######################## Process Buffer to WORD ########################
+if ($Outputformat -like "Word") {
+
 # Prepare data structure
 $buffer = @{}
 $QuestionArray = @()
 $tempbuffer = @()
 $questid = -1
-
 
 ### Process Paragraphs and store them in $Buffer, store content per question in array in $Buffer ###
 # Access like this: "$buffer[questionnumber][indexnumberofcontentinquestion]""
@@ -97,10 +113,11 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
   if ( !(Like $paragraphs[$i].text $Selector.question) ) {
     
     if ( ($paragraphs[$i].Pictures).count -like 1 ) {
-      $tempbuffer += ($examNumber + "_" + $paragraphs[$i].Pictures.FileName)
+      $tempbuffer += $paragraphs[$i].Pictures.FileName
+      write-host $i
       Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $examNumber + "_" + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
     }
-    elseif ( Like $paragraphs[$i].Text $Selector.filter ) {
+    elseif ($paragraphs[$i].text -like $Selector.filter ) {
       # skip it
     }  
     else {
@@ -115,10 +132,6 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
 } # End for loop
 
 
-############### Store all the Question parts per Question in Objects, store Objects in $QuestionArray ###############
-
-### Process Buffer to WORD
-if ($Outputformat -like "Word") {
   for ( $i=0; $i -lt $buffer.count; $i++ ) { 
     $textExplanation = $false
     $QuestionArray += NewQuestion # Add new empty Question Object to array
@@ -190,50 +203,64 @@ if ($Outputformat -like "Word") {
   
 } # End of Process buffer to Word
 
-### Process buffer to CSV
+######################## Process buffer to CSV ########################
 elseif ($Outputformat -like "CSV") {
-  for ( $i=0; $i -lt $buffer.count; $i++ ) { 
 
-    $textExplanation = $false
-    $QuestionArray += NewQuestion # Add new empty Question Object to array
+### Process Paragraphs and store them in $Buffer, store content per question in array in $Buffer ###
+# Access like this: "$buffer[questionnumber][indexnumberofcontentinquestion]""
+$QuestionArray = @()
+$questid = 0
+$QuestionArray += NewQuestion
+$textExplanation = $false
 
-    for ( $ii=0; $ii -lt $buffer[$i].count; $ii++ ) { # process parts of questions
-      if ( $buffer[$i][$ii].length -lt 3 ) {
-        # skip it
-      }
-      elseif ( Like $buffer[$i][$ii] $Selector.options ) { # Add part to Options Array
-        $buffer[$i][$ii] -match $reg | out-null
-        $QuestionArray[$i].answers += $Matches[2].Trim(" ")
-      }
-      elseif ( Like $buffer[$i][$ii] $Selector.correct ) { # Add part to Correct Array
-        $tempCorrect = $buffer[$i][$ii].Replace( ($Selector.correct.Trim("*") + ": "), "" )
+for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
+  # write-host "starting round $($i)" # Turn on for Debugging
 
-        if ($tempCorrect.Length -like 1) { # convert single answer to decimal
-          $QuestionArray[$i].correct += ConvertAnswer $tempCorrect
-          $QuestionArray[$i].type = "0" # Set MultipleChoice question type to single answer
-        }
-        elseif ($tempCorrect.Length -gt 1) { # Convert multiple answers to decimal
-          $tempSplit = $tempCorrect.ToCharArray() | ForEach-Object {$_.tostring()}
-          $QuestionArray[$i].correct += [system.String]::Join(",", ($tempSplit | ForEach-Object { ConvertAnswer $_ } ))
-          $QuestionArray[$i].type = "1" # Set MultipleChoice question type to multiple answer
-        }
-      }
-      elseif ( Like $buffer[$i][$ii] $Selector.imageFormat ) { # Add to image property
-        write-host $i
-        $QuestionArray[$i].text += ("<img src=../../../../upload/images/$($buffer[$i][$ii])" + " />")
-      }
-      elseif ( $textExplanation ) { # Add to Explanation Array
-        $QuestionArray[$i].explanation += $buffer[$i][$ii] + "<br><br>"
-      }
-      elseif ( Like $buffer[$i][$ii] $Selector.explanation ) { # Add to explanation property
-        $QuestionArray[$i].explanation += $buffer[$i][$ii]  + "<br><br>"
+  if ( !(Like $paragraphs[$i].text $Selector.question) ) { # If NOT start of new question, continue
+    
+    if ( ($paragraphs[$i].Pictures).count -like 1 ) # Images
+    { 
+      $QuestionArray[$questid].image += $imageURLPrefix + $paragraphs[$i].Pictures.FileName
+      Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
+    }
+    elseif ($paragraphs[$i].text -like $Selector.filter ) # Filter unwanted text
+    { 
+      # skip it
+    }  
+    elseif ($paragraphs[$i].text -like $Selector.section ) # Section description of exam
+    { 
+        $QuestionArray[$questid].section += $paragraphs[$i].text
+    } 
+    elseif ( $paragraphs[$i].islistitem ) # Possible answers
+    { 
+        $QuestionArray[$questid].answers += $paragraphs[$i].text
+    }
+    elseif ( $paragraphs[$i].text -like $Selector.correct ) # Correct answer
+    {
+        $QuestionArray[$questid].correct += ($paragraphs[$i].text).replace("Correct Answer: ","")
+    }
+    elseif ( $textExplanation ) # Add to Explanation Array
+    {
+        $QuestionArray[$questid].explanation += $paragraphs[$i].text
+    }
+    elseif ($paragraphs[$i].text -like $Selector.explanation ) # Add to explanation property
+    {
+        $QuestionArray[$questid].explanation += $paragraphs[$i].text
         $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
-      }
-      else { # Add to text array
-        $QuestionArray[$i].text += $buffer[$i][$ii] + "<br><br>"
-      }
-    } # End of process parts of questions
-  } # End of process questions
+    }
+    else # The question itself
+    { 
+      $QuestionArray[$questid].text += $paragraphs[$i].text
+    }
+  }
+  elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
+  
+    $QuestionArray += NewQuestion
+    $textExplanation = $false
+    $questid ++
+  } 
+} # End for loop
+
 
   # Save Data as CSV
   $prepareCsv = for ($i=1; $i -lt $QuestionArray.count; $i++) {
@@ -247,8 +274,11 @@ elseif ($Outputformat -like "CSV") {
 
   } # End prepare CSV
 
-  $CSVFormat | Out-File -FilePath ($folderPath + "test.csv") -Encoding utf8 -Force
-  $prepareCsv | Out-File -FilePath ($folderPath + "test.csv") -Encoding utf8 -Append
+  $CSVFormat | Out-File -FilePath ($folderPath + "new-$($examNumber).csv") -Encoding utf8 -Force
+  $prepareCsv | Out-File -FilePath ($folderPath + "new-$($examNumber).csv") -Encoding utf8 -Append
 
 } # End of Process Buffer to CSV
+
+$QuestionArray | ConvertTo-Json | Out-File -FilePath ($folderPath + "new-$($examNumber).json")
+
 
