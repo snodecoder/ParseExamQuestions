@@ -97,9 +97,7 @@ for ( $i=0; $i -lt $paragraphs.count; $i++ ) {
   if ( !(Like $paragraphs[$i].text $Selector.question) ) {
     
     if ( ($paragraphs[$i].Pictures).count -like 1 ) {
-      #$tempbuffer += ($examNumber + "_" + $paragraphs[$i].Pictures.FileName)
-      $tempbuffer += $paragraphs[$i].Pictures.FileName
-      write-host $i
+      $tempbuffer += ($examNumber + "_" + $paragraphs[$i].Pictures.FileName)
       Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $examNumber + "_" + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
     }
     elseif ( Like $paragraphs[$i].Text $Selector.filter ) {
