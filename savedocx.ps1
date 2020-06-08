@@ -1,6 +1,7 @@
 
 Param(
-	[String]$temp
+  [array]$text,
+  [string]$name
 )
 
 $folderPath = "C:\Codeprojects\ParseWordDocument\"
@@ -22,12 +23,12 @@ $selection = $word.Selection
 	$selection.TypeText($folderPath)
 	$selection.TypeParagraph()
 
-	$selection.TypeText($temp);
+	$selection.TypeText($text);
 	$selection.TypeParagraph()
 
 
 
-$outputPath = $folderPath + "sources.docx"
+$outputPath = $folderPath + $name
 $doc.SaveAs($outputPath)
 $doc.Close()
 $word.Quit()
