@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-$OldWord = "741.docx"
-=======
 $OldWord = "742.docx"
->>>>>>> 55c3ede68af26c08bc5b0fea2234f2ee7d1841aa
 $folderPath = "C:\Codeprojects\ParseWordDocument\"
 $mediaFolder = "C:\Codeprojects\ParseWordDocument\docx\word\media\"
 $imageFolder = $folderPath + "images\"
