@@ -25,22 +25,22 @@ function Like ( $str, $patterns ) { # Perform like search in Array
 function ConvertAnswer($_) {
   $input = $_.tostring()
   switch ( $input ) {
-    "A" {"1"; Break}
-    "B" {"2"; break}
-    "C" {"3"; break}
-    "D" {"4"; break}
-    "E" {"5"; break}
-    "F" {"6"; break}
-    "G" {"7"; break}
-    "H" {"8"; break}
-    "I" {"9"; break}
-    "J" {"10"; break}
-    "K" {"11"; break}
-    "L" {"12"; break}
+    "A" {"0"; Break}
+    "B" {"1"; break}
+    "C" {"2"; break}
+    "D" {"3"; break}
+    "E" {"4"; break}
+    "F" {"5"; break}
+    "G" {"6"; break}
+    "H" {"7"; break}
+    "I" {"8"; break}
+    "J" {"9"; break}
+    "K" {"10"; break}
+    "L" {"11"; break}
   }
 } # End of function ConvertAnswer
 
-function newJsonExam () {
+function NewJsonExam () {
   New-Object psobject -Property @{
     id = [int] # exam ID
     ;title = [string] # exam title
@@ -59,7 +59,7 @@ function newJsonExam () {
   }
 } # End of function newJsonExam
 
-function newJsonQuestion () {
+function NewJsonQuestion () {
   New-Object psobject -Property @{
     variant = [int] # question variant
     ;question = @() # body of actual question
@@ -70,17 +70,17 @@ function newJsonQuestion () {
 } # End of function newJsonQuestion
 
 
-function extractWordImages($folderPath, $wordFileName) { # extracts images from .docx and stores them in .\images folder, 
+function ExtractWordImages($folderPath, $wordFileName) { # extracts images from .docx and stores them in .\images folder, 
   $wordFile = Get-ChildItem -Path ($folderPath + $wordFileName) -Filter *.docx
   Rename-Item $wordFile -NewName ($wordFile.BaseName + ".zip") 
-  Expand-Archive ($wordFile.BaseName + ".zip")
+  Expand-Archive ($wordFile.BaseName + ".zip") -Force
 
-  Get-ChildItem -Path ($wordFile.BaseName + "\word\media\") | ForEach-Object {
-    Copy-Item -Path ($wordFile.BaseName + "\word\media\*") -Destination ($folderPath + "\images")
-  }
+  #Get-ChildItem -Path ($wordFile.BaseName + "\word\media\") | ForEach-Object {
+  #  Copy-Item -Path ($wordFile.BaseName + "\word\media\*") -Destination ($folderPath + "\images")
+  #}
   $zipFile = Get-ChildItem -Path ($folderPath + $wordFile.BaseName + ".zip") -Filter *.zip 
   Rename-Item -Path $zipFile.FullName -NewName ($zipFile.BaseName + ".docx") 
-  Remove-Item -Path ($folderPath + "\" + $zipFile.BaseName) -Recurse
+  #Remove-Item -Path ($folderPath + "\" + $zipFile.BaseName) -Recurse
 } # End of function extractWordImages
 
-
+Export-ModuleMember -Function ConvertAnswer, ExtractWordImages, Like, NewJsonExam, NewJsonQuestion, NewQuestion
