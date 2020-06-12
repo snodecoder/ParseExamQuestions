@@ -140,7 +140,7 @@ $jsonOutputObject = newJsonExam
 $jsonOutputObject.test += NewJsonQuestion
 
 # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
-for ( $i=0; $i -lt 40; $i++ ) {
+for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
   # write-host "starting round $($i)" # Turn on for Debugging
 
   if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
@@ -201,6 +201,7 @@ for ( $i=0; $i -lt 40; $i++ ) {
     elseif ($QuestionArray[$questid].correct[0].Length -gt 1){
         $QuestionArray[$questid].type = "multiple_answers"
         $jsonOutputObject.test[$questid].variant = 1
+
     }
 
     $QuestionArray[$questid].index = $questid
@@ -211,10 +212,17 @@ for ( $i=0; $i -lt 40; $i++ ) {
   } 
 } # End for loop
 
-$QuestionArray
+$QuestionArray[9]
+
+$jsonOutputObject.test[9]
 
 
+function booleanAnswer ($correct, $count) {
+  if ($correct.Length -like 1){
+    
+  }
 
+}
 
   # Save Data as JSON
   $QuestionArray | ConvertTo-Json | Out-File -FilePath ($folderPath + "new-$($examNumber).json")
