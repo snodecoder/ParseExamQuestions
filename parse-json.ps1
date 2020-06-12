@@ -91,6 +91,19 @@ function insertVariant ($variant, $text) { # example use $jsonOutputObject.test[
   $array
 }
 
+function booleanAnswer ($CorrectAnswers, $ChoicesCount) { # Generate Array with true or false (if correct answer) for each answer
+  [System.Boolean[]]$booleanAnswers = @()
+  [int[]]$correct = @()
+
+  $CorrectAnswers | ForEach-Object { # convert Correct Character answer (A, or B) to decimal index
+    $correct += ConvertAnswer $_
+  }
+
+  for ($i = 0; $i -lt $ChoicesCount; $i++) { # generate true if decimal index correct == index of choices, otherwise false
+    $booleanAnswers += $correct.Contains($i)
+  }
+  $booleanAnswers
+}
 
 function insertChoice ($index, $text) { # example use $jsonOutputObject.test[0].question += insertVariant $NodeVariant.text "dit is een test"
   switch ($index) {
@@ -169,7 +182,9 @@ for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
     }
     elseif ( $paragraphs[$i].text -like $Selector.correct ) # Correct answer
     {
-        $QuestionArray[$questid].correct += ($paragraphs[$i].text).replace("Correct Answer: ","")
+      $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
+      $QuestionArray[$questid].correct += $CorrectAnswer.ToCharArray()
+      
     }
     elseif ( $textExplanation ) # Add to Explanation Array
     {
@@ -192,18 +207,13 @@ for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
     if ($QuestionArray[$questid].correct[0].Length -like 1){
         $QuestionArray[$questid].type = "single_answer"
         $jsonOutputObject.test[$questid].variant = 0
-
-        $correct = $QuestionArray[$questid].correct[0]
-        $jsonOutputObject.test[$questid].answer = ConvertAnswer $correct
-        
-        
     }
     elseif ($QuestionArray[$questid].correct[0].Length -gt 1){
         $QuestionArray[$questid].type = "multiple_answers"
         $jsonOutputObject.test[$questid].variant = 1
-
     }
 
+    $jsonOutputObject.test[$questid].answer = booleanAnswer -CorrectAnswers $QuestionArray[$questid].correct -ChoicesCount $QuestionArray[$questid].answers.Count # Save array of answers in boolean
     $QuestionArray[$questid].index = $questid
     $QuestionArray += NewQuestion
     $jsonOutputObject.test += NewJsonQuestion
@@ -211,21 +221,24 @@ for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
     $questid ++
   } 
 } # End for loop
-
-$QuestionArray[9]
-
-$jsonOutputObject.test[9]
-
-
-function booleanAnswer ($correct, $count) {
-  if ($correct.Length -like 1){
-    
-  }
-
+$OutputObject = @()
+for ($i=1; $i -lt $jsonOutputObject.test.Count; $i++) {
+  $OutputObject += $jsonOutputObject.test[$i]
 }
 
+$jsonExport = $jsonOutputObject | ConvertTo-Json -Depth 6 -AsArray -EnumsAsStrings
+
+[array[]]$jsonQuestions = @()
+
+$jsonQuestions += $OutputObject[1] | ConvertTo-Json -Depth 3 -AsArray -EnumsAsStrings
+$jsonExport = $jsonQuestions 
+$jsonExport | Out-File -FilePath ($folderPath + "new-$($examNumber).json") -Force
+
+
+
+
   # Save Data as JSON
-  $QuestionArray | ConvertTo-Json | Out-File -FilePath ($folderPath + "new-$($examNumber).json")
+  #$QuestionArray | ConvertTo-Json | Out-File -FilePath ($folderPath + "new-$($examNumber).json")
 
 
 
