@@ -84,11 +84,10 @@ $NodeVariant = @{
 }
 
 function insertVariant ($variant, $text) { # example use $jsonOutputObject.test[0].question += insertVariant $NodeVariant.text "dit is een test"
-  $array = @{
+  New-Object [[PSCustomObject] -Property @{
     variant = $variant
     text = $text
-  }
-  $array
+  }]  
 }
 
 function booleanAnswer ($CorrectAnswers, $ChoicesCount) { # Generate Array with true or false (if correct answer) for each answer
@@ -121,11 +120,10 @@ function insertChoice ($index, $text) { # example use $jsonOutputObject.test[0].
     11 {$label = "L"}
     Default {}
   }
-  $array = @{
+  New-Object [PSCustomObject] -Property @{
     label = $label
     text = $text
-  }
-  $array
+  } 
 }
 
 
@@ -153,7 +151,7 @@ $jsonOutputObject = newJsonExam
 $jsonOutputObject.test += NewJsonQuestion
 
 # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
-for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
+for ( $i=0; $i -lt 23; $i++ ) {
   # write-host "starting round $($i)" # Turn on for Debugging
 
   if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
@@ -221,6 +219,10 @@ for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
     $questid ++
   } 
 } # End for loop
+
+
+$jsonOutputObject
+
 $OutputObject = @()
 for ($i=1; $i -lt $jsonOutputObject.test.Count; $i++) {
   $OutputObject += $jsonOutputObject.test[$i]
