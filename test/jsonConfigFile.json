@@ -25,7 +25,7 @@
           {"label": "A", "text": "Option A"},
           {"label": "B", "text": "Option B"},
           {"label": "C", "text": "Option C"},
-          {"label": "D", "text": "Option D"},
+          {"label": "D", "text": "Option D"}
       ],
       "answer": [true, false, false, false],
       "explanation": [

@@ -1,4 +1,72 @@
 
+##### DEFINITIONS #####
+enum Variant {
+  Large = 2
+  Normal = 1
+  Image_URL = 0
+}
+
+class TextVariant # Text Vvariant (Large, Normal, Url)
+{
+  # Properties
+  [int] $variant
+  [string] $text
+
+
+
+  TextVariant([int] $variant, [string] $text)
+  {
+    $this.variant = $variant
+    $this.text = $text
+  }
+} # End class TextVariant
+
+$tempVariant = $null
+$tempVariant = [TextVariant]::new(1, "Test")
+$tempVariant.variant.GetType()
+
+class TextLabel # Text Label for choices (A, B, C...)
+{
+  # Properties
+  [string] $Label
+  [string] $Text
+
+
+  TextLabel([string] $Label, [string] $Text)
+  {
+    $this.label = $Label
+    $this.text = $Text
+  }
+} # End class TextLabel
+
+class Question # Question constructor
+{
+  [int] $variant
+  [array] $question
+  [array] $choices
+  [array] $answer
+  [array] $explanation
+
+  # Constructor
+  Question()
+  {
+    $this.variant = $null
+    $this.question = $null
+    $this.choices = $null
+    $this.answer = $null
+    $this.explanation = $null
+  }
+
+  [array]AddText([int] $variant, [string] $text)
+  {
+    return [Variant]::new($variant, $text)
+  }
+
+}
+
+$testQuestion = [Question]::new()
+$testQuestion.
+
 $exam = $null
 
 $exam = [PSCustomObject]@{
@@ -15,43 +83,56 @@ $exam = [PSCustomObject]@{
   pass = [int]$null # minimum score required to pass exam
   image = [string]$null # cover image of exam
   cover = [array[]] @() # fill array with addText method
+  test = [array[]] @() # stores questions via addQuestion method
 }
 
-function addMethods ([string]$location){
-    # Add addText method to Exam object
-  $exam | Add-Member -Name addText -MemberType ScriptMethod -Value {
-    param( 
-      [Parameter(Mandatory=$true,
-      HelpMessage="0=Image URL, 1=Normal Size, 2=Large Size")]
-      [int]$textSize, 
-      [Parameter(Mandatory=$true,
-      HelpMessage="Enter Text")]
-      [string]$text,
-      [Parameter(Mandatory=$false,
-      HelpMessage="Location to add text, default=cover")]
-      [string]$location
-    )
-      
-    $this.$location += [PSCustomObject]@{ # Add object with values from input
-      variant = [int]$textSize
-      text = [string]$text
-    }
-
-  } -Force
+$temp = [PSCustomObject]@{
+  variant = [int]$null # defines the type of question (add via addQuestionType method)
+  question = [array[]] @() # stores question parts (add via addTextVariant method)
+  choices = [array[]] @() # stores answer choices (add via addChoice method)
+  answer = [array[]] @() # stores correct and incorrect answers (add via addAnswers method)
+  explanation = [array[]] @() # stores answer explanation (add via addTextVariant)
 }
-addMethods("cover")
 
-$exam.GetType()
+
+
+
+
+  # Add addText method to Exam object
+$exam | Add-Member -Name addTextVariant -MemberType ScriptMethod -Value {
+  param(
+    [Parameter(Mandatory=$true,
+    HelpMessage="0=Image URL, 1=Normal Size, 2=Large Size")]
+    [int]$textSize,
+    [Parameter(Mandatory=$true,
+    HelpMessage="Enter Text")]
+    [string]$text,
+    [Parameter(Mandatory=$true,
+    HelpMessage="Location to add text, default=cover",
+    ValueFromPipeline=$true)]
+    [ValidateSet("cover", "test.question", "test.explanation")]
+    [psobject]$location
+  )
+
+  $this.$location += [PSCustomObject]@{ # Add object with values from input
+    variant = [int]$textSize
+    text = [string]$text
+  }
+
+} -Force
+
+$exam.test[0].GetType()
+$exam.test += $temp
 $exam.addText(1, "test", "test.question")
 $exam.test.gettype()
 
+$exam | ConvertTo-Json | Test-Json
 
 
 
 [string]$string = "test.question"
 
 
-$exam.
 
 $exam.$string +=[PSCustomObject]@{ # Add object with values from input
   variant = [int]$textSize ="1"
@@ -73,7 +154,7 @@ function NewJsonExam () {
     id = [int] # exam description
     ;title = [string] # exam description
     ;description = [string] # exam description
-    ;author = [ordered] @{
+    ;$author = [ordered] @{
       id = [int] # author ID
       ;name = [string] # author name
       ;image = [string] # author image
