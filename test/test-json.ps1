@@ -1,18 +1,10 @@
 
 ##### DEFINITIONS #####
-enum Variant {
-  Large = 2
-  Normal = 1
-  Image_URL = 0
-}
-
 class TextVariant # Text Vvariant (Large, Normal, Url)
 {
   # Properties
   [int] $variant
   [string] $text
-
-
 
   TextVariant([int] $variant, [string] $text)
   {
@@ -21,21 +13,17 @@ class TextVariant # Text Vvariant (Large, Normal, Url)
   }
 } # End class TextVariant
 
-$tempVariant = $null
-$tempVariant = [TextVariant]::new(1, "Test")
-$tempVariant.variant.GetType()
-
 class TextLabel # Text Label for choices (A, B, C...)
 {
   # Properties
-  [string] $Label
+  [string] $label
   [string] $Text
 
 
-  TextLabel([string] $Label, [string] $Text)
+  TextLabel([string] $label, [string] $text)
   {
-    $this.label = $Label
-    $this.text = $Text
+    $this.label = $label
+    $this.text = $text
   }
 } # End class TextLabel
 
@@ -50,22 +38,13 @@ class Question # Question constructor
   # Constructor
   Question()
   {
-    $this.variant = $null
-    $this.question = $null
-    $this.choices = $null
-    $this.answer = $null
-    $this.explanation = $null
+    $this.variant
+    $this.question
+    $this.choices
+    $this.answer
+    $this.explanation
   }
-
-  [array]AddText([int] $variant, [string] $text)
-  {
-    return [Variant]::new($variant, $text)
-  }
-
 }
-
-$testQuestion = [Question]::new()
-$testQuestion.
 
 $exam = $null
 
@@ -85,6 +64,39 @@ $exam = [PSCustomObject]@{
   cover = [array[]] @() # fill array with addText method
   test = [array[]] @() # stores questions via addQuestion method
 }
+
+function AddTextVariant () {
+  param(
+    [Parameter(Mandatory=$true,
+    HelpMessage="0=Image URL, 1=Normal Size, 2=Large Size")]
+    [ValidateSet("cover" , "test.question", "test.explanation")]
+    [string]$variant,
+    [Parameter(Mandatory=$true,
+    HelpMessage="Enter Text")]
+    [string]$text
+  )
+  [TextVariant]::new($variant, $text)
+}
+
+### testing
+AddTextVariant -variant  
+$exam.test += [Question]::new()
+$exam.test[0].answer += $true, $false
+$exam.test[0].variant = [TextVariant]::new((Large), "test")
+(Large, "large")
+$exam.test[0].answer.GetType()
+
+$exam | ConvertTo-Json -Depth 4 -Compress | Test-Json
+
+
+
+
+
+
+
+
+
+
 
 $temp = [PSCustomObject]@{
   variant = [int]$null # defines the type of question (add via addQuestionType method)
