@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-06-16T23:19:12.471Z",
+  "createdAt": "2020-06-16T23:21:16.729Z",
   "code": "70-742",
   "time": 60,
   "pass": 75,
@@ -47,7 +47,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image1.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image1.jpg"
         },
         {
           "variant": 1,
@@ -142,7 +142,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image2.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
         },
         {
           "variant": 1,
@@ -355,15 +355,15 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -532,7 +532,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image2.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
         },
         {
           "variant": 1,
@@ -1935,7 +1935,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image4.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image4.jpg"
         },
         {
           "variant": 1,
@@ -2000,7 +2000,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image4.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image4.jpg"
         },
         {
           "variant": 1,
@@ -2065,7 +2065,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image5.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image5.jpg"
         },
         {
           "variant": 1,
@@ -2330,7 +2330,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image2.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
         },
         {
           "variant": 1,
@@ -2535,7 +2535,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image2.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
         },
         {
           "variant": 1,
@@ -3452,7 +3452,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image6.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image6.jpg"
         },
         {
           "variant": 1,
@@ -3609,15 +3609,15 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -3678,15 +3678,15 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -4083,11 +4083,11 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -4741,7 +4741,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image7.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image7.jpg"
         },
         {
           "variant": 1,
@@ -5138,7 +5138,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image8.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image8.jpg"
         },
         {
           "variant": 1,
@@ -5501,7 +5501,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image9.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image9.jpg"
         },
         {
           "variant": 1,
@@ -5509,7 +5509,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image10.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
         },
         {
           "variant": 1,
@@ -5576,7 +5576,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image11.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image11.jpg"
         },
         {
           "variant": 1,
@@ -5584,7 +5584,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image10.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
         },
         {
           "variant": 1,
@@ -5879,7 +5879,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image12.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image12.jpg"
         },
         {
           "variant": 1,
@@ -6597,7 +6597,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image11.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image11.jpg"
         },
         {
           "variant": 1,
@@ -6605,7 +6605,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image10.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
         },
         {
           "variant": 1,
@@ -6798,7 +6798,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image13.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image13.jpg"
         },
         {
           "variant": 1,
@@ -6806,7 +6806,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image14.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image14.jpg"
         },
         {
           "variant": 1,
@@ -7096,7 +7096,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image15.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image15.jpg"
         },
         {
           "variant": 1,
@@ -7171,7 +7171,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image16.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image16.jpg"
         },
         {
           "variant": 1,
@@ -7191,7 +7191,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image17.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image17.jpg"
         }
       ],
       "choices": [
@@ -7293,7 +7293,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image18.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image18.jpg"
         },
         {
           "variant": 1,
@@ -7348,7 +7348,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image19.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image19.jpg"
         },
         {
           "variant": 1,
@@ -7407,7 +7407,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image20.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image20.jpg"
         },
         {
           "variant": 1,
@@ -7462,7 +7462,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image21.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image21.jpg"
         },
         {
           "variant": 1,
@@ -8256,7 +8256,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image22.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image22.jpg"
         },
         {
           "variant": 1,
@@ -8328,19 +8328,19 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -9093,23 +9093,23 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image3.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         }
       ],
       "choices": [
@@ -9417,7 +9417,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images//image23.jpg"
+          "text": "https://files.doorhetgeluid.nl/images/70-742/image23.jpg"
         },
         {
           "variant": 1,

@@ -20,10 +20,7 @@
 ###     Global Variables    ###
 ###############################
 param (
-  $WordFileName = "742.docx"
-  ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
-  ,$imageURLPrefix = "https://files.doorhetgeluid.nl/images/$($examNumber)/"
-  ,$examAuthorId = "00001"
+  $examAuthorId = "00001"
   ,$examAuthorName = "Snodecoder"
   ,$examAuthorImage = "http://www.example.com/image.png"
   ,$examCode= "70-742"
@@ -32,6 +29,9 @@ param (
   ,$examImage = "http://www.example.com/image.png"
   ,$examTime = 60 # Maximum time for exam
   ,$examPass = 75 # Minimum percentage to pass exam
+  ,$imageURLPrefix = "https://files.doorhetgeluid.nl/images/$($examCode)/"
+  ,$WordFileName = "742.docx"
+  ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
 )
 ################################
 ### <<< End of Edit Area <<< ###
@@ -273,6 +273,7 @@ try {
   }
   elseif ( (Test-Path -Path ($imageFolder)) -like "True" ) {
     Remove-Item -Path $imageFolder -Recurse
+    New-Item -Path $folderPath -Name "images" -ItemType Directory | Out-Null
   }
   # Extract images from .docx file
   extractWordImages -folderPath $folderPath -wordFileName $WordFileName
