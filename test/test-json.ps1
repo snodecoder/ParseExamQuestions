@@ -65,26 +65,65 @@ $exam = [PSCustomObject]@{
   test = [array[]] @() # stores questions via addQuestion method
 }
 
-function AddTextVariant () {
+function AddTextVariant () { # Helper function to add textVariant blocks
   param(
     [Parameter(Mandatory=$true,
     HelpMessage="0=Image URL, 1=Normal Size, 2=Large Size")]
-    [ValidateSet("cover" , "test.question", "test.explanation")]
+    [ValidateSet("ImageURL" , "Normal", "Large")]
     [string]$variant,
     [Parameter(Mandatory=$true,
     HelpMessage="Enter Text")]
     [string]$text
   )
-  [TextVariant]::new($variant, $text)
+  [int]$intVariant
+  switch ($variant) {
+    ImageURL { $intvariant = 0 }
+    Normal { $intvariant = 1 }
+    Large { $intvariant = 2 }
+    Default {}
+  }
+  [TextVariant]::new($intVariant, $text)
 }
 
+function AddTextLabel () { # Helper function to add textLabel blocks
+  param(
+    [Parameter(Mandatory=$true)]
+    [ValidateSet("A" , "B", "C", "D", "E", "F", "G", "H", "I", "J", "K")]
+    [string]$label,
+    [Parameter(Mandatory=$true,
+    HelpMessage="Enter Text")]
+    [string]$text
+  )
+  [TextLabel]::new($label, $text)
+}
+
+function addQuestionType () { # Helper function to add QuestionType
+  param(
+    [Parameter(Mandatory=$true,
+    HelpMessage="Choose type of question")]
+    [ValidateSet("MultipleChoice", "MultipleAnswer", "FillInTheBlank", "ListOrder")]
+    [string]$type
+  )
+  [int]$intType = switch ($type) {
+    MultipleChoice { 0 }
+    MultipleAnswer { 1 }
+    FillInTheBlank { 2 }
+    ListOrder { 3 }
+    Default {}
+  }
+  $intType
+}
+
+
+
 ### testing
-AddTextVariant -variant  
+
 $exam.test += [Question]::new()
 $exam.test[0].answer += $true, $false
-$exam.test[0].variant = [TextVariant]::new((Large), "test")
-(Large, "large")
-$exam.test[0].answer.GetType()
+$exam.test[0].question += AddTextVariant -variant Normal -text "sdfsd" 
+$exam.test[0].choices += AddTextLabel -label A -text "Voer een ip addres in"
+$exam.test[0].variant = addQuestionType -type MultipleChoice
+
 
 $exam | ConvertTo-Json -Depth 4 -Compress | Test-Json
 
