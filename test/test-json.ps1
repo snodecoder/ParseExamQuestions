@@ -120,7 +120,7 @@ function addQuestionType () { # Helper function to add QuestionType
 
 $exam.test += [Question]::new()
 $exam.test[0].answer += $true, $false
-$exam.test[0].question += AddTextVariant -variant Normal -text "sdfsd" 
+$exam.test[0].question += AddTextVariant -variant Normal -text "sdfsd"
 $exam.test[0].choices += AddTextLabel -label A -text "Voer een ip addres in"
 $exam.test[0].variant = addQuestionType -type MultipleChoice
 
@@ -192,12 +192,11 @@ $exam.$string +=[PSCustomObject]@{ # Add object with values from input
 
 
 
-Get-Content "test/jsonConfigFile.json" -Raw | Test-Json
-
-$json = [ordered]@{}
-
-(Get-Content "test/jsonConfigFile.json" -Raw | ConvertFrom-Json).PSObject.Properties |
+$json = @{}
+ (Get-Content "test/schema.json" -Raw | ConvertFrom-Json).PSObject.Properties |
     ForEach-Object { $json[$_.Name] = $_.Value }
+
+$json.createdAt.GetType()
 
 
 function NewJsonExam () {

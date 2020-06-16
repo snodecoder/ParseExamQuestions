@@ -22,8 +22,16 @@
 param (
   $WordFileName = "742.docx"
   ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
-  ,$examNumber = "70-742"
   ,$imageURLPrefix = "https://files.doorhetgeluid.nl/images/$($examNumber)/"
+  ,$examAuthorId = "00001"
+  ,$examAuthorName = "Snodecoder"
+  ,$examAuthorImage = "http://www.example.com/image.png"
+  ,$examCode= "70-742"
+  ,$examTitle = "Identity with Windows Server 2016"
+  ,$examDescription = "161 questions available in Multiple Choice en Multiple Answer format."
+  ,$examImage = "http://www.example.com/image.png"
+  ,$examTime = 60 # Maximum time for exam
+  ,$examPass = 75 # Minimum percentage to pass exam
 )
 ################################
 ### <<< End of Edit Area <<< ###
@@ -35,7 +43,7 @@ try{
   ### Global Variables ###
   $mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName.Remove(3,5))\word\media\"
   $imageFolder = $folderPath + "images\"
-  $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
+  # NOT IN USE # $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
   $Selector = New-Object psobject -Property @{
     question = "QUESTION*"
     ;explanation = "Explanation*"
@@ -115,6 +123,25 @@ try{
     }
   }
 
+  function NewJsonExam () {
+    [PSCustomObject]@{
+      title = [string]$null # exam title
+      description = [string]$null # exam description
+      author = [PSCustomObject]@{
+        id = [string]$null # author ID
+        name = [string]$null # author name
+        image = [string]$null # author image
+      }
+      createdAt = [datetime] # creation datetime
+      code = [string]$null # exam number
+      time = [int]$null # maximum exam time
+      pass = [int]$null # minimum score required to pass exam
+      image = [string]$null # cover image of exam
+      cover = [array[]] @() # fill array with addText method
+      test = [array[]] @() # stores questions via addQuestion method
+    }
+  } # End of function newJsonExam
+
   function Like ( $str, $patterns ) { # Perform like search in Array
     $patterns | ForEach-Object {
       if ($str -ilike $_ ) {
@@ -174,26 +201,6 @@ try{
     [TextLabel]::new($label, $text)
   }
 
-  function NewJsonExam () {
-    [PSCustomObject]@{
-      id = [int]$null # exam description
-      title = [string]$null # exam description
-      description = [string]$null # exam description
-      author = [PSCustomObject]@{
-        id = [int]$null # author ID
-        name = [string]$null # author name
-        image = [string]$null # author image
-      }
-      code = [string]$null # exam number
-      time = [int]$null # maximum exam time
-      pass = [int]$null # minimum score required to pass exam
-      image = [string]$null # cover image of exam
-      cover = [array[]] @() # fill array with addText method
-      test = [array[]] @() # stores questions via addQuestion method
-    }
-  } # End of function newJsonExam
-
-
   function AddTextVariant () { # Helper function to add textVariant blocks
     param(
       [Parameter(Mandatory=$true,
@@ -204,12 +211,11 @@ try{
       HelpMessage="Enter Text")]
       [string]$text
     )
-    [int]$intVariant
 
-    switch ($variant) { # Convert to decimal
-      ImageURL { $intvariant = 0 }
-      Normal { $intvariant = 1 }
-      Large { $intvariant = 2 }
+    [int]$intVariant = switch ($variant) { # Convert to decimal
+      ImageURL { 0 }
+      Normal { 1 }
+      Large { 2 }
       Default {}
     }
 
@@ -263,7 +269,10 @@ try {
 
   # Create Image folder (for exported images) in working directory, if it not already exists
   if ( (Test-Path -Path ($imageFolder)) -like "False" ) {
-    New-Item -Path $folderPath -Name "images" -ItemType Directory
+    New-Item -Path $folderPath -Name "images" -ItemType Directory | Out-Null
+  }
+  elseif ( (Test-Path -Path ($imageFolder)) -like "True" ) {
+    Remove-Item -Path $imageFolder -Recurse
   }
   # Extract images from .docx file
   extractWordImages -folderPath $folderPath -wordFileName $WordFileName
@@ -273,6 +282,18 @@ try {
   $questid = 0
   $textExplanation = $false
   $exam = newJsonExam
+  $exam.title = $examTitle
+  $exam.description = $examDescription
+  $exam.author.id = $examAuthorId
+  $exam.author.name = $examAuthorName
+  $exam.author.image = $examAuthorImage
+  $exam.createdAt = Get-Date -Format "yyyy-MM-ddTHH:mm:ss.fffZ"
+  $exam.image = $examImage
+  $exam.code = $examCode
+  $exam.time = $examTime
+  $exam.pass = $examPass
+  $exam.cover += AddTextVariant -variant Large -text $examTitle
+  $exam.cover += AddTextVariant -variant Normal -text $examDescription
   $exam.test += [Question]::new()
 
 
@@ -323,9 +344,14 @@ try {
       }
     }
     elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
-      $exam.test += [Question]::new() # add new empty Question object to exam
+      if ( $exam.test[$questid].question -like $null ) { # if question was not filled, recycle it
+        $exam.test[$questid] = [Question]::new()
+      }
+      else {
+        $exam.test += [Question]::new() # add new empty Question object to exam
+        $questid ++ # increment Question ID for processing next question
+      }
       $textExplanation = $false # reset the textexplanation value
-      $questid ++ # increment Question ID for processing next question
     }
   } # End for loop
 }
@@ -333,10 +359,17 @@ catch{
   Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
 }
 
-$jsonExam = $exam | ConvertTo-Json -Depth 4 -Compress
+
+### Randomize question order in subsets ###
+# Because current version of Exam Simulator does not offer randomization and subset selection of questions, this allows you to generate a few randomized version of the exam.
+
+
+### Convert Exam to JSON and Export it ###
+
+$jsonExam = $exam | ConvertTo-Json -Depth 4 -Verbose
 
 if ( $jsonExam | Test-Json ) {
-  $jsonExam | Out-File -FilePath ($folderPath + "new-$($examNumber).json") -Force
+  $jsonExam | Out-File -FilePath ($folderPath + "new-$($examCode).json") -Force
   Write-Host "Done :)" -ForegroundColor Green
 }
 else {
@@ -344,4 +377,13 @@ else {
 }
 
 
+
+<#
+$exam.test.GetType()
+$temp = $exam.test[1].question
+$exam.test = [array[]]@()
+$exam.test += $temp
+AddTextVariant -variant Normal "test"
+
+#>
 
