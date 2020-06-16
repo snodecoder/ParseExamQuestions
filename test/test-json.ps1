@@ -38,11 +38,11 @@ class Question # Question constructor
   # Constructor
   Question()
   {
-    $this.variant
-    $this.question
-    $this.choices
-    $this.answer
-    $this.explanation
+    $this.variant # question variant
+    $this.question # body of actual question
+    $this.choices # body of actual choices
+    $this.answer # array with true/false for every choice
+    $this.explanation # explanation
   }
 }
 

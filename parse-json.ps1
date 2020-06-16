@@ -15,6 +15,10 @@
   General notes
 #>
 
+### Import the custom Classes and Functions for this project
+Using Module .\functions.psm1 
+
+
 ###############################
 ### >>> Start Edit Area >>> ###
 ###     Global Variables    ### 
@@ -25,210 +29,324 @@ param (
   ,$examNumber = "70-742"
   ,$imageURLPrefix = "https://files.doorhetgeluid.nl/images/$($examNumber)/"
 )
-
-
-$mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName)\word\media\"
-$imageFolder = $folderPath + "images\"
-$reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
-$Selector = New-Object psobject -Property @{
-  question = "QUESTION*"
-  ;explanation = "Explanation*"
-  ;correct = "Correct Answer*"
-  ;section = "Section*"
-  ;options = @(
-    "A.*"
-    ,"B.*"
-    ,"C.*"
-    ,"D.*"
-    ,"E.*"
-    ,"F.*"
-    ,"G.*"
-    ,"H.*"
-  )
-  ;imageFormat = @(
-    "*.jpeg"
-    ,"*.png"
-  )
-  ;filter = @(
-    "*gratisexam*"
-  )
-} # End of Selector object
-
 ################################
 ### <<< End of Edit Area <<< ###
 ################################
 
-### Load Modules ###
-#. ($PSScriptRoot + ".\functions.ps1") # Load functions
-$PSWriteWord = Get-InstalledModule -Name PSWriteWord -ErrorAction SilentlyContinue # Check if PSWriteWord is installed
+$DebugPreference = 'Continue'
 
-if (!$PSWriteWord) {
-  Install-Module -Name PSWriteWord -Force
-}
-Import-Module PSWriteWord -Force
-Import-Module .\functions.psm1 -Force
-### End Modules ###
+try{
+  ### Global Variables ###
+  $mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName)\word\media\"
+  $imageFolder = $folderPath + "images\"
+  $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
+  $Selector = New-Object psobject -Property @{
+    question = "QUESTION*"
+    ;explanation = "Explanation*"
+    ;correct = "Correct Answer*"
+    ;section = "Section*"
+    ;options = @(
+      "A.*"
+      ,"B.*"
+      ,"C.*"
+      ,"D.*"
+      ,"E.*"
+      ,"F.*"
+      ,"G.*"
+      ,"H.*"
+    )
+    ;imageFormat = @(
+      "*.jpeg"
+      ,"*.png"
+    )
+    ;filter = @(
+      "*gratisexam*"
+    )
+  } # End of Selector object
 
 
+  ### Load Modules ###
+  #. ($PSScriptRoot + ".\functions.ps1") # Load functions
+  $PSWriteWord = Get-InstalledModule -Name PSWriteWord -ErrorAction SilentlyContinue # Check if PSWriteWord is installed
 
-$QuestionVariant = @{
-  multipleChoice = 0 # [true,false,false,false]
-  multipleAnswer = 1 # [true,true,false,false]
-  fillInTheBlank = 2 # [answer,variation,another]
-  listOrder = 3 # []
-}
-$NodeVariant = @{
-  image = 0 # URL of an image
-  text = 1 # Normal sized text, most commonly used variant
-  largeText = 2 # Large header text
-}
-
-function insertVariant ($variant, $text) { # example use $jsonOutputObject.test[0].question += insertVariant $NodeVariant.text "dit is een test"
-  New-Object [[PSCustomObject] -Property @{
-    variant = $variant
-    text = $text
-  }]  
-}
-
-function booleanAnswer ($CorrectAnswers, $ChoicesCount) { # Generate Array with true or false (if correct answer) for each answer
-  [System.Boolean[]]$booleanAnswers = @()
-  [int[]]$correct = @()
-
-  $CorrectAnswers | ForEach-Object { # convert Correct Character answer (A, or B) to decimal index
-    $correct += ConvertAnswer $_
+  if (!$PSWriteWord) {
+    Install-Module -Name PSWriteWord -Force
   }
+  Import-Module PSWriteWord -Force
 
-  for ($i = 0; $i -lt $ChoicesCount; $i++) { # generate true if decimal index correct == index of choices, otherwise false
-    $booleanAnswers += $correct.Contains($i)
-  }
-  $booleanAnswers
-}
+  ### End Modules ###
 
-function insertChoice ($index, $text) { # example use $jsonOutputObject.test[0].question += insertVariant $NodeVariant.text "dit is een test"
-  switch ($index) {
-    0 {$label = "A"}
-    1 {$label = "B"}
-    2 {$label = "C"}
-    3 {$label = "D"}
-    4 {$label = "E"}
-    5 {$label = "F"}
-    6 {$label = "G"}
-    7 {$label = "H"}
-    8 {$label = "I"}
-    9 {$label = "J"}
-    10 {$label = "K"}
-    11 {$label = "L"}
-    Default {}
-  }
-  New-Object [PSCustomObject] -Property @{
-    label = $label
-    text = $text
-  } 
-}
+  ##### Functions & Class DEFINITIONS #####
+  class TextVariant # Text Vvariant (Large, Normal, Url)
+  {
+    [int] $variant
+    [string] $text
 
-
-
-######################## Process Word Document ########################
-# Prepare Word Document for processing
-$OldWordDocument = Get-WordDocument -FilePath ($folderPath + $WordFileName)
-$paragraphs = $OldWordDocument.Paragraphs
-
-# Create Image folder (for exported images) in working directory, if it not already exists
-if ( (Test-Path -Path ($imageFolder)) -like "False" ) {
-  New-Item -Path $folderPath -Name "images" -ItemType Directory
-}
-# Extract images from .docx file
-extractWordImages -folderPath $folderPath -wordFileName $WordFileName
-
-
-### Prepare Datastrucure ###
-$QuestionArray = @()
-$questid = 0
-$QuestionArray += NewQuestion
-$textExplanation = $false
-# Prepare Exam
-$jsonOutputObject = newJsonExam
-$jsonOutputObject.test += NewJsonQuestion
-
-# Store all the Question parts per Question in Objects, store Objects in $QuestionArray
-for ( $i=0; $i -lt 23; $i++ ) {
-  # write-host "starting round $($i)" # Turn on for Debugging
-
-  if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
-    
-    if ( ($paragraphs[$i].Pictures).count -like 1 ) # Images
-    { 
-      $jsonOutputObject.test[$questid].question += insertVariant -variant $NodeVariant.image -text $imageURLPrefix + $paragraphs[$i].Pictures.FileName
-      
-      $QuestionArray[$questid].image += $imageURLPrefix + $paragraphs[$i].Pictures.FileName
-      Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
+    TextVariant([int] $variant, [string] $text)
+    {
+      $this.variant = $variant
+      $this.text = $text
     }
-    elseif ($paragraphs[$i].text -like $Selector.filter ) # Filter unwanted text
-    { 
-      # skip it
+  } # End class TextVariant
+
+  class TextLabel # Text Label for choices (A, B, C...)
+  {
+    [string] $label
+    [string] $Text
+
+    TextLabel([string] $label, [string] $text)
+    {
+      $this.label = $label
+      $this.text = $text
+    }
+  } # End class TextLabel
+
+  class Question # Question constructor
+  {
+    [int] $variant
+    [array] $question
+    [array] $choices
+    [array] $answer
+    [array] $explanation
+
+    Question() # Constructor
+    {
+      $this.variant # question variant
+      $this.question # body of actual question
+      $this.choices # body of actual choices
+      $this.answer # array with true/false for every choice
+      $this.explanation # explanation
+    }
+  }
+
+  function Like ( $str, $patterns ) { # Perform like search in Array
+    $patterns | ForEach-Object {
+      if ($str -ilike $_ ) {
+        return $true
+      }
     }  
-    elseif ($paragraphs[$i].text -like $Selector.section ) # Section description of exam
-    { 
-        $QuestionArray[$questid].section += $paragraphs[$i].text
-    } 
-    elseif ( $paragraphs[$i].islistitem ) # Possible answers
-    { 
-      $choiceIndex = $jsonOutputObject.test[$questid].choices.Count
-      $jsonOutputObject.test[$questid].choices += insertChoice -index $choiceIndex -text $paragraphs[$i].text
-      
-      $QuestionArray[$questid].answers += $paragraphs[$i].text
+  } # End of function Like
+
+  function ConvertAnswer($answer) {
+    $input = $answer.tostring()
+    switch ( $input ) {
+      "A" {"0"; Break}
+      "B" {"1"; break}
+      "C" {"2"; break}
+      "D" {"3"; break}
+      "E" {"4"; break}
+      "F" {"5"; break}
+      "G" {"6"; break}
+      "H" {"7"; break}
+      "I" {"8"; break}
+      "J" {"9"; break}
+      "K" {"10"; break}
+      "L" {"11"; break}
     }
-    elseif ( $paragraphs[$i].text -like $Selector.correct ) # Correct answer
-    {
-      $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
-      $QuestionArray[$questid].correct += $CorrectAnswer.ToCharArray()
-      
+  } # End of function ConvertAnswer
+
+  function booleanAnswer ($CorrectAnswers, $ChoicesCount) { # Generate Array with true or false (if correct answer) for each answer
+    [System.Boolean[]]$booleanAnswers = @()
+    [int[]]$correct = @()
+
+    $CorrectAnswers | ForEach-Object { # convert Correct Character answer (A, or B) to decimal index
+      $correct += ConvertAnswer $_
     }
-    elseif ( $textExplanation ) # Add to Explanation Array
-    {
-        $QuestionArray[$questid].explanation += $paragraphs[$i].text
+
+    for ($i = 0; $i -lt $ChoicesCount; $i++) { # generate true if decimal index correct == index of choices, otherwise false
+      $booleanAnswers += $correct.Contains($i)
     }
-    elseif ($paragraphs[$i].text -like $Selector.explanation ) # Add to explanation property
-    {
-        $QuestionArray[$questid].explanation += $paragraphs[$i].text
-        $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
-        $jsonOutputObject.test[$questid].explanation += $paragraphs[$i].text
-    }
-    else # The question itself
-    { 
-      $QuestionArray[$questid].text += $paragraphs[$i].text
-      $jsonOutputObject.test[$questid].question += insertVariant -variant $NodeVariant.text -text $paragraphs[$i].text
-    }
+    $booleanAnswers
   }
-  elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
 
-    if ($QuestionArray[$questid].correct[0].Length -like 1){
-        $QuestionArray[$questid].type = "single_answer"
-        $jsonOutputObject.test[$questid].variant = 0
+  function AddChoice ($index, $text) { # example use $jsonOutputObject.test[0].question += insertVariant $NodeVariant.text "dit is een test"
+    switch ($index) {
+      0 {$label = "A"}
+      1 {$label = "B"}
+      2 {$label = "C"}
+      3 {$label = "D"}
+      4 {$label = "E"}
+      5 {$label = "F"}
+      6 {$label = "G"}
+      7 {$label = "H"}
+      8 {$label = "I"}
+      9 {$label = "J"}
+      10 {$label = "K"}
+      11 {$label = "L"}
+      Default {}
     }
-    elseif ($QuestionArray[$questid].correct[0].Length -gt 1){
-        $QuestionArray[$questid].type = "multiple_answers"
-        $jsonOutputObject.test[$questid].variant = 1
+    [TextLabel]::new($label, $text)
+  }
+
+  function NewJsonExam () {
+    [PSCustomObject]@{
+      id = [int]$null # exam description
+      title = [string]$null # exam description
+      description = [string]$null # exam description
+      author = [PSCustomObject]@{
+        id = [int]$null # author ID
+        name = [string]$null # author name
+        image = [string]$null # author image
+      }
+      code = [string]$null # exam number
+      time = [int]$null # maximum exam time
+      pass = [int]$null # minimum score required to pass exam
+      image = [string]$null # cover image of exam
+      cover = [array[]] @() # fill array with addText method
+      test = [array[]] @() # stores questions via addQuestion method
+    }
+  } # End of function newJsonExam
+
+
+  function AddTextVariant () { # Helper function to add textVariant blocks
+    param(
+      [Parameter(Mandatory=$true,
+      HelpMessage="0=Image URL, 1=Normal Size, 2=Large Size")]
+      [ValidateSet("ImageURL" , "Normal", "Large")]
+      [string]$variant,
+      [Parameter(Mandatory=$false,
+      HelpMessage="Enter Text")]
+      [string]$text
+    )
+    [int]$intVariant 
+
+    switch ($variant) { # Convert to decimal
+      ImageURL { $intvariant = 0 }
+      Normal { $intvariant = 1 }
+      Large { $intvariant = 2 }
+      Default {}
     }
 
-    $jsonOutputObject.test[$questid].answer = booleanAnswer -CorrectAnswers $QuestionArray[$questid].correct -ChoicesCount $QuestionArray[$questid].answers.Count # Save array of answers in boolean
-    $QuestionArray[$questid].index = $questid
-    $QuestionArray += NewQuestion
-    $jsonOutputObject.test += NewJsonQuestion
-    $textExplanation = $false
-    $questid ++
-  } 
-} # End for loop
+    if ($text.Length -like 0) { # add space to be able to store a blank line of text
+      $text = " "
+    }
+
+    [TextVariant]::new($intVariant, $text)
+  }
+
+  function addQuestionType () { # Helper function to add QuestionType
+    param(
+      [Parameter(Mandatory=$true,
+      HelpMessage="Choose type of question")]
+      [ValidateSet("MultipleChoice", "MultipleAnswer", "FillInTheBlank", "ListOrder")]
+      [string]$type
+    )
+    [int]$intType = switch ($type) {
+      MultipleChoice { 0 }
+      MultipleAnswer { 1 }
+      FillInTheBlank { 2 }
+      ListOrder { 3 }
+      Default {}
+    }
+    $intType
+  }
+
+  function ExtractWordImages($folderPath, $wordFileName) { # extracts images from .docx and stores them in .\images folder, 
+    $wordFile = Get-ChildItem -Path ($folderPath + $wordFileName) -Filter *.docx
+    Rename-Item $wordFile -NewName ($wordFile.BaseName + ".zip") 
+    Expand-Archive ($wordFile.BaseName + ".zip") -Force
+
+    #Get-ChildItem -Path ($wordFile.BaseName + "\word\media\") | ForEach-Object {
+    #  Copy-Item -Path ($wordFile.BaseName + "\word\media\*") -Destination ($folderPath + "\images")
+    #}
+    $zipFile = Get-ChildItem -Path ($folderPath + $wordFile.BaseName + ".zip") -Filter *.zip 
+    Rename-Item -Path $zipFile.FullName -NewName ($zipFile.BaseName + ".docx") 
+    #Remove-Item -Path ($folderPath + "\" + $zipFile.BaseName) -Recurse
+  } # End of function extractWordImages
+}
+catch{
+  Write-Debug -Message "$($_) : Error in setting up Global Variables, Modules, Classed and Functions. Please review."
+}
 
 
-$jsonOutputObject
+try {
+  ######################## Process Word Document ########################
+  # Prepare Word Document for processing
+  $OldWordDocument = Get-WordDocument -FilePath ($folderPath + $WordFileName)
+  $paragraphs = $OldWordDocument.Paragraphs
+
+  # Create Image folder (for exported images) in working directory, if it not already exists
+  if ( (Test-Path -Path ($imageFolder)) -like "False" ) {
+    New-Item -Path $folderPath -Name "images" -ItemType Directory
+  }
+  # Extract images from .docx file
+  extractWordImages -folderPath $folderPath -wordFileName $WordFileName
+
+
+  ### Prepare Datastrucure ###
+  $questid = 0
+  $textExplanation = $false
+  $exam = newJsonExam
+  $exam.test += [Question]::new()
+
+
+  # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
+  for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
+    # write-host "starting round $($i)" # Turn on for Debugging
+
+    if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
+      
+      if ( ($paragraphs[$i].Pictures).count -like 1 ) { # Images
+        # Store imagelink in text for current question
+        $exam.test[$questid].question += AddTextVariant -variant ImageURL -text ($imageURLPrefix + $paragraphs[$i].Pictures.FileName)
+        # Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
+        Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
+      }
+      elseif ( $paragraphs[$i].text -like $Selector.filter ) { # Filter unwanted text
+        # skip it
+      }  
+      elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam 
+        # skip it
+      } 
+      elseif ( $paragraphs[$i].islistitem ) { # Possible answers 
+        # Store available choices in question
+        $choiceIndex = $exam.test[$questid].choices.Count
+        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text      
+      }
+      elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer
+        # Convert correct answers to boolean array and store in $exam
+        $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
+        $exam.test[$questid].answer = booleanAnswer -CorrectAnswers ($CorrectAnswer.ToCharArray()) -ChoicesCount ($exam.test[$questid].choices.count)
+      }
+      elseif ( $textExplanation ) { # Add to Explanation Array
+        $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+      }
+      elseif ( $paragraphs[$i].text -like $Selector.explanation ) { # Add to explanation property
+          $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
+          $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+      }
+      else { # The question itself
+        $exam.test[$questid].question += AddTextVariant -variant Normal -text $paragraphs[$i].text
+      }
+    }
+    elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
+
+      if ( $QuestionArray[$questid].correct[0].Length -like 1 ) {
+          $exam.test[$questid].variant = addQuestionType -type MultipleChoice
+      }
+      elseif ( $QuestionArray[$questid].correct[0].Length -gt 1 ) {
+          $exam.test[$questid].variant = addQuestionType -type MultipleAnswer
+      }
+
+      $exam.test += [Question]::new() # add new empty Question object to exam
+      $textExplanation = $false # reset the textexplanation value
+      $questid ++ # increment Question ID for processing next question
+    } 
+  } # End for loop
+}
+catch{
+  Write-Debug -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
+}
+
+
+$exam
 
 $OutputObject = @()
-for ($i=1; $i -lt $jsonOutputObject.test.Count; $i++) {
-  $OutputObject += $jsonOutputObject.test[$i]
+for ($i=1; $i -lt $exam.test.Count; $i++) {
+  $OutputObject += $exam.test[$i]
 }
 
-$jsonExport = $jsonOutputObject | ConvertTo-Json -Depth 6 -AsArray -EnumsAsStrings
+$jsonExport = $exam | ConvertTo-Json -Depth 6 -AsArray -EnumsAsStrings
 
 [array[]]$jsonQuestions = @()
 
