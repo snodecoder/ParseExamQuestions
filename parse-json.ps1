@@ -15,13 +15,9 @@
   General notes
 #>
 
-### Import the custom Classes and Functions for this project
-Using Module .\functions.psm1 
-
-
 ###############################
 ### >>> Start Edit Area >>> ###
-###     Global Variables    ### 
+###     Global Variables    ###
 ###############################
 param (
   $WordFileName = "742.docx"
@@ -33,11 +29,11 @@ param (
 ### <<< End of Edit Area <<< ###
 ################################
 
-$DebugPreference = 'Continue'
+$WarningPreference = 'Continue'
 
 try{
   ### Global Variables ###
-  $mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName)\word\media\"
+  $mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName.Remove(3,5))\word\media\"
   $imageFolder = $folderPath + "images\"
   $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
   $Selector = New-Object psobject -Property @{
@@ -124,7 +120,7 @@ try{
       if ($str -ilike $_ ) {
         return $true
       }
-    }  
+    }
   } # End of function Like
 
   function ConvertAnswer($answer) {
@@ -208,7 +204,7 @@ try{
       HelpMessage="Enter Text")]
       [string]$text
     )
-    [int]$intVariant 
+    [int]$intVariant
 
     switch ($variant) { # Convert to decimal
       ImageURL { $intvariant = 0 }
@@ -241,21 +237,21 @@ try{
     $intType
   }
 
-  function ExtractWordImages($folderPath, $wordFileName) { # extracts images from .docx and stores them in .\images folder, 
+  function ExtractWordImages($folderPath, $wordFileName) { # extracts images from .docx and stores them in .\images folder,
     $wordFile = Get-ChildItem -Path ($folderPath + $wordFileName) -Filter *.docx
-    Rename-Item $wordFile -NewName ($wordFile.BaseName + ".zip") 
+    Rename-Item $wordFile -NewName ($wordFile.BaseName + ".zip")
     Expand-Archive ($wordFile.BaseName + ".zip") -Force
 
     #Get-ChildItem -Path ($wordFile.BaseName + "\word\media\") | ForEach-Object {
     #  Copy-Item -Path ($wordFile.BaseName + "\word\media\*") -Destination ($folderPath + "\images")
     #}
-    $zipFile = Get-ChildItem -Path ($folderPath + $wordFile.BaseName + ".zip") -Filter *.zip 
-    Rename-Item -Path $zipFile.FullName -NewName ($zipFile.BaseName + ".docx") 
+    $zipFile = Get-ChildItem -Path ($folderPath + $wordFile.BaseName + ".zip") -Filter *.zip
+    Rename-Item -Path $zipFile.FullName -NewName ($zipFile.BaseName + ".docx")
     #Remove-Item -Path ($folderPath + "\" + $zipFile.BaseName) -Recurse
   } # End of function extractWordImages
 }
 catch{
-  Write-Debug -Message "$($_) : Error in setting up Global Variables, Modules, Classed and Functions. Please review."
+  Write-Warning -Message "$($_) : Error in setting up Global Variables, Modules, Classed and Functions. Please review."
 }
 
 
@@ -285,7 +281,7 @@ try {
     # write-host "starting round $($i)" # Turn on for Debugging
 
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
-      
+
       if ( ($paragraphs[$i].Pictures).count -like 1 ) { # Images
         # Store imagelink in text for current question
         $exam.test[$questid].question += AddTextVariant -variant ImageURL -text ($imageURLPrefix + $paragraphs[$i].Pictures.FileName)
@@ -294,19 +290,26 @@ try {
       }
       elseif ( $paragraphs[$i].text -like $Selector.filter ) { # Filter unwanted text
         # skip it
-      }  
-      elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam 
+      }
+      elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam
         # skip it
-      } 
-      elseif ( $paragraphs[$i].islistitem ) { # Possible answers 
+      }
+      elseif ( $paragraphs[$i].islistitem ) { # Possible answers
         # Store available choices in question
         $choiceIndex = $exam.test[$questid].choices.Count
-        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text      
+        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
       }
       elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer
         # Convert correct answers to boolean array and store in $exam
         $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
         $exam.test[$questid].answer = booleanAnswer -CorrectAnswers ($CorrectAnswer.ToCharArray()) -ChoicesCount ($exam.test[$questid].choices.count)
+        # Determine type of question
+        if ( $CorrectAnswer.Length -like 1 ) {
+          $exam.test[$questid].variant = addQuestionType -type MultipleChoice
+        }
+        elseif ( $CorrectAnswer.Length -gt 1) {
+          $exam.test[$questid].variant = addQuestionType -type MultipleAnswer
+        }
       }
       elseif ( $textExplanation ) { # Add to Explanation Array
         $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
@@ -320,47 +323,25 @@ try {
       }
     }
     elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
-
-      if ( $QuestionArray[$questid].correct[0].Length -like 1 ) {
-          $exam.test[$questid].variant = addQuestionType -type MultipleChoice
-      }
-      elseif ( $QuestionArray[$questid].correct[0].Length -gt 1 ) {
-          $exam.test[$questid].variant = addQuestionType -type MultipleAnswer
-      }
-
       $exam.test += [Question]::new() # add new empty Question object to exam
       $textExplanation = $false # reset the textexplanation value
       $questid ++ # increment Question ID for processing next question
-    } 
+    }
   } # End for loop
 }
 catch{
-  Write-Debug -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
+  Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
 }
 
+$jsonExam = $exam | ConvertTo-Json -Depth 4 -Compress
 
-$exam
-
-$OutputObject = @()
-for ($i=1; $i -lt $exam.test.Count; $i++) {
-  $OutputObject += $exam.test[$i]
+if ( $jsonExam | Test-Json ) {
+  $jsonExam | Out-File -FilePath ($folderPath + "new-$($examNumber).json") -Force
+  Write-Host "Done :)" -ForegroundColor Green
 }
-
-$jsonExport = $exam | ConvertTo-Json -Depth 6 -AsArray -EnumsAsStrings
-
-[array[]]$jsonQuestions = @()
-
-$jsonQuestions += $OutputObject[1] | ConvertTo-Json -Depth 3 -AsArray -EnumsAsStrings
-$jsonExport = $jsonQuestions 
-$jsonExport | Out-File -FilePath ($folderPath + "new-$($examNumber).json") -Force
-
-
-
-
-  # Save Data as JSON
-  #$QuestionArray | ConvertTo-Json | Out-File -FilePath ($folderPath + "new-$($examNumber).json")
-
-
+else {
+  Write-Warning "Please check generated jsonExam. It is not a valid JSON file."
+}
 
 
 
