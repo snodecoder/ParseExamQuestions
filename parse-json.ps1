@@ -344,7 +344,8 @@ try {
         $exam.test[$questid].question += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
     }
-    elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything
+    elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything++
+
       if ( $exam.test[$questid].question -like $null ) { # if question was not filled, recycle it
         $exam.test[$questid] = [Question]::new()
       }
@@ -363,7 +364,6 @@ catch{
 
 ### Randomize question order in subsets ###
 # Because current version of Exam Simulator does not offer randomization and subset selection of questions, this allows you to generate a few randomized version of the exam.
-
 
 ### Convert Exam to JSON and Export it ###
 
