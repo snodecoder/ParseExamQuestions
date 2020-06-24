@@ -46,7 +46,7 @@ try{
   # NOT IN USE # $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
   $Selector = New-Object psobject -Property @{
     question = "QUESTION*"
-    ;explanation = "Explanation*"
+    ;explanation = "Explanation:*"
     ;correct = "Correct Answer*"
     ;section = "Section*"
     ;options = @(
@@ -68,6 +68,8 @@ try{
       ,"*Note: This question*"
       ,"*Start of repeated scenario*"
       ,"*End of repeated scenario*"
+      ,"*After you answer a question in this section*"
+      ,"*Explanation/Reference:*"
     )
   } # End of Selector object
 
@@ -251,12 +253,8 @@ try{
     Rename-Item $wordFile -NewName ($wordFile.BaseName + ".zip")
     Expand-Archive ($wordFile.BaseName + ".zip") -Force
 
-    #Get-ChildItem -Path ($wordFile.BaseName + "\word\media\") | ForEach-Object {
-    #  Copy-Item -Path ($wordFile.BaseName + "\word\media\*") -Destination ($folderPath + "\images")
-    #}
     $zipFile = Get-ChildItem -Path ($folderPath + $wordFile.BaseName + ".zip") -Filter *.zip
     Rename-Item -Path $zipFile.FullName -NewName ($zipFile.BaseName + ".docx")
-    #Remove-Item -Path ($folderPath + "\" + $zipFile.BaseName) -Recurse
   } # End of function extractWordImages
 }
 catch{
@@ -265,7 +263,7 @@ catch{
 
 
 try {
-  ######################## Process Word Document ########################
+  ########## Process Word Document ##########
   # Prepare Word Document for processing
   $OldWordDocument = Get-WordDocument -FilePath ($folderPath + $WordFileName)
   $paragraphs = $OldWordDocument.Paragraphs
@@ -282,7 +280,7 @@ try {
   extractWordImages -folderPath $folderPath -wordFileName $WordFileName
 
 
-  ### Prepare Datastrucure ###
+  ########## Prepare Datastrucure ##########
   $questid = 0
   $textExplanation = $false
   $exam = newJsonExam
@@ -301,39 +299,45 @@ try {
   $exam.test += [Question]::new()
 
 
+########## PROCESS TEXT ##########
   # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
   for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
     # write-host "starting round $($i)" # Turn on for Debugging
 
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
 
-      if ( ($paragraphs[$i].Pictures).count -like 1 ) { # Images
-
+##### IMAGES #####
+      if ( ($paragraphs[$i].Pictures).count -like 1 ) { 
         if ( $paragraphs[$i].Pictures.width -lt 15 ) {
           # Skip it, non-relevant image
         }
-        else {
-          # Store imagelink in text for current question
+        else {  # Store imagelink in text for current question. Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
           $exam.test[$questid].question += AddTextVariant -variant ImageURL -text ($imageURLPrefix + $paragraphs[$i].Pictures.FileName)
-          # Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
           Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
         }
       }
+
+##### FILTER #####      
       elseif ( Like -string $paragraphs[$i].text -arrayStrings $Selector.filter ) { # Uses Like Function to search if current text exists in array of text. -> Filter unwanted text
         # skip it
       }
+
+##### SECTION #####      
       elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam
         # skip it
       }
-      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i] -arrayStrings $Selector.options) ) { # Possible answers
-        # Store available choices in question
+      
+##### POSSIBLE ANSWERS #####   
+      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i] -arrayStrings $Selector.options) ) { # Possible answers: Store available choices in question
         $choiceIndex = $exam.test[$questid].choices.Count
         $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
       }
-      elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer
-        # Convert correct answers to boolean array and store in $exam
+
+##### CORRECT ANSWERs #####         
+      elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer: Convert correct answers to boolean array and store in $exam
         $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
         $exam.test[$questid].answer = booleanAnswer -CorrectAnswers ($CorrectAnswer.ToCharArray()) -ChoicesCount ($exam.test[$questid].choices.count)
+        
         # Determine type of question
         if ( $CorrectAnswer.Length -like 1 ) {
           $exam.test[$questid].variant = addQuestionType -type MultipleChoice
@@ -342,6 +346,7 @@ try {
           $exam.test[$questid].variant = addQuestionType -type MultipleAnswer
         }
       }
+##### EXPLANATION #####       
       elseif ( $textExplanation ) { # Add to Explanation Array
         $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
@@ -349,10 +354,12 @@ try {
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
           $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
+##### ACTUAL QUESTION #####       
       else { # The question itself
         $exam.test[$questid].question += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
     }
+##### NEW QUESTION: RESET #####     
     elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything++
 
       if ( $exam.test[$questid].question -like $null ) { # if question was not filled, recycle it
@@ -364,18 +371,15 @@ try {
       }
       $textExplanation = $false # reset the textexplanation value
     }
+##### START LOOP AGAIN #####
+
   } # End for loop
 }
 catch{
   Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
 }
 
-
-### Randomize question order in subsets ###
-# Because current version of Exam Simulator does not offer randomization and subset selection of questions, this allows you to generate a few randomized version of the exam.
-
-### Convert Exam to JSON and Export it ###
-
+########## Convert Exam to JSON and Export it ##########
 $jsonExam = $exam | ConvertTo-Json -Depth 4 -Verbose
 
 if ( $jsonExam | Test-Json ) {
@@ -385,15 +389,3 @@ if ( $jsonExam | Test-Json ) {
 else {
   Write-Warning "Please check generated jsonExam. It is not a valid JSON file."
 }
-
-
-
-<#
-$exam.test.GetType()
-$temp = $exam.test[1].question
-$exam.test = [array[]]@()
-$exam.test += $temp
-AddTextVariant -variant Normal "test"
-
-#>
-
