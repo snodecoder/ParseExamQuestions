@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-06-24T18:06:31.765Z",
+  "createdAt": "2020-06-25T00:12:51.880Z",
   "code": "70-742",
   "time": 60,
   "pass": 75,
@@ -1354,10 +1354,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.thewindowsclub.com/whoami-windows"
         }
       ],
       "choices": [
@@ -1374,7 +1370,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://www.thewindowsclub.com/whoami-windows"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1390,10 +1391,6 @@
         {
           "variant": 1,
           "text": "Permission"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -1424,6 +1421,10 @@
         {
           "label": "G",
           "Text": "Correct Answer: A"
+        },
+        {
+          "label": "H",
+          "Text": "Explanation/Reference:"
         }
       ],
       "answer": null,
@@ -1524,14 +1525,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://www.itprotoday.com/active-directory/delegating-privileges-active-directory"
         }
       ],
       "choices": [
@@ -1573,7 +1566,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.itprotoday.com/active-directory/delegating-privileges-active-directory"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1585,10 +1587,6 @@
         {
           "variant": 1,
           "text": "Which setting will be copied when you copy the user account from Active Directory Users and Computers?"
-        },
-        {
-          "variant": 1,
-          "text": "References: http://www.rebeladmin.com/2014/07/create-users-with-user-templates-in-ad/"
         }
       ],
       "choices": [
@@ -1625,7 +1623,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: http://www.rebeladmin.com/2014/07/create-users-with-user-templates-in-ad/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1699,10 +1702,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ],
       "choices": [
@@ -1719,7 +1718,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1751,10 +1755,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ],
       "choices": [
@@ -1771,7 +1771,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1795,14 +1800,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ],
       "choices": [
@@ -1819,7 +1816,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2043,10 +2049,6 @@
         {
           "variant": 1,
           "text": "What should you do first?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.dtonias.com/access-denied-delete-move-ou-active-directory/"
         }
       ],
       "choices": [
@@ -2073,7 +2075,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://www.dtonias.com/access-denied-delete-move-ou-active-directory/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2097,10 +2104,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps"
         }
       ],
       "choices": [
@@ -2127,7 +2130,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2147,10 +2155,6 @@
         {
           "variant": 1,
           "text": "What should you do before you raise the domain functional level?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels"
         }
       ],
       "choices": [
@@ -2177,7 +2181,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2225,14 +2234,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/back-up-files-and-directories"
         }
       ],
       "choices": [
@@ -2259,7 +2260,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/back-up-files-and-directories"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2363,14 +2373,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://webactivedirectory.com/2011/07/18/simple-powershell-script-to-bulk-update-or-modify-active-directory-user-attributes/"
         }
       ],
       "choices": [
@@ -2387,7 +2389,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
+        {
+          "variant": 1,
+          "text": "References: https://webactivedirectory.com/2011/07/18/simple-powershell-script-to-bulk-update-or-modify-active-directory-user-attributes/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2491,10 +2502,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adobject?view=winserver2012-ps"
         }
       ],
       "choices": [
@@ -2511,7 +2518,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adobject?view=winserver2012-ps"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2825,10 +2837,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -2845,7 +2853,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2873,10 +2886,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -2903,7 +2912,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3001,10 +3015,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -3031,7 +3041,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3055,14 +3070,6 @@
         {
           "variant": 1,
           "text": "Which tool should you use?"
-        },
-        {
-          "variant": 1,
-          "text": "Reference:"
-        },
-        {
-          "variant": 1,
-          "text": "https://blogs.technet.microsoft.com/tristank/2006/05/08/3-simple-rules-to-kerberos-authenticationdelegation-spns/"
         }
       ],
       "choices": [
@@ -3104,7 +3111,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Reference:"
+        },
+        {
+          "variant": 1,
+          "text": "https://blogs.technet.microsoft.com/tristank/2006/05/08/3-simple-rules-to-kerberos-authenticationdelegation-spns/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3296,10 +3312,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -3316,7 +3328,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3397,10 +3414,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://theitbros.com/active-directory-database-compact-defrag/"
         }
       ],
       "choices": [
@@ -3417,7 +3430,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://theitbros.com/active-directory-database-compact-defrag/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3437,10 +3455,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -3467,7 +3481,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3773,10 +3792,6 @@
         {
           "variant": 1,
           "text": "What should you implement?"
-        },
-        {
-          "variant": 1,
-          "text": "References: http://techgenix.com/active-directory-trusts/ https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/"
         }
       ],
       "choices": [
@@ -3803,7 +3818,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: http://techgenix.com/active-directory-trusts/ https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3867,10 +3887,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -3887,7 +3903,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4219,10 +4240,6 @@
         {
           "variant": 1,
           "text": "Which two actions should you perform? Each correct answer presents part of the solution."
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -4255,6 +4272,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
         {
           "variant": 1,
           "text": "Explanation:"
@@ -4397,14 +4418,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Reference:"
-        },
-        {
-          "variant": 1,
-          "text": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/15/group-policy-basics-part-2-understanding-which-gpos-to-apply/"
         }
       ],
       "choices": [
@@ -4431,7 +4444,16 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Reference:"
+        },
+        {
+          "variant": 1,
+          "text": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/15/group-policy-basics-part-2-understanding-which-gpos-to-apply/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4576,10 +4598,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -4626,7 +4644,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference: Explanation:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5332,10 +5355,6 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -5352,7 +5371,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5376,10 +5400,6 @@
         {
           "variant": 1,
           "text": "What should you configure?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -5406,7 +5426,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5480,10 +5505,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -5510,7 +5531,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5647,14 +5673,6 @@
         {
           "variant": 1,
           "text": "Which GPO or GPOs will apply to User2 when the user signs in to Computer1 after loopback processing is configured?"
-        },
-        {
-          "variant": 1,
-          "text": "In Replace Mode, the user's list of GPOs is not gathered. Only the list of GPOs based on the computer object is used."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy"
         }
       ],
       "choices": [
@@ -5681,7 +5699,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "In Replace Mode, the user's list of GPOs is not gathered. Only the list of GPOs based on the computer object is used."
+        },
+        {
+          "variant": 1,
+          "text": "References: https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5760,10 +5787,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -5790,7 +5813,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5868,14 +5896,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://www.windowscentral.com/how-apply-local-group-policy-settings-specific-users-windows-10"
         }
       ],
       "choices": [
@@ -5902,7 +5922,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.windowscentral.com/how-apply-local-group-policy-settings-specific-users-windows-10"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5982,10 +6011,6 @@
         {
           "variant": 1,
           "text": "Which type of item level targeting should you use?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733022(v=ws.11) https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753566%28v%3dws.10%29"
         }
       ],
       "choices": [
@@ -6017,7 +6042,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733022(v=ws.11) https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753566%28v%3dws.10%29"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6037,10 +6067,6 @@
         {
           "variant": 1,
           "text": "Which administrative action for GPOs can User1 perform?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -6067,7 +6093,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6095,10 +6126,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -6126,6 +6153,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
         {
           "variant": 1,
           "text": "Explanation:"
@@ -6216,14 +6247,6 @@
         {
           "variant": 1,
           "text": "What should you run on Server?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
-        },
-        {
-          "variant": 1,
-          "text": "Reference: https://docs.microsoft.com/en-us/powershell/module/grouppolicy/invoke-gpupdate?view=win10-ps"
         }
       ],
       "choices": [
@@ -6250,7 +6273,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
+        {
+          "variant": 1,
+          "text": "Reference: https://docs.microsoft.com/en-us/powershell/module/grouppolicy/invoke-gpupdate?view=win10-ps"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6324,10 +6356,6 @@
         {
           "variant": 1,
           "text": "Which configuration possibly prevents GPO1 from being applied to Server1?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -6354,7 +6382,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6428,14 +6461,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/archive/blogs/musings_of_a_technical_tam/group-policy-basics-part-2-understanding-which-gpos-to-apply"
         }
       ],
       "choices": [
@@ -6462,7 +6487,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/archive/blogs/musings_of_a_technical_tam/group-policy-basics-part-2-understanding-which-gpos-to-apply"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6482,14 +6516,6 @@
         {
           "variant": 1,
           "text": "What should you do?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://social.technet.microsoft.com/Forums/ie/en-US/e9d3a8d3-5301-4961-96be-99f586c6fc1c/using-ad-to-allow-a-user-to-startstop-a-service?forum=winserverDS"
         }
       ],
       "choices": [
@@ -6516,7 +6542,16 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://social.technet.microsoft.com/Forums/ie/en-US/e9d3a8d3-5301-4961-96be-99f586c6fc1c/using-ad-to-allow-a-user-to-startstop-a-service?forum=winserverDS"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6532,14 +6567,6 @@
         {
           "variant": 1,
           "text": "What should you run on Server?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpupdate"
         }
       ],
       "choices": [
@@ -6566,7 +6593,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpupdate"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6590,10 +6626,6 @@
         {
           "variant": 1,
           "text": "Which setting should you configure from the properties on the UserAutoEnroll certificate template?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -6620,7 +6652,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7025,10 +7062,6 @@
         {
           "variant": 1,
           "text": "NOTE: Each correct selection is worth one point."
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -7061,6 +7094,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
         {
           "variant": 1,
           "text": "Explanation:"
@@ -7163,14 +7200,6 @@
         {
           "variant": 1,
           "text": "NOTE: Each correct selection is worth one point."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://www.ejbca.org/docs/Part_2__Microsoft_Certification_Authority_and_Group_Policies.html"
         }
       ],
       "choices": [
@@ -7202,7 +7231,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.ejbca.org/docs/Part_2__Microsoft_Certification_Authority_and_Group_Policies.html"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7222,10 +7260,6 @@
         {
           "variant": 1,
           "text": "What should you change?"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/tpm-key-attestation"
         }
       ],
       "choices": [
@@ -7252,7 +7286,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/tpm-key-attestation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7276,14 +7315,6 @@
         {
           "variant": 1,
           "text": "How should you configure the extension settings of the CA?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
         }
       ],
       "choices": [
@@ -7310,7 +7341,16 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7431,10 +7471,6 @@
         {
           "variant": 1,
           "text": "Which server role or role service should you install on Server1?"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation"
         }
       ],
       "choices": [
@@ -7466,7 +7502,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference: Explanation:"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8103,14 +8144,6 @@
         {
           "variant": 1,
           "text": "What should you do first?"
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/powershell/module/adfs/add-adfswebapiapplication?view=win10-ps"
         }
       ],
       "choices": [
@@ -8137,7 +8170,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/powershell/module/adfs/add-adfswebapiapplication?view=win10-ps"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8161,10 +8203,6 @@
         {
           "variant": 1,
           "text": "On which server should you install the role service?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.techsupportpk.com/2016/12/deploy-web-application-proxy-windows-server-2016.html https://docs.microsoft.com/en-us/sharepoint/hybrid/configure-web-application-proxy-for-a-hybrid-environment https://docs.microsoft.com/en-us/windows-server/storage/work-folders/deploy-work-folders-adfs-step4"
         }
       ],
       "choices": [
@@ -8191,7 +8229,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://www.techsupportpk.com/2016/12/deploy-web-application-proxy-windows-server-2016.html https://docs.microsoft.com/en-us/sharepoint/hybrid/configure-web-application-proxy-for-a-hybrid-environment https://docs.microsoft.com/en-us/windows-server/storage/work-folders/deploy-work-folders-adfs-step4"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8207,10 +8250,6 @@
         {
           "variant": 1,
           "text": "What should you enable first?"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://forsenergy.com/en-us/rms_help/html/9a944ab7-f0d9-4224-97c6-b2543f537827.htm"
         }
       ],
       "choices": [
@@ -8237,7 +8276,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References: https://forsenergy.com/en-us/rms_help/html/9a944ab7-f0d9-4224-97c6-b2543f537827.htm"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8533,7 +8577,28 @@
         {
           "variant": 1,
           "text": "What should you create?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "Text": "a security policy"
         },
+        {
+          "label": "B",
+          "Text": "a trust policy"
+        },
+        {
+          "label": "C",
+          "Text": "an exclusion policy"
+        }
+      ],
+      "answer": [
+        false,
+        false,
+        true
+      ],
+      "explanation": [
         {
           "variant": 1,
           "text": "References:"
@@ -8558,27 +8623,7 @@
           "variant": 1,
           "text": " "
         }
-      ],
-      "choices": [
-        {
-          "label": "A",
-          "Text": "a security policy"
-        },
-        {
-          "label": "B",
-          "Text": "a trust policy"
-        },
-        {
-          "label": "C",
-          "Text": "an exclusion policy"
-        }
-      ],
-      "answer": [
-        false,
-        false,
-        true
-      ],
-      "explanation": null
+      ]
     }
   ]
 }

@@ -46,7 +46,7 @@ try{
   # NOT IN USE # $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
   $Selector = New-Object psobject -Property @{
     question = "QUESTION*"
-    ;explanation = "Explanation:*"
+    ;explanation = "Explanation*"
     ;correct = "Correct Answer*"
     ;section = "Section*"
     ;options = @(
@@ -69,7 +69,6 @@ try{
       ,"*Start of repeated scenario*"
       ,"*End of repeated scenario*"
       ,"*After you answer a question in this section*"
-      ,"*Explanation/Reference:*"
     )
   } # End of Selector object
 
@@ -352,7 +351,7 @@ try {
       }
       elseif ( $paragraphs[$i].text -like $Selector.explanation ) { # Add to explanation property
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
-          $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+          #$exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
 ##### ACTUAL QUESTION #####       
       else { # The question itself
