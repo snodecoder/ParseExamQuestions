@@ -29,7 +29,7 @@ param (
   ,$examImage = "http://www.example.com/image.png"
   ,$examTime = 60 # Maximum time for exam
   ,$examPass = 75 # Minimum percentage to pass exam
-  ,$imageURLPrefix = "https://files.doorhetgeluid.nl/images/$($examCode)/"
+  ,$imageURLPrefix = "https://files.opensourceexams.org/$($examCode)/images/"
   ,$WordFileName = "742.docx"
   ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
 )
@@ -65,6 +65,9 @@ try{
     )
     ;filter = @(
       "*gratisexam*"
+      ,"*Note: This question*"
+      ,"*Start of repeated scenario*"
+      ,"*End of repeated scenario*"
     )
   } # End of Selector object
 
@@ -142,9 +145,9 @@ try{
     }
   } # End of function newJsonExam
 
-  function Like ( $str, $patterns ) { # Perform like search in Array
-    $patterns | ForEach-Object {
-      if ($str -ilike $_ ) {
+  function Like ( $string, $arrayStrings ) { # Perform like search in Array
+    $arrayStrings | ForEach-Object {
+      if ($string -ilike $_ ) {
         return $true
       }
     }
@@ -305,18 +308,24 @@ try {
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
 
       if ( ($paragraphs[$i].Pictures).count -like 1 ) { # Images
-        # Store imagelink in text for current question
-        $exam.test[$questid].question += AddTextVariant -variant ImageURL -text ($imageURLPrefix + $paragraphs[$i].Pictures.FileName)
-        # Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
-        Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
+
+        if ( $paragraphs[$i].Pictures.width -lt 15 ) {
+          # Skip it, non-relevant image
+        }
+        else {
+          # Store imagelink in text for current question
+          $exam.test[$questid].question += AddTextVariant -variant ImageURL -text ($imageURLPrefix + $paragraphs[$i].Pictures.FileName)
+          # Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
+          Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
+        }
       }
-      elseif ( $paragraphs[$i].text -like $Selector.filter ) { # Filter unwanted text
+      elseif ( Like -string $paragraphs[$i].text -arrayStrings $Selector.filter ) { # Uses Like Function to search if current text exists in array of text. -> Filter unwanted text
         # skip it
       }
       elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam
         # skip it
       }
-      elseif ( $paragraphs[$i].islistitem ) { # Possible answers
+      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i] -arrayStrings $Selector.options) ) { # Possible answers
         # Store available choices in question
         $choiceIndex = $exam.test[$questid].choices.Count
         $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text

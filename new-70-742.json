@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-06-16T23:21:16.729Z",
+  "createdAt": "2020-06-24T12:24:08.796Z",
   "code": "70-742",
   "time": 60,
   "pass": 75,
@@ -27,14 +27,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For you convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
-          "text": "Start of repeated scenario."
-        },
-        {
-          "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
         },
         {
@@ -47,7 +39,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image1.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image1.jpg"
         },
         {
           "variant": 1,
@@ -68,10 +60,6 @@
         {
           "variant": 1,
           "text": "An administrator of the adatum.com domain runs the Set-ADUser cmdlet to configure a user named User1 to have a user logon name of User1@litwareinc.com."
-        },
-        {
-          "variant": 1,
-          "text": "End of repeated scenario."
         },
         {
           "variant": 1,
@@ -122,14 +110,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
-          "text": "Start of repeated scenario."
-        },
-        {
-          "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
         },
         {
@@ -142,7 +122,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image2.jpg"
         },
         {
           "variant": 1,
@@ -354,18 +334,6 @@
           "text": "You need to secure several high-privilege user accounts to meet the following requirements:"
         },
         {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
           "variant": 1,
           "text": "What should you do?"
         }
@@ -516,10 +484,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For you convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
           "text": " "
         },
         {
@@ -532,7 +496,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image2.jpg"
         },
         {
           "variant": 1,
@@ -657,10 +621,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain functional level is Windows Server 2012 R2."
@@ -855,10 +815,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -918,10 +874,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -985,10 +937,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -1048,10 +996,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -1273,10 +1217,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -1336,10 +1276,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -1407,10 +1343,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -1470,10 +1402,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -1543,10 +1471,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -1923,10 +1847,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -1935,7 +1855,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image4.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image4.jpg"
         },
         {
           "variant": 1,
@@ -1988,10 +1908,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -2000,7 +1916,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image4.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image4.jpg"
         },
         {
           "variant": 1,
@@ -2053,10 +1969,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -2065,7 +1977,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image5.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image5.jpg"
         },
         {
           "variant": 1,
@@ -2192,10 +2104,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -2251,10 +2159,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -2314,10 +2218,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
         },
         {
@@ -2330,7 +2230,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image2.jpg"
         },
         {
           "variant": 1,
@@ -2519,10 +2419,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
         },
         {
@@ -2535,7 +2431,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image2.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image2.jpg"
         },
         {
           "variant": 1,
@@ -2671,10 +2567,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -2714,10 +2606,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -2867,10 +2755,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -2914,10 +2798,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com."
@@ -2997,10 +2877,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory forest named contoso.com. The forest functional level is Windows Server 2012 R2."
@@ -3133,10 +3009,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -3180,10 +3052,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. You recently deleted 5,000 objects from the Active Directory database."
@@ -3251,10 +3119,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -3369,10 +3233,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com."
         },
         {
@@ -3452,7 +3312,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image6.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image6.jpg"
         },
         {
           "variant": 1,
@@ -3589,10 +3449,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -3606,18 +3462,6 @@
         {
           "variant": 1,
           "text": "Server1 has the following local Group Policies:"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -3658,10 +3502,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -3675,18 +3515,6 @@
         {
           "variant": 1,
           "text": "Server1 has the following local Group Policies:"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -3725,10 +3553,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -3780,10 +3604,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -3831,10 +3651,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -3888,10 +3704,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -3953,10 +3765,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -4082,14 +3890,6 @@
           "text": "You need to ensure that all the user passwords in the domain contain at least three of the following types of characters:"
         },
         {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
           "variant": 1,
           "text": " Lowercase letters  Special characters"
         },
@@ -4185,10 +3985,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -4240,10 +4036,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -4464,10 +4256,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -4515,10 +4303,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -4574,10 +4358,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -4625,10 +4405,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -4688,10 +4464,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -4741,7 +4513,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image7.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image7.jpg"
         },
         {
           "variant": 1,
@@ -4798,10 +4570,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains a domain controller named Server1."
@@ -5138,7 +4906,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image8.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image8.jpg"
         },
         {
           "variant": 1,
@@ -5256,10 +5024,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains 5,000 user accounts."
         },
         {
@@ -5329,10 +5093,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
         {
           "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains 5,000 user accounts."
@@ -5410,10 +5170,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same or similar answer choices. An answer choice may be correct for more than one question in the series. Each question is independent of the other questions in this series. Information and details provided in a question apply only to that question."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains 5,000 user accounts."
         },
         {
@@ -5485,14 +5241,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
-          "text": "Start of repeated scenario."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains a single site named Site1. All computers are in Site1."
         },
         {
@@ -5501,7 +5249,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image9.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image9.jpg"
         },
         {
           "variant": 1,
@@ -5509,11 +5257,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
-        },
-        {
-          "variant": 1,
-          "text": "End of repeated scenario."
+          "text": "https://files.opensourceexams.org/70-742/images/image10.jpg"
         },
         {
           "variant": 1,
@@ -5560,14 +5304,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
-          "text": "Start of repeated scenario."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains a single site named Site1. All computers are in Site1."
         },
         {
@@ -5576,7 +5312,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image11.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image11.jpg"
         },
         {
           "variant": 1,
@@ -5584,11 +5320,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
-        },
-        {
-          "variant": 1,
-          "text": "End of repeated scenario."
+          "text": "https://files.opensourceexams.org/70-742/images/image10.jpg"
         },
         {
           "variant": 1,
@@ -5879,7 +5611,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image12.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image12.jpg"
         },
         {
           "variant": 1,
@@ -5920,10 +5652,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -5975,10 +5703,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -6028,10 +5752,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -6079,10 +5799,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -6142,10 +5858,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -6191,10 +5903,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -6238,10 +5946,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -6581,14 +6285,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
-          "text": "Start of repeated scenario."
-        },
-        {
-          "variant": 1,
           "text": "Your network contains an Active Directory domain named contoso.com. The domain contains a single site named Site1. All computers are in Site1."
         },
         {
@@ -6597,7 +6293,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image11.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image11.jpg"
         },
         {
           "variant": 1,
@@ -6605,11 +6301,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image10.jpg"
-        },
-        {
-          "variant": 1,
-          "text": "End of repeated scenario."
+          "text": "https://files.opensourceexams.org/70-742/images/image10.jpg"
         },
         {
           "variant": 1,
@@ -6782,10 +6474,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that use the same scenario. For your convenience, the scenario is repeated in each question. Each question presents a different goal and answer choices, but the text of the scenario is exactly the same in each question in this series."
-        },
-        {
-          "variant": 1,
           "text": " "
         },
         {
@@ -6798,7 +6486,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image13.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image13.jpg"
         },
         {
           "variant": 1,
@@ -6806,7 +6494,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image14.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image14.jpg"
         },
         {
           "variant": 1,
@@ -7096,7 +6784,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image15.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image15.jpg"
         },
         {
           "variant": 1,
@@ -7171,7 +6859,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image16.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image16.jpg"
         },
         {
           "variant": 1,
@@ -7191,7 +6879,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image17.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image17.jpg"
         }
       ],
       "choices": [
@@ -7293,7 +6981,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image18.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image18.jpg"
         },
         {
           "variant": 1,
@@ -7348,7 +7036,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image19.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image19.jpg"
         },
         {
           "variant": 1,
@@ -7407,7 +7095,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image20.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image20.jpg"
         },
         {
           "variant": 1,
@@ -7462,7 +7150,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image21.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image21.jpg"
         },
         {
           "variant": 1,
@@ -8256,7 +7944,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image22.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image22.jpg"
         },
         {
           "variant": 1,
@@ -8325,22 +8013,6 @@
         {
           "variant": 1,
           "text": "You have a certification authority (CA) named CA1. You create a certificate template named Template1 that has the following configurations:"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         },
         {
           "variant": 1,
@@ -8723,10 +8395,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -9090,26 +8758,6 @@
         {
           "variant": 1,
           "text": "Which tool should you use to publish WebApp1?"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
-        },
-        {
-          "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image3.jpg"
         }
       ],
       "choices": [
@@ -9260,10 +8908,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -9307,10 +8951,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -9417,7 +9057,7 @@
         },
         {
           "variant": 0,
-          "text": "https://files.doorhetgeluid.nl/images/70-742/image23.jpg"
+          "text": "https://files.opensourceexams.org/70-742/images/image23.jpg"
         },
         {
           "variant": 1,
@@ -9523,10 +9163,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -9594,10 +9230,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
@@ -9681,10 +9313,6 @@
       "question": [
         {
           "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
-        {
-          "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
         },
         {
@@ -9764,10 +9392,6 @@
     {
       "variant": 0,
       "question": [
-        {
-          "variant": 1,
-          "text": "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution."
-        },
         {
           "variant": 1,
           "text": "After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen."
