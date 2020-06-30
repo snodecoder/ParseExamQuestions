@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-06-25T00:12:51.880Z",
+  "createdAt": "2020-06-30T17:45:12.897Z",
   "code": "70-742",
   "time": 60,
   "pass": 75,
@@ -593,39 +593,39 @@
         {
           "variant": 1,
           "text": "Which tool should you use?"
-        },
-        {
-          "variant": 1,
-          "text": "A. Dsadd quota"
         }
       ],
       "choices": [
         {
           "label": "A",
-          "Text": "B. Dsmod"
+          "Text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Active Directory Administrative Center"
+          "Text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Dsacls"
+          "Text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsamain"
+          "Text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Active Directory Users and Computers"
+          "Text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Ntdsutil"
+          "Text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
+          "Text": "Ntdsutil"
+        },
+        {
+          "label": "H",
           "Text": "Group Policy Management Console"
         }
       ],
@@ -633,6 +633,7 @@
         false,
         false,
         true,
+        false,
         false,
         false,
         false,
@@ -1387,10 +1388,6 @@
         {
           "variant": 1,
           "text": "Which setting will be copied when you copy the user account from Active Directory Users and Computers?"
-        },
-        {
-          "variant": 1,
-          "text": "Permission"
         }
       ],
       "choices": [
@@ -1404,26 +1401,30 @@
         },
         {
           "label": "C",
-          "Text": "Remote Desktop Services Profile"
+          "Text": "Permission"
         },
         {
           "label": "D",
-          "Text": "the User logon name attribute "
+          "Text": "Remote Desktop Services Profile"
         },
         {
           "label": "E",
-          "Text": "Published Certificates "
+          "Text": "the User logon name attribute "
         },
         {
           "label": "F",
-          "Text": "the Office attribute "
+          "Text": "Published Certificates "
         },
         {
           "label": "G",
-          "Text": "Correct Answer: A"
+          "Text": "the Office attribute "
         },
         {
           "label": "H",
+          "Text": "Correct Answer: A"
+        },
+        {
+          "label": "I",
           "Text": "Explanation/Reference:"
         }
       ],
@@ -3139,6 +3140,18 @@
         },
         {
           "variant": 1,
+          "text": "Local Computer Policy"
+        },
+        {
+          "variant": 1,
+          "text": "Local Computer\\User1 Policy"
+        },
+        {
+          "variant": 1,
+          "text": "Local Computer\\Administrators Policy"
+        },
+        {
+          "variant": 1,
           "text": "You need to force User1 to change his password every 14 days."
         },
         {
@@ -3180,6 +3193,18 @@
         {
           "variant": 1,
           "text": "Server1 has the following local Group Policies:"
+        },
+        {
+          "variant": 1,
+          "text": "Local Computer Policy"
+        },
+        {
+          "variant": 1,
+          "text": "Local Computer\\User1 Policy"
+        },
+        {
+          "variant": 1,
+          "text": "Local Computer\\Administrators Policy"
         },
         {
           "variant": 1,
@@ -3505,7 +3530,15 @@
         },
         {
           "variant": 1,
-          "text": " Lowercase letters  Special characters"
+          "text": "Numbers"
+        },
+        {
+          "variant": 1,
+          "text": "Uppercase letters"
+        },
+        {
+          "variant": 1,
+          "text": "Lowercase letters\nSpecial characters"
         },
         {
           "variant": 1,
@@ -4377,7 +4410,7 @@
         },
         {
           "variant": 1,
-          "text": "D. Create a Config.xml file and add a software installation package to the Computer Configuration node of GPO1."
+          "text": " "
         }
       ],
       "choices": [
@@ -4387,11 +4420,21 @@
         },
         {
           "label": "B",
-          "Text": "Create a Config.xml file and add a software installation package to the User Configuration node of GPO1. C. Create a Config.zap file and add a software installation package to the User Configuration node of GPO1."
+          "Text": "Create a Config.xml file and add a software installation package to the User Configuration node of GPO1. "
+        },
+        {
+          "label": "C",
+          "Text": "C. Create a Config.zap file and add a software installation package to the User Configuration node of GPO1."
+        },
+        {
+          "label": "D",
+          "Text": "Create a Config.xml file and add a software installation package to the Computer Configuration node of GPO1."
         }
       ],
       "answer": [
         false,
+        false,
+        true,
         false
       ],
       "explanation": null
@@ -5214,7 +5257,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": " "
+        },
+        {
+          "variant": 1,
+          "text": " "
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5335,7 +5387,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": " "
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5586,7 +5643,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": " "
+        }
+      ]
     },
     {
       "variant": 1,
@@ -6702,7 +6764,7 @@
         },
         {
           "variant": 1,
-          "text": "D. Certificate templates."
+          "text": " "
         }
       ],
       "choices": [
@@ -6712,11 +6774,21 @@
         },
         {
           "label": "B",
-          "Text": "CRL publication intervalC. Delta CRL publication interval"
+          "Text": "CRL publication interval"
+        },
+        {
+          "label": "C",
+          "Text": "Delta CRL publication interval"
+        },
+        {
+          "label": "D",
+          "Text": "Certificate templates."
         }
       ],
       "answer": [
         false,
+        false,
+        true,
         false
       ],
       "explanation": null
@@ -7130,28 +7202,34 @@
         {
           "variant": 1,
           "text": "Which two actions should you perform? Each correct answer presents part of the solution."
-        },
-        {
-          "variant": 1,
-          "text": "A. From the Certification Authority console, modify the Auditing settings for the CA. B. From the Certification Authority console, modify the Security settings for the CA."
         }
       ],
       "choices": [
         {
           "label": "A",
-          "Text": "From Local Group Policy Editor, configure auditing for policy change."
+          "Text": "From the Certification Authority console, modify the Auditing settings for the CA."
         },
         {
           "label": "B",
-          "Text": "From the Certification Authority console, modify the Certificate Managers settings for the CA."
+          "Text": "From the Certification Authority console, modify the Security settings for the CA."
         },
         {
           "label": "C",
+          "Text": "From Local Group Policy Editor, configure auditing for policy change."
+        },
+        {
+          "label": "D",
+          "Text": "From the Certification Authority console, modify the Certificate Managers settings for the CA."
+        },
+        {
+          "label": "E",
           "Text": "From Local Group Policy Editor, configure auditing for object access."
         }
       ],
       "answer": [
         false,
+        false,
+        true,
         false,
         true
       ],
@@ -7248,6 +7326,14 @@
         {
           "variant": 1,
           "text": "You have a certification authority (CA) named CA1. You create a certificate template named Template1 that has the following configurations:"
+        },
+        {
+          "variant": 1,
+          "text": "Minimum key size: 2048"
+        },
+        {
+          "variant": 1,
+          "text": "Cryptographic provider: Microsoft Strong Cryptographic Provider \nCompatibility Settings-Certification Authority: Windows server 2012 R2 \nCompatibility Settings-Certificate recipient: Windows 8.1 /Windows Server 2012 R2"
         },
         {
           "variant": 1,
