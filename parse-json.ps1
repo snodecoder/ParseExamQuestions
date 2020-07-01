@@ -2,22 +2,38 @@
 .SYNOPSIS
   Parse Word Document to JSON
 .DESCRIPTION
-  Defines an Object structure from the predefined JSON structure (stored in .\functions.ps1).
-  Processes a Word Document, strips unnecessary data, stores wanted data in objects, outputs JSON file.
+  Defines an Object structure from the predefined JSON structure created by Exam Simulator(https://github.com/exam-simulator).
+  Processes a Word Document paragraph by paragraph, strips unnecessary data, stores wanted data in objects, outputs JSON file.
 .EXAMPLE
-  PS C:\> <example usage>
-  Explanation of what the example does
+  How to use:
+
+  1. Edit the Default Parameters defined in script.
+  2. Structurize data in .docx file, so it has a consistent structure (example: Questions always start with 'Question [NUMBER]' / Answers start with 'A.' etc..).
+  3. Define the Selector Object below with text markers that identify the structure consistency.
+  4. Run Script
+
+  Common Errors:
+  The script outputs last processed question so you can determine the cause of error.
+
+  Example: A new question part starts at the end of the previous paragraph (instead of starting on a new paragraphd)
+    Bad:
+      "E.	Add Admin1 to the Enterprise Admins group. Correct Answer: B"
+    Good:
+      "E.	Add Admin1 to the Enterprise Admins group."
+      "Correct Answer: B"
+
+
 .INPUTS
-  Inputs (if any)
+  You input a .docx Word document
 .OUTPUTS
-  Output (if any)
+  .JSON file
 .NOTES
   General notes
 #>
 
 ###############################
 ### >>> Start Edit Area >>> ###
-###     Global Variables    ###
+###    Default Parameters   ###
 ###############################
 param (
   $examAuthorId = "00001"
@@ -27,23 +43,18 @@ param (
   ,$examTitle = "Identity with Windows Server 2016"
   ,$examDescription = "161 questions available in Multiple Choice en Multiple Answer format."
   ,$examImage = "http://www.example.com/image.png"
-  ,$examTime = 60 # Maximum time for exam
+  ,$examTime = 120 # Maximum time for exam
   ,$examPass = 75 # Minimum percentage to pass exam
-  ,$imageURLPrefix = "https://files.opensourceexams.org/$($examCode)/images/"
+  ,$imageURLPrefix = "https://start.opensourceexams.org/exams/$($examCode)/images/"
   ,$WordFileName = "742.docx"
   ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
 )
-################################
-### <<< End of Edit Area <<< ###
-################################
-
-$WarningPreference = 'Continue'
 
 try{
-  ### Global Variables ###
-  $mediaFolder = "C:\Codeprojects\ParseWordDocument\$($WordFileName.Remove(3,5))\word\media\"
-  $imageFolder = $folderPath + "images\"
-  # NOT IN USE # $reg = '([A-Z]{1})[\.](.*)' # Regex match string to select First letter in Option, replace '.' with ':)', finally add answer.
+  ##################################
+  ### >>> Continue Edit Area >>> ###
+  ###      Global Variables      ###
+  ##################################
   $Selector = New-Object psobject -Property @{
     question = "QUESTION*"
     ;explanation = "Explanation*"
@@ -71,6 +82,14 @@ try{
       ,"*After you answer a question in this section*"
     )
   } # End of Selector object
+
+  ################################
+  ### <<< End of Edit Area <<< ###
+  ################################
+  $mediaFolder = $folderPath + "$($WordFileName.Remove(3,5))\word\media\"
+  $imageFolder = $folderPath + "images\"
+  $WarningPreference = 'Continue'
+
 
 
   ### Load Modules ###
@@ -147,11 +166,14 @@ try{
   } # End of function newJsonExam
 
   function Like ( $string, $arrayStrings ) { # Perform like search in Array
+    $result = $false
+
     $arrayStrings | ForEach-Object {
       if ($string -ilike $_ ) {
-        return $true
+        $result = $true
       }
     }
+    return $result
   } # End of function Like
 
   function ConvertAnswer($answer) {
@@ -306,7 +328,7 @@ try {
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
 
 ##### IMAGES #####
-      if ( ($paragraphs[$i].Pictures).count -like 1 ) { 
+      if ( ($paragraphs[$i].Pictures).count -like 1 ) {
         if ( $paragraphs[$i].Pictures.width -lt 15 ) {
           # Skip it, non-relevant image
         }
@@ -316,27 +338,21 @@ try {
         }
       }
 
-##### FILTER #####      
+##### FILTER #####
       elseif ( Like -string $paragraphs[$i].text -arrayStrings $Selector.filter ) { # Uses Like Function to search if current text exists in array of text. -> Filter unwanted text
         # skip it
       }
 
-##### SECTION #####      
+##### SECTION #####
       elseif ( $paragraphs[$i].text -like $Selector.section ) { # Section description of exam
         # skip it
       }
-      
-##### POSSIBLE ANSWERS #####   
-      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i] -arrayStrings $Selector.options) ) { # Possible answers: Store available choices in question
-        $choiceIndex = $exam.test[$questid].choices.Count
-        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
-      }
 
-##### CORRECT ANSWERs #####         
+##### CORRECT ANSWERs #####
       elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer: Convert correct answers to boolean array and store in $exam
         $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
         $exam.test[$questid].answer = booleanAnswer -CorrectAnswers ($CorrectAnswer.ToCharArray()) -ChoicesCount ($exam.test[$questid].choices.count)
-        
+
         # Determine type of question
         if ( $CorrectAnswer.Length -like 1 ) {
           $exam.test[$questid].variant = addQuestionType -type MultipleChoice
@@ -345,7 +361,14 @@ try {
           $exam.test[$questid].variant = addQuestionType -type MultipleAnswer
         }
       }
-##### EXPLANATION #####       
+
+##### POSSIBLE ANSWERS #####
+      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i].text -arrayStrings $Selector.options) ) { # Possible answers: Store available choices in question
+        $choiceIndex = $exam.test[$questid].choices.Count
+        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
+      }
+
+##### EXPLANATION #####
       elseif ( $textExplanation ) { # Add to Explanation Array
         $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
@@ -353,16 +376,21 @@ try {
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
           #$exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
-##### ACTUAL QUESTION #####       
+
+##### ACTUAL QUESTION #####
       else { # The question itself
         $exam.test[$questid].question += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
     }
-##### NEW QUESTION: RESET #####     
+
+##### NEW QUESTION: RESET #####
     elseif ( (Like $paragraphs[$i].text $Selector.question) ) { # New question starts, reset everything++
 
       if ( $exam.test[$questid].question -like $null ) { # if question was not filled, recycle it
         $exam.test[$questid] = [Question]::new()
+      }
+      elseif ($exam.test[$questid].answer -notcontains "True") {
+        throw "Correct answer array does not contain a correct answer for question ($($questid + 1)) in .docx file."
       }
       else {
         $exam.test += [Question]::new() # add new empty Question object to exam
@@ -373,17 +401,37 @@ try {
 ##### START LOOP AGAIN #####
 
   } # End for loop
+  Write-Host "Finished processing document." -ForegroundColor Green
 }
+
 catch{
-  Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion. Please review"
+  Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion."
+
+  Write-Host "Question summary: " -ForegroundColor Blue
+  $exam.test[$questid]
+  Write-Host "Question: Text" -ForegroundColor Blue
+  $exam.test[$questid].question | Format-Table
+  Write-Host "Question: Choices" -ForegroundColor Blue
+  $exam.test[$questid].choices | Format-Table
+  Write-Host "Question: Answers" -ForegroundColor Blue
+  $exam.test[$questid].answer | Format-List
+  Write-Host "Question: Explanation" -ForegroundColor Blue
+  $exam.test[$questid].explanation
+
+  Write-Host "Please fix consistency problem in structure .docx file." -ForegroundColor Red
+  Write-Host "Mostly this is caused by a question part (for example 'Correct Answer: A') that does not have it's own 'line', fix by placing question part on a new line with enter."
+  exit 0
 }
+########## FINISHED PROCESSING DOCUMENT ##########
+
+
 
 ########## Convert Exam to JSON and Export it ##########
 $jsonExam = $exam | ConvertTo-Json -Depth 4 -Verbose
 
 if ( $jsonExam | Test-Json ) {
   $jsonExam | Out-File -FilePath ($folderPath + "new-$($examCode).json") -Force
-  Write-Host "Done :)" -ForegroundColor Green
+  Write-Host "Exported $($exam.test.Count) questions to JSON file :)" -ForegroundColor Green
 }
 else {
   Write-Warning "Please check generated jsonExam. It is not a valid JSON file."
