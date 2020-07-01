@@ -362,12 +362,6 @@ try {
         }
       }
 
-##### POSSIBLE ANSWERS #####
-      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i].text -arrayStrings $Selector.options) ) { # Possible answers: Store available choices in question
-        $choiceIndex = $exam.test[$questid].choices.Count
-        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
-      }
-
 ##### EXPLANATION #####
       elseif ( $textExplanation ) { # Add to Explanation Array
         $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
@@ -375,6 +369,12 @@ try {
       elseif ( $paragraphs[$i].text -like $Selector.explanation ) { # Add to explanation property
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
           #$exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+      }
+
+##### POSSIBLE ANSWERS #####
+      elseif ( ($paragraphs[$i].islistitem) -or (Like -string $paragraphs[$i].text -arrayStrings $Selector.options) ) { # Possible answers: Store available choices in question
+        $choiceIndex = $exam.test[$questid].choices.Count
+        $exam.test[$questid].choices += AddChoice -index $choiceIndex -text $paragraphs[$i].text
       }
 
 ##### ACTUAL QUESTION #####

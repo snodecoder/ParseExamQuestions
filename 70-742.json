@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-01T21:00:24.724Z",
+  "createdAt": "2020-07-01T21:35:02.826Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -1418,10 +1418,6 @@
         {
           "label": "G",
           "Text": "the Office attribute "
-        },
-        {
-          "label": "H",
-          "Text": "Explanation/Reference:"
         }
       ],
       "answer": [
@@ -1434,6 +1430,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation/Reference:"
+        },
         {
           "variant": 1,
           "text": "Explanation:"
@@ -8045,38 +8045,6 @@
         {
           "label": "E",
           "Text": "Routing and Remote Access on Server1"
-        },
-        {
-          "label": "F",
-          "Text": "On the Web Application Proxy server, in the Remote Access Management console, in the Navigation pane, click Web Application Proxy, and then in the Tasks pane, click Publish."
-        },
-        {
-          "label": "G",
-          "Text": "On the Publish New Application Wizard, on the Welcome page, click Next."
-        },
-        {
-          "label": "H",
-          "Text": "On the Preauthentication page, click Active Directory Federation Services (AD FS), and then click Next."
-        },
-        {
-          "label": "I",
-          "Text": "On the Supported Clients page, select Web and MSOFBA, and then click Next."
-        },
-        {
-          "label": "J",
-          "Text": "On the Relying Party page, in the list of relying parties select the relying party for the application that you want to publish, and then click Next."
-        },
-        {
-          "label": "K",
-          "Text": "On the Publishing Settings page, do the following, and then click Next:"
-        },
-        {
-          "label": "L",
-          "Text": "On the Confirmation page, review the settings, and then click Publish. You can copy the PowerShell command to set up additional published applications."
-        },
-        {
-          "label": "",
-          "Text": "On the Results page, make sure that the application published successfully, and then click Close."
         }
       ],
       "answer": [
@@ -8094,6 +8062,38 @@
         {
           "variant": 1,
           "text": "To publish a claims-based application"
+        },
+        {
+          "variant": 1,
+          "text": "On the Web Application Proxy server, in the Remote Access Management console, in the Navigation pane, click Web Application Proxy, and then in the Tasks pane, click Publish."
+        },
+        {
+          "variant": 1,
+          "text": "On the Publish New Application Wizard, on the Welcome page, click Next."
+        },
+        {
+          "variant": 1,
+          "text": "On the Preauthentication page, click Active Directory Federation Services (AD FS), and then click Next."
+        },
+        {
+          "variant": 1,
+          "text": "On the Supported Clients page, select Web and MSOFBA, and then click Next."
+        },
+        {
+          "variant": 1,
+          "text": "On the Relying Party page, in the list of relying parties select the relying party for the application that you want to publish, and then click Next."
+        },
+        {
+          "variant": 1,
+          "text": "On the Publishing Settings page, do the following, and then click Next:"
+        },
+        {
+          "variant": 1,
+          "text": "On the Confirmation page, review the settings, and then click Publish. You can copy the PowerShell command to set up additional published applications."
+        },
+        {
+          "variant": 1,
+          "text": "On the Results page, make sure that the application published successfully, and then click Close."
         },
         {
           "variant": 1,
