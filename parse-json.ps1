@@ -364,7 +364,13 @@ try {
 
 ##### EXPLANATION #####
       elseif ( $textExplanation ) { # Add to Explanation Array
-        $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+
+        if ( $paragraphs[$i].text -like "*http*") { # Place HTTP/HTTPS links on new line
+          $subStrings = $paragraphs[$i].Text.Split(" ")
+          foreach ($string in $subStrings) {
+            $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $string
+          }
+        }
       }
       elseif ( $paragraphs[$i].text -like $Selector.explanation ) { # Add to explanation property
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.

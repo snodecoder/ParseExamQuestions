@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-01T21:35:02.826Z",
+  "createdAt": "2020-07-01T22:55:11.002Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -181,16 +181,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "A domain local group (group2) can only be a member of another domain local group.  Therefore, we need to change the scope of Group3 from Universal to Domain Local."
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -343,12 +334,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -794,15 +780,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "The Set-AdComputer cmdlet modifies an Active Directory computer object. It will not allow you to add a domain user to a local Administrators group."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://technet.microsoft.com/es-es/library/hh852268(v=wps.620).aspx"
+          "text": "https://technet.microsoft.com/es-es/library/hh852268(v=wps.620).aspx"
         }
       ]
     },
@@ -847,15 +829,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "to add uses to the Local Administrator built In group on all the computers using Group Policy, open group policy editor and create or edit existing GPO. Go to User Configuration -> Preferences -> Control Panel Settings -> Local users and groups."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.ntweekly.com/2015/01/10/how-to-add-users-to-local-admin-group-using-group-policy-windows-server-2012/"
+          "text": "https://www.ntweekly.com/2015/01/10/how-to-add-users-to-local-admin-group-using-group-policy-windows-server-2012/"
         }
       ]
     },
@@ -900,15 +878,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Account Lockout Policy settings encapsulates Password Policy, Account Lockout Policy, and Kerberos Policy. It will not allow you to add a domain user to a local Administrators group."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://technet.microsoft.com/pt-pt/library/cc757692(v=ws.10).aspx"
+          "text": "https://technet.microsoft.com/pt-pt/library/cc757692(v=ws.10).aspx"
         }
       ]
     },
@@ -1260,11 +1234,75 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "The"
         },
         {
           "variant": 1,
-          "text": "The Get-ADGroup cmdlet does not include the MemberOf property. The command above is, therefore, not valid. References: https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adgroup?view=win10-ps"
+          "text": "Get-ADGroup"
+        },
+        {
+          "variant": 1,
+          "text": "cmdlet"
+        },
+        {
+          "variant": 1,
+          "text": "does"
+        },
+        {
+          "variant": 1,
+          "text": "not"
+        },
+        {
+          "variant": 1,
+          "text": "include"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "MemberOf"
+        },
+        {
+          "variant": 1,
+          "text": "property."
+        },
+        {
+          "variant": 1,
+          "text": "The"
+        },
+        {
+          "variant": 1,
+          "text": "command"
+        },
+        {
+          "variant": 1,
+          "text": "above"
+        },
+        {
+          "variant": 1,
+          "text": "is,"
+        },
+        {
+          "variant": 1,
+          "text": "therefore,"
+        },
+        {
+          "variant": 1,
+          "text": "not"
+        },
+        {
+          "variant": 1,
+          "text": "valid."
+        },
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-adgroup?view=win10-ps"
         }
       ]
     },
@@ -1313,19 +1351,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "DSGET displays the properties of a user in the directory. There are two variations of this command. The first variation displays the properties of multiple users. The second variation displays the group membership information of a single user."
-        },
-        {
-          "variant": 1,
-          "text": "To show the list of groups, recursively expanded, to which the user Mike Danseglio belongs, type: dsget user \"CN=Mike Danseglio,CN=users,dc=ms,dc=tld\" -memberof –expand"
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732535%28v%3dws.10%29"
+          "text": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732535%28v%3dws.10%29"
         }
       ]
     },
@@ -1374,7 +1404,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://www.thewindowsclub.com/whoami-windows"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.thewindowsclub.com/whoami-windows"
         }
       ]
     },
@@ -1429,24 +1463,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "A user template in Active Directory can be used if you are creating users for a specific department, with exactly the same properties, and membership to the same user groups. A user template is nothing more than a disabled user account that has all these settings already in place."
-        },
-        {
-          "variant": 1,
-          "text": "References: www.rebeladmin.com/2014/07/create-users-with-user-templates-in-ad/"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 1,
@@ -1574,10 +1591,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://www.itprotoday.com/active-directory/delegating-privileges-active-directory"
         }
       ]
@@ -1631,7 +1644,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: http://www.rebeladmin.com/2014/07/create-users-with-user-templates-in-ad/"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "http://www.rebeladmin.com/2014/07/create-users-with-user-templates-in-ad/"
         }
       ]
     },
@@ -1726,7 +1743,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ]
     },
@@ -1779,7 +1800,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ]
     },
@@ -1824,11 +1849,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation/Reference:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+          "text": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
         }
       ]
     },
@@ -1894,15 +1919,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "Reference:"
         },
         {
           "variant": 1,
-          "text": "A domain local group can have a universal group as a member.  A universal group can have users or global groups from any domain in the forest as a member. To adhere to Microsoft best practice, we should add the Fabrikam.com users to a global group in the Fabrikam.com domain.  Add the global group to a universal group.  Convert Group1 to a domain local group and add the universal group to Group1."
-        },
-        {
-          "variant": 1,
-          "text": "Reference: https://www.netwrix.com/active_directory_group_management.html"
+          "text": "https://www.netwrix.com/active_directory_group_management.html"
         }
       ]
     },
@@ -1943,15 +1964,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "You need to use the Schema snap-in to find the schema master. The Schema snap-in is not installed by default but can be installed by using Schmmgmt.dll."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.petri.com/determining_fsmo_role_holders"
+          "text": "https://www.petri.com/determining_fsmo_role_holders"
         }
       ]
     },
@@ -1992,15 +2009,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "This command gets a global catalog in the current forest using Discovery."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-addomaincontroller?view=win10-ps"
+          "text": "https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-addomaincontroller?view=win10-ps"
         }
       ]
     },
@@ -2083,7 +2096,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://www.dtonias.com/access-denied-delete-move-ou-active-directory/"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.dtonias.com/access-denied-delete-move-ou-active-directory/"
         }
       ]
     },
@@ -2138,7 +2155,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/powershell/module/addsadministration/set-adaccountexpiration?view=win10-ps"
         }
       ]
     },
@@ -2189,7 +2210,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels"
         }
       ]
     },
@@ -2266,10 +2291,6 @@
         false
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/back-up-files-and-directories"
@@ -2397,11 +2418,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation/Reference:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "References: https://webactivedirectory.com/2011/07/18/simple-powershell-script-to-bulk-update-or-modify-active-directory-user-attributes/"
+          "text": "https://webactivedirectory.com/2011/07/18/simple-powershell-script-to-bulk-update-or-modify-active-directory-user-attributes/"
         }
       ]
     },
@@ -2526,7 +2547,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adobject?view=winserver2012-ps"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-adobject?view=winserver2012-ps"
         }
       ]
     },
@@ -2593,15 +2618,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Dsadd quota adds a quota specification to a directory partition. A quota specification determines the maximum number of directory objects that a given security principal can own in a specified directory partition."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://blogs.technet.microsoft.com/activedirectoryua/2009/03/19/active-directory-quotas/"
+          "text": "https://blogs.technet.microsoft.com/activedirectoryua/2009/03/19/active-directory-quotas/"
         }
       ]
     },
@@ -2668,15 +2689,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "You can restore objects from the Active Directory Recycle Bin by using Active Directory Administrative Center."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://blogs.technet.microsoft.com/canitpro/2014/07/28/step-by-step-restoring-a-deleted-object-via-active-directory-recycle-bin/"
+          "text": "https://blogs.technet.microsoft.com/canitpro/2014/07/28/step-by-step-restoring-a-deleted-object-via-active-directory-recycle-bin/"
         }
       ]
     },
@@ -2858,12 +2875,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -2917,12 +2929,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -3046,12 +3053,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -3117,10 +3119,6 @@
         false
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "Reference:"
-        },
         {
           "variant": 1,
           "text": "https://blogs.technet.microsoft.com/tristank/2006/05/08/3-simple-rules-to-kerberos-authenticationdelegation-spns/"
@@ -3357,12 +3355,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -3405,15 +3398,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "You need to run ntdsutil.exe with the ‘compact to’ option."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://theitbros.com/active-directory-database-compact-defrag/"
+          "text": "https://theitbros.com/active-directory-database-compact-defrag/"
         }
       ]
     },
@@ -3462,7 +3451,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://theitbros.com/active-directory-database-compact-defrag/"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://theitbros.com/active-directory-database-compact-defrag/"
         }
       ]
     },
@@ -3510,12 +3503,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -3655,16 +3643,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "You would need to use the -Force parameter because the server that held the role (DC1) if offline."
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -3749,19 +3728,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References"
         },
         {
           "variant": 1,
-          "text": "To list the user and computer accounts for the passwords that are cached on the RODC, run the following command:"
-        },
-        {
-          "variant": 1,
-          "text": "repadmin /prp view <read-only domain controller> reveal"
-        },
-        {
-          "variant": 1,
-          "text": "References https://support.microsoft.com/en-za/help/2028962/the-active-directory-users-and-computers-mmc-snap-in-does-not-list-all"
+          "text": "https://support.microsoft.com/en-za/help/2028962/the-active-directory-users-and-computers-mmc-snap-in-does-not-list-all"
         }
       ]
     },
@@ -3858,7 +3829,15 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: http://techgenix.com/active-directory-trusts/ https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "http://techgenix.com/active-directory-trusts/"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.rootusers.com/how-to-join-centos-linux-to-an-active-directory-domain/"
         }
       ]
     },
@@ -3940,12 +3919,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -4196,15 +4170,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Dsamain.exe, allows an ntds.dit file to be mounted and exposed as an LDAP server, which means you can use such familiar tools as ADSIEdit, LDP.exe, and Active Directory Users and Computers to interact with a mounted database."
-        },
-        {
-          "variant": 1,
-          "text": "References: http://www.itprotoday.com/windows-8/using-active-directory-snapshots-and-dsamain-tool"
+          "text": "http://www.itprotoday.com/windows-8/using-active-directory-snapshots-and-dsamain-tool"
         }
       ]
     },
@@ -4252,12 +4222,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 1,
@@ -4311,27 +4276,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation/Reference:"
+          "text": "http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group"
         },
         {
           "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "The Group Policy Creator Owners group lets its members create new GPOs."
-        },
-        {
-          "variant": 1,
-          "text": "You can delegate the ability for users to be given the ability to link GPOs to an OU or domain via the Delegation tab of the OU/domain/site within the GPMC."
-        },
-        {
-          "variant": 1,
-          "text": "References: "
-        },
-        {
-          "variant": 1,
-          "text": "http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group http://www.itprotoday.com/management-mobility/how-do-i-delegate-permissions-someone-edit-gpo"
+          "text": "http://www.itprotoday.com/management-mobility/how-do-i-delegate-permissions-someone-edit-gpo"
         }
       ]
     },
@@ -4494,10 +4443,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Reference:"
-        },
-        {
-          "variant": 1,
           "text": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/15/group-policy-basics-part-2-understanding-which-gpos-to-apply/"
         }
       ]
@@ -4554,12 +4499,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -4691,12 +4631,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference: Explanation:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5081,19 +5016,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "The Set-IpamConfiguration cmdlet modifies the configuration for the computer that runs the IPAM server."
-        },
-        {
-          "variant": 1,
-          "text": "The -GpoPrefix<String> parameter specifies the unique Group Policy object (GPO) prefix name that IPAM uses to create the group policy objects. Use this parameter only when the value of the ProvisioningMethod parameter is set to Automatic."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/powershell/module/ipamserver/set-ipamconfiguration?view=win10-ps"
+          "text": "https://docs.microsoft.com/en-us/powershell/module/ipamserver/set-ipamconfiguration?view=win10-ps"
         }
       ]
     },
@@ -5261,16 +5188,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": " "
-        },
-        {
-          "variant": 1,
-          "text": " "
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5309,15 +5227,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "The Group Policy Creator Owners group also has no permission to link GPOs to a container such as a domain or OU; that permission still must be manually given."
-        },
-        {
-          "variant": 1,
-          "text": "References: http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group"
+          "text": "http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group"
         }
       ]
     },
@@ -5391,12 +5305,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": " "
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5432,12 +5341,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5487,12 +5391,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5592,12 +5491,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5647,12 +5541,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": " "
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 1,
@@ -5768,11 +5657,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "In Replace Mode, the user's list of GPOs is not gathered. Only the list of GPOs based on the computer object is used."
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "References: https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy"
+          "text": "https://support.microsoft.com/en-us/help/231287/loopback-processing-of-group-policy"
         }
       ]
     },
@@ -5823,15 +5712,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "In Windows Server 2008 Microsoft introduced a Group Policy extension, named Group Policy Preferences (GPP). GPP that includes registry settings, allows you to add, remove or modify key values."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://theitbros.com/add-modify-and-delete-registry-keys-using-group-policy/"
+          "text": "https://theitbros.com/add-modify-and-delete-registry-keys-using-group-policy/"
         }
       ]
     },
@@ -5879,12 +5764,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -5989,10 +5869,6 @@
         true
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://www.windowscentral.com/how-apply-local-group-policy-settings-specific-users-windows-10"
@@ -6111,7 +5987,15 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733022(v=ws.11) https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753566%28v%3dws.10%29"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733022(v=ws.11)"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753566%28v%3dws.10%29"
         }
       ]
     },
@@ -6159,12 +6043,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -6219,22 +6098,6 @@
         false
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        },
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "If the GPO link is enabled, the settings of the GPO are applied when Group Policy is processed for the site, domain or OU."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/powershell/module/grouppolicy/set-gplink?view=win10-ps"
@@ -6342,11 +6205,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation/Reference:"
+          "text": "Reference:"
         },
         {
           "variant": 1,
-          "text": "Reference: https://docs.microsoft.com/en-us/powershell/module/grouppolicy/invoke-gpupdate?view=win10-ps"
+          "text": "https://docs.microsoft.com/en-us/powershell/module/grouppolicy/invoke-gpupdate?view=win10-ps"
         }
       ]
     },
@@ -6448,12 +6311,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -6556,10 +6414,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/archive/blogs/musings_of_a_technical_tam/group-policy-basics-part-2-understanding-which-gpos-to-apply"
         }
       ]
@@ -6611,10 +6465,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://social.technet.microsoft.com/Forums/ie/en-US/e9d3a8d3-5301-4961-96be-99f586c6fc1c/using-ad-to-allow-a-user-to-startstop-a-service?forum=winserverDS"
         }
       ]
@@ -6660,10 +6510,6 @@
         true
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpupdate"
@@ -6718,12 +6564,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -7105,16 +6946,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "You can’t create templates or configure auto-enrollment on a standalone CA."
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 1,
@@ -7172,19 +7004,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation/Reference:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "Once the OCSP service is configured, we need to configure the OCSP Response Signing template. This process includes adding an Authority Information Access (AIA) extension and then issuing a new certificate template."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
+          "text": "https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
         }
       ]
     },
@@ -7240,19 +7064,15 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Audit policy change defines whether every incident of a change to user rights assignment policies, audit policies, or trust policies is audited."
+          "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-policy-change"
         },
         {
           "variant": 1,
-          "text": "Audit object access defines whether the event of a user accessing an object--for example, a file, folder, registry key, printer, and so forth--that has its own system access control list (SACL) specified is audited."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-policy-change https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-object-access"
+          "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/basic-audit-object-access"
         }
       ]
     },
@@ -7314,10 +7134,6 @@
         false
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://www.ejbca.org/docs/Part_2__Microsoft_Certification_Authority_and_Group_Policies.html"
@@ -7432,10 +7248,6 @@
         false
       ],
       "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
         {
           "variant": 1,
           "text": "https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
@@ -7592,12 +7404,7 @@
         false,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "Explanation/Reference: Explanation:"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -7755,12 +7562,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": " "
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -8057,50 +7859,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
-        },
-        {
-          "variant": 1,
-          "text": "To publish a claims-based application"
-        },
-        {
-          "variant": 1,
-          "text": "On the Web Application Proxy server, in the Remote Access Management console, in the Navigation pane, click Web Application Proxy, and then in the Tasks pane, click Publish."
-        },
-        {
-          "variant": 1,
-          "text": "On the Publish New Application Wizard, on the Welcome page, click Next."
-        },
-        {
-          "variant": 1,
-          "text": "On the Preauthentication page, click Active Directory Federation Services (AD FS), and then click Next."
-        },
-        {
-          "variant": 1,
-          "text": "On the Supported Clients page, select Web and MSOFBA, and then click Next."
-        },
-        {
-          "variant": 1,
-          "text": "On the Relying Party page, in the list of relying parties select the relying party for the application that you want to publish, and then click Next."
-        },
-        {
-          "variant": 1,
-          "text": "On the Publishing Settings page, do the following, and then click Next:"
-        },
-        {
-          "variant": 1,
-          "text": "On the Confirmation page, review the settings, and then click Publish. You can copy the PowerShell command to set up additional published applications."
-        },
-        {
-          "variant": 1,
-          "text": "On the Results page, make sure that the application published successfully, and then click Close."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/remote/remote-access/web-application-proxy/publishing-applications-using-ad-fs-preauthentication"
         }
       ]
@@ -8274,10 +8032,6 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/powershell/module/adfs/add-adfswebapiapplication?view=win10-ps"
         }
       ]
@@ -8333,7 +8087,19 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://www.techsupportpk.com/2016/12/deploy-web-application-proxy-windows-server-2016.html https://docs.microsoft.com/en-us/sharepoint/hybrid/configure-web-application-proxy-for-a-hybrid-environment https://docs.microsoft.com/en-us/windows-server/storage/work-folders/deploy-work-folders-adfs-step4"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.techsupportpk.com/2016/12/deploy-web-application-proxy-windows-server-2016.html"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/sharepoint/hybrid/configure-web-application-proxy-for-a-hybrid-environment"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows-server/storage/work-folders/deploy-work-folders-adfs-step4"
         }
       ]
     },
@@ -8380,7 +8146,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References: https://forsenergy.com/en-us/rms_help/html/9a944ab7-f0d9-4224-97c6-b2543f537827.htm"
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://forsenergy.com/en-us/rms_help/html/9a944ab7-f0d9-4224-97c6-b2543f537827.htm"
         }
       ]
     },
@@ -8425,23 +8195,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "By default, an AD RMS Licensing Server can issue use licenses for only content where it originally issued the publishing license. In some situations, this may not be acceptable. In order to specify a cluster that is allowed to issue use licenses for content protected by a different cluster, the first cluster must be defined as a trusted publishing domain. If content was published by another certification cluster either in your organization, for example, a subsidiary organization in another forest, or in a separate organization, your AD RMS cluster can grant use licenses to users for this content by configuring a Trusted Publishing Domain on your AD RMS cluster. By adding a Trusted Publishing Domain, you set up a trust relationship between your AD RMS cluster and the other certification cluster by importing the Trusted Publishing Certificate of the other cluster."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://books.google.co.za/books?id=gjR-BAAAQBAJ&pg=PA397&lpg=PA397&dq=configure+a+partners+forest+as+a+trusted+publishing+domain+-+AD"
-        },
-        {
-          "variant": 1,
-          "text": "+RMS&source=bl&ots=mohQXTyW9s&sig=NJ7oFHuLYOs72o9EM-"
-        },
-        {
-          "variant": 1,
-          "text": "yQiIscUW8&hl=en&sa=X&ved=0ahUKEwjuivW24sPbAhWGRMAKHQcEB6EQ6AEIOzAD#v=onepage&q=configure%20a%20partners%20forest%20as%20a% 20trusted%20publishing%20domain%20-%20AD%20RMS&f=false"
+          "text": "https://books.google.co.za/books?id=gjR-BAAAQBAJ&pg=PA397&lpg=PA397&dq=configure+a+partners+forest+as+a+trusted+publishing+domain+-+AD"
         }
       ]
     },
@@ -8502,19 +8260,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
         },
         {
           "variant": 1,
-          "text": "Device Registration requires Windows Server 2012 R2 forest schema. We can run adprep.exe to upgrade the schema."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"
         }
       ]
     },
@@ -8575,19 +8325,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
         },
         {
           "variant": 1,
-          "text": "Device Registration requires Windows Server 2012 R2 forest schema. Upgrading a domain controller will run adprep.exe to upgrade the schema as part of the upgrade process."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"
         }
       ]
     },
@@ -8648,15 +8390,11 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Explanation:"
+          "text": "References:"
         },
         {
           "variant": 1,
-          "text": "Device Registration requires Windows Server 2012 R2 forest schema (not just domain schema)."
-        },
-        {
-          "variant": 1,
-          "text": "References: https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
         }
       ]
     },
@@ -8702,27 +8440,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
           "text": "https://books.google.co.za/books?id=G9Y5DwAAQBAJ&pg=PA385&lpg=PA385&dq=rights-protected+content+-+exclusion"
-        },
-        {
-          "variant": 1,
-          "text": "+policy&source=bl&ots=MeKgOC82dG&sig=ACfU3U1DLYH3Eud3XrtFyvVR-"
-        },
-        {
-          "variant": 1,
-          "text": "j80rY0JuA&hl=en&sa=X&ved=2ahUKEwi4vsvO1svnAhXs6eAKHb73Bb4Q6AEwBnoECAoQAQ#v=onepage&q=rights-protected%20content%20-%20exclusion% 20policy&f=false"
-        },
-        {
-          "variant": 1,
-          "text": " "
-        },
-        {
-          "variant": 1,
-          "text": " "
         }
       ]
     }
