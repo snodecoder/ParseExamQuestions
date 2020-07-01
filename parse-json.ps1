@@ -430,7 +430,7 @@ catch{
 $jsonExam = $exam | ConvertTo-Json -Depth 4 -Verbose
 
 if ( $jsonExam | Test-Json ) {
-  $jsonExam | Out-File -FilePath ($folderPath + "new-$($examCode).json") -Force
+  $jsonExam | Out-File -FilePath ($folderPath + "$($examCode).json") -Force
   Write-Host "Exported $($exam.test.Count) questions to JSON file :)" -ForegroundColor Green
 }
 else {
