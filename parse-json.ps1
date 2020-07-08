@@ -119,7 +119,7 @@ try{
   class TextLabel # Text Label for choices (A, B, C...)
   {
     [string] $label
-    [string] $Text
+    [string] $text
 
     TextLabel([string] $label, [string] $text)
     {
@@ -432,8 +432,9 @@ catch{
 
 
 
+
 ########## Convert Exam to JSON and Export it ##########
-$jsonExam = $exam | ConvertTo-Json -Depth 4 -Verbose
+$jsonExam = $exam | ConvertTo-Json -Depth 5 -Verbose
 
 if ( $jsonExam | Test-Json ) {
   $jsonExam | Out-File -FilePath ($folderPath + "$($examCode).json") -Force

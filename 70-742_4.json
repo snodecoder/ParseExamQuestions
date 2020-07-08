@@ -1,0 +1,571 @@
+{
+  "title": "Identity with Windows Server 2016",
+  "description": "Variant: 4 | 10 questions available in Multiple Choice en Multiple Answer format.",
+  "author": {
+    "id": "00001",
+    "name": "Snodecoder",
+    "image": "http://www.example.com/image.png"
+  },
+  "createdAt": "2020-07-08T19:40:45.093Z",
+  "code": "70-742",
+  "time": 120,
+  "pass": 75,
+  "image": "https://pbs.twimg.com/profile_images/1080479698742902784/724c4osq_400x400.jpg",
+  "cover": [
+    {
+      "variant": 2,
+      "text": "Identity with Windows Server 2016"
+    },
+    "Variant: 4 | 10 questions available in Multiple Choice en Multiple Answer format."
+  ],
+  "test": [
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory domain named contoso.com."
+        },
+        {
+          "variant": 1,
+          "text": "The domain contains a web application that uses Kerberos authentication."
+        },
+        {
+          "variant": 1,
+          "text": "You change the domain name of the web application."
+        },
+        {
+          "variant": 1,
+          "text": "You need to ensure that the service principal name (SPN) for the application is registered."
+        },
+        {
+          "variant": 1,
+          "text": "Which tool should you use?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rdspnf"
+        },
+        {
+          "label": "B",
+          "text": "Active Directory Users and Computers"
+        },
+        {
+          "label": "C",
+          "text": "Dnscmd"
+        },
+        {
+          "label": "D",
+          "text": "Ldifde"
+        },
+        {
+          "label": "E",
+          "text": "Netsh"
+        },
+        {
+          "label": "F",
+          "text": "Internet Information Services (IIS) Manager"
+        },
+        {
+          "label": "G",
+          "text": "Repladmin "
+        }
+      ],
+      "answer": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "https://blogs.technet.microsoft.com/tristank/2006/05/08/3-simple-rules-to-kerberos-authenticationdelegation-spns/"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "You network contains an active Directory domain. The domain contains 20 domain controllers. You discover that some Group Policy objects (PROs) are not being applied by all the domain controllers."
+        },
+        {
+          "variant": 1,
+          "text": "You need to verify whether GPOs replicate successfully to all the domain controllers."
+        },
+        {
+          "variant": 1,
+          "text": "What should you do?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). Run dcdiag.exe for each domain controller."
+        },
+        {
+          "label": "B",
+          "text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). View the Directory Service event log."
+        },
+        {
+          "label": "C",
+          "text": "From Group Policy Management, view the Status tab for the domain."
+        },
+        {
+          "label": "D",
+          "text": "Run repadmin.exe for each GPO."
+        }
+      ],
+      "answer": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "explanation": null
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory forest named contoso.com. The forest contains 10 domains."
+        },
+        {
+          "variant": 1,
+          "text": "The root domain contains a global catalog server named DC1."
+        },
+        {
+          "variant": 1,
+          "text": "You remove the global catalog server role from DC1."
+        },
+        {
+          "variant": 1,
+          "text": "You need to decrease the size of the Active Directory database on DC1."
+        },
+        {
+          "variant": 1,
+          "text": "Solution: You restart DC1 in Safe Mode. You run ntdsutil.exe, use the files option, and then restart DC1."
+        },
+        {
+          "variant": 1,
+          "text": "Does this meet the goal?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "answer": [
+        false,
+        true
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://theitbros.com/active-directory-database-compact-defrag/"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory domain named contoso.com."
+        },
+        {
+          "variant": 1,
+          "text": "You plan to deploy a new Active Directory Rights Management Services (AD RMS) cluster on a server named Server1."
+        },
+        {
+          "variant": 1,
+          "text": "You need to create the AD RMS service account. The solution must use the principle of least privilege."
+        },
+        {
+          "variant": 1,
+          "text": "What should you do?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Create a local user account on Server1 and add the account to the Administrators group on Server1."
+        },
+        {
+          "label": "B",
+          "text": "Create a domain user account and add the account to the Administrators group on Server1."
+        },
+        {
+          "label": "C",
+          "text": "Create a domain user account and add the account to the Domain Users group in the domain."
+        },
+        {
+          "label": "D",
+          "text": "Create a domain user account and add the account to the Account Operators group in the domain."
+        }
+      ],
+      "answer": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "explanation": null
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory forest. The forest contains a forest root domain named contoso.com and a child domain named eu.contoso.com. Each domain contains two domain controllers that run Windows Server 2012 R2."
+        },
+        {
+          "variant": 1,
+          "text": "The forest functional level is Windows Server 2008 R2. The domain functional level of contoso.com is Windows Server 2012 R2. The domain functional level of eu.contoso.com is Windows Server 2008 R2."
+        },
+        {
+          "variant": 1,
+          "text": "You need to raise the domain functional level of contoso.com to Windows Server 2016. The solution must minimize administrative effort."
+        },
+        {
+          "variant": 1,
+          "text": "What should you do before you raise the domain functional level?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Raise the forest functional level"
+        },
+        {
+          "label": "B",
+          "text": "Upgrade all of the domain controllers in the forest"
+        },
+        {
+          "label": "C",
+          "text": "Upgrade all of the domain controllers in contoso.com"
+        },
+        {
+          "label": "D",
+          "text": "Raise the domain functional level of eu.contoso.com"
+        }
+      ],
+      "answer": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-functional-levels"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains the Active Directory forests and domains shown in the following table:"
+        },
+        {
+          "variant": 0,
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image4.jpg"
+        },
+        {
+          "variant": 1,
+          "text": "A two-way forest trust exists between ForestA and ForestB. "
+        },
+        {
+          "variant": 1,
+          "text": "Each domain in ForestB contains user accounts that are used to manage servers. "
+        },
+        {
+          "variant": 1,
+          "text": "You need to ensure that the user accounts used to manage the servers in ForestB are members of the Server Operators in ForestA. "
+        },
+        {
+          "variant": 1,
+          "text": "Solution: In each domain in ForestB, you create a global group that contains the user accounts of the respective domain. You create a universal group in DomainBRoot. You add the new global groups to the new universal group. You modify the membership of the Server Operators in ForestA."
+        },
+        {
+          "variant": 1,
+          "text": "Does this meet the goal?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes "
+        },
+        {
+          "label": "B",
+          "text": "No "
+        }
+      ],
+      "answer": [
+        true,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups#bkmk-serveroperators"
+        }
+      ]
+    },
+    {
+      "variant": 1,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory domain named contoso.com."
+        },
+        {
+          "variant": 1,
+          "text": "You have an organizational unit (OU) named TestOU that contains test computers."
+        },
+        {
+          "variant": 1,
+          "text": "You need to enable a technician named Tech1 to create Group Policy objects (GPOs) and to link the GPOs to TestOU. The solution must use the principle of least privilege."
+        },
+        {
+          "variant": 1,
+          "text": "Which two actions should you perform? Each correct answer presents part of the solution."
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Add Tech1 to the Group Policy Creator Owners group."
+        },
+        {
+          "label": "B",
+          "text": "From Group Policy Management, modify the Delegation settings of the TestOU OU."
+        },
+        {
+          "label": "C",
+          "text": "Add Tech1 to the Protected Users group."
+        },
+        {
+          "label": "D",
+          "text": "From Group Policy Management, modify the Delegation settings of the contoso.com container."
+        },
+        {
+          "label": "E",
+          "text": "Create a new universal security group and add Tech1 to the group."
+        }
+      ],
+      "answer": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group"
+        },
+        {
+          "variant": 1,
+          "text": "http://www.itprotoday.com/management-mobility/how-do-i-delegate-permissions-someone-edit-gpo"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your network contains an Active Directory domain named contoso.com. The domain contains a server named Server1 that runs Windows Server 2016."
+        },
+        {
+          "variant": 1,
+          "text": "Server1 has IP Address Management (IPAM) installed. IPAM is configured to use the Group Policy based provisioning method. The prefix for the IPAM Group Policy objects (GPOs) is IP."
+        },
+        {
+          "variant": 1,
+          "text": "From Group Policy Management, you manually rename the IPAM GPOs to have a prefix of IPAM."
+        },
+        {
+          "variant": 1,
+          "text": "You need to modify the GPO prefix used by IPAM."
+        },
+        {
+          "variant": 1,
+          "text": "What should you do?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Click Configure server discovery in Server Manager."
+        },
+        {
+          "label": "B",
+          "text": "Run the Set-IpamConfiguration cmdlet."
+        },
+        {
+          "label": "C",
+          "text": "Run the Invoke-IpamGpoProvisioning cmdlet."
+        },
+        {
+          "label": "D",
+          "text": "Click Provision the IPAM server in Server Manager."
+        }
+      ],
+      "answer": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "References:"
+        },
+        {
+          "variant": 1,
+          "text": "https://docs.microsoft.com/en-us/powershell/module/ipamserver/set-ipamconfiguration?view=win10-ps"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "Your company has multiple branch offices."
+        },
+        {
+          "variant": 1,
+          "text": "The network contains an Active Directory domain named contoso.com."
+        },
+        {
+          "variant": 1,
+          "text": "In one of the branch offices, a new technician is hired to add computers to the domain."
+        },
+        {
+          "variant": 1,
+          "text": "After successfully joining multiple computers to the domain, the technician fails to join any more computers to the domain."
+        },
+        {
+          "variant": 1,
+          "text": "You need to ensure that the technician can join an unlimited number of computers to the domain."
+        },
+        {
+          "variant": 1,
+          "text": "What should you do?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Run the Delegation of Control Wizard on the Computers container."
+        },
+        {
+          "label": "B",
+          "text": "Run the redircmp.exe command."
+        },
+        {
+          "label": "C",
+          "text": "Modify the Security settings of the technician’s user account."
+        },
+        {
+          "label": "D",
+          "text": "Add the technician to the Windows Authorization Access group."
+        },
+        {
+          "label": "E",
+          "text": "Configure the technician’s user account as a manager service account."
+        },
+        {
+          "label": "F",
+          "text": "Run the Set-ADComputer cmdlet."
+        },
+        {
+          "label": "G",
+          "text": "Add the technician to the Domain Computers group."
+        }
+      ],
+      "answer": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "https://www.itprotoday.com/active-directory/delegating-privileges-active-directory"
+        }
+      ]
+    },
+    {
+      "variant": 0,
+      "question": [
+        {
+          "variant": 1,
+          "text": "You have a server named Web1 that runs Windows Server 2016."
+        },
+        {
+          "variant": 1,
+          "text": "You need to list all the SSL certificates on Web1 that will expire during the next 60 days. Solution: You run the following command."
+        },
+        {
+          "variant": 1,
+          "text": "Get-ChildItem Cert:\\LocalMachine\\My |? { $_.NotAfter –It (Get-Date).AddDays( 60 ) } Does this meet the goal?"
+        }
+      ],
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yes"
+        },
+        {
+          "label": "B",
+          "text": "No"
+        }
+      ],
+      "answer": [
+        true,
+        false
+      ],
+      "explanation": null
+    }
+  ]
+}

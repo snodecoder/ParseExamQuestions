@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-01T22:55:11.002Z",
+  "createdAt": "2020-07-08T19:40:45.093Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -77,19 +77,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "the group scope of Group5"
+          "text": "the group scope of Group5"
         },
         {
           "label": "B",
-          "Text": "the Managed By settings of Group4"
+          "text": "the Managed By settings of Group4"
         },
         {
           "label": "C",
-          "Text": "the group scope of Group4"
+          "text": "the group scope of Group4"
         },
         {
           "label": "D",
-          "Text": "the Managed By settings of Group5"
+          "text": "the Managed By settings of Group5"
         }
       ],
       "answer": [
@@ -155,23 +155,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the Security settings of Group3."
+          "text": "Modify the Security settings of Group3."
         },
         {
           "label": "B",
-          "Text": "Modify the group scope of Group3."
+          "text": "Modify the group scope of Group3."
         },
         {
           "label": "C",
-          "Text": "Modify the group type of Group3."
+          "text": "Modify the group type of Group3."
         },
         {
           "label": "D",
-          "Text": "Set Admin1 as the manager of Group3."
+          "text": "Set Admin1 as the manager of Group3."
         },
         {
           "label": "E",
-          "Text": "Add Admin1 to the Enterprise Admins group"
+          "text": "Add Admin1 to the Enterprise Admins group"
         }
       ],
       "answer": [
@@ -210,19 +210,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run the Get-ADUser cmdlet and pipe the output to the Set-ADUser cmdlet."
+          "text": "Run the Get-ADUser cmdlet and pipe the output to the Set-ADUser cmdlet."
         },
         {
           "label": "B",
-          "Text": "Create a group that contains all of the users in the Temp OU. Create a Password Setting object (PSO) for the new group."
+          "text": "Create a group that contains all of the users in the Temp OU. Create a Password Setting object (PSO) for the new group."
         },
         {
           "label": "C",
-          "Text": "Create a Group Policy object (GPO) and link the GPO to the Temp OU. Modify the Password Policy settings of the GPO."
+          "text": "Create a Group Policy object (GPO) and link the GPO to the Temp OU. Modify the Password Policy settings of the GPO."
         },
         {
           "label": "D",
-          "Text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-Date cmdlet."
+          "text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-Date cmdlet."
         }
       ],
       "answer": [
@@ -256,31 +256,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Active Directory Sites and Services, modify the properties of the 192.168.10.0/24 IP subnet."
+          "text": "From Active Directory Sites and Services, modify the properties of the 192.168.10.0/24 IP subnet."
         },
         {
           "label": "B",
-          "Text": "From Windows PowerShell, run the Set-NetNatGlobal cmdlet."
+          "text": "From Windows PowerShell, run the Set-NetNatGlobal cmdlet."
         },
         {
           "label": "C",
-          "Text": "From Active Directory Sites and Services, modify the NTDS Settings object of LON-DC02."
+          "text": "From Active Directory Sites and Services, modify the NTDS Settings object of LON-DC02."
         },
         {
           "label": "D",
-          "Text": "From Windows PowerShell, run the Enable-ADOptionalFeature cmdlet."
+          "text": "From Windows PowerShell, run the Enable-ADOptionalFeature cmdlet."
         },
         {
           "label": "E",
-          "Text": "From the properties of the LON-DC02 computer account in Active Directory Users and Computers, modify the NTDS settings."
+          "text": "From the properties of the LON-DC02 computer account in Active Directory Users and Computers, modify the NTDS settings."
         },
         {
           "label": "F",
-          "Text": "From the properties of the LON-DC02 computer account in Active Directory Users and Computers, modify the City attribute."
+          "text": "From the properties of the LON-DC02 computer account in Active Directory Users and Computers, modify the City attribute."
         },
         {
           "label": "G",
-          "Text": "From the properties of the Domain Controllers organizational unit (OU) in Active Directory Users and Computers, modify the Security settings."
+          "text": "From the properties of the Domain Controllers organizational unit (OU) in Active Directory Users and Computers, modify the Security settings."
         }
       ],
       "answer": [
@@ -313,19 +313,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create a universal security group for the user accounts and modify the Security settings of the group."
+          "text": "Create a universal security group for the user accounts and modify the Security settings of the group."
         },
         {
           "label": "B",
-          "Text": "Add the users to the Windows Authorization Access Group group."
+          "text": "Add the users to the Windows Authorization Access Group group."
         },
         {
           "label": "C",
-          "Text": "Add the user to the Protected Users group."
+          "text": "Add the user to the Protected Users group."
         },
         {
           "label": "D",
-          "Text": "Create a separate organizational unit (OU) for the user accounts and modify the Security settings of the OU."
+          "text": "Create a separate organizational unit (OU) for the user accounts and modify the Security settings of the OU."
         }
       ],
       "answer": [
@@ -363,19 +363,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run dnscmd and specify the CacheLockingPercent parameter."
+          "text": "Run dnscmd and specify the CacheLockingPercent parameter."
         },
         {
           "label": "B",
-          "Text": "Run Set-DnsServerGlobalQueryBlockList."
+          "text": "Run Set-DnsServerGlobalQueryBlockList."
         },
         {
           "label": "C",
-          "Text": "Run ipconfig and specify the Renew parameter."
+          "text": "Run ipconfig and specify the Renew parameter."
         },
         {
           "label": "D",
-          "Text": "Run Set-DnsServerCache."
+          "text": "Run Set-DnsServerCache."
         }
       ],
       "answer": [
@@ -409,19 +409,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Network List Manager Policies"
+          "text": "Network List Manager Policies"
         },
         {
           "label": "B",
-          "Text": "Network Access Protection (NAP)"
+          "text": "Network Access Protection (NAP)"
         },
         {
           "label": "C",
-          "Text": "Name Resolution Policy"
+          "text": "Name Resolution Policy"
         },
         {
           "label": "D",
-          "Text": "Public Key Policy"
+          "text": "Public Key Policy"
         }
       ],
       "answer": [
@@ -487,19 +487,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Add Admin1 to the Enterprise Admins group."
+          "text": "Add Admin1 to the Enterprise Admins group."
         },
         {
           "label": "B",
-          "Text": "Remove all the members from Group1."
+          "text": "Remove all the members from Group1."
         },
         {
           "label": "C",
-          "Text": "Modify the Security settings of Group1."
+          "text": "Modify the Security settings of Group1."
         },
         {
           "label": "D",
-          "Text": "Convert Group1 to a universal security group."
+          "text": "Convert Group1 to a universal security group."
         }
       ],
       "answer": [
@@ -533,23 +533,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Instruct Tech1 to run the Active Directory Domain Services Configuration Wizard."
+          "text": "Instruct Tech1 to run the Active Directory Domain Services Configuration Wizard."
         },
         {
           "label": "B",
-          "Text": "Create an RODC computer account by using Active Administrative Center."
+          "text": "Create an RODC computer account by using Active Administrative Center."
         },
         {
           "label": "C",
-          "Text": "Instruct Tech1 to run dcpromo.exe on RODC1."
+          "text": "Instruct Tech1 to run dcpromo.exe on RODC1."
         },
         {
           "label": "D",
-          "Text": "Instruct Tech1 to install the Active Directory Domain Services server role on RODC1."
+          "text": "Instruct Tech1 to install the Active Directory Domain Services server role on RODC1."
         },
         {
           "label": "E",
-          "Text": "Modify the permissions of the Domain Controllers organizational unit (OU)."
+          "text": "Modify the permissions of the Domain Controllers organizational unit (OU)."
         }
       ],
       "answer": [
@@ -584,35 +584,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -650,31 +650,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Unjoin Computer1 from the domain, and then join the computer to the domain."
+          "text": "Unjoin Computer1 from the domain, and then join the computer to the domain."
         },
         {
           "label": "B",
-          "Text": "From Active Directory Administrative Center, reset the computer account of Computer1."
+          "text": "From Active Directory Administrative Center, reset the computer account of Computer1."
         },
         {
           "label": "C",
-          "Text": "From Active Directory Administrative Center, disable Computer1, and then enable the computer account of Computer1."
+          "text": "From Active Directory Administrative Center, disable Computer1, and then enable the computer account of Computer1."
         },
         {
           "label": "D",
-          "Text": "From Active Directory Users and Computers, run the Delegation of Control Wizard."
+          "text": "From Active Directory Users and Computers, run the Delegation of Control Wizard."
         },
         {
           "label": "E",
-          "Text": "From Windows PowerShell on Computer1, run the Restore-Computer cmdlet"
+          "text": "From Windows PowerShell on Computer1, run the Restore-Computer cmdlet"
         },
         {
           "label": "F",
-          "Text": "From a command prompt, run the Systemreset.exe command"
+          "text": "From a command prompt, run the Systemreset.exe command"
         },
         {
           "label": "G",
-          "Text": "From Windows PowerShell on Computer1, run the Set-ADComputer cmdlet "
+          "text": "From Windows PowerShell on Computer1, run the Set-ADComputer cmdlet "
         }
       ],
       "answer": [
@@ -711,23 +711,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Assign the Domain Controllers group in fabrikam.com permissions to Group1."
+          "text": "Assign the Domain Controllers group in fabrikam.com permissions to Group1."
         },
         {
           "label": "B",
-          "Text": "Modify the scope of Group1 to Universal."
+          "text": "Modify the scope of Group1 to Universal."
         },
         {
           "label": "C",
-          "Text": "Raise the domain functional level contoso.com to Windows Server 2016."
+          "text": "Raise the domain functional level contoso.com to Windows Server 2016."
         },
         {
           "label": "D",
-          "Text": "Raise the domain functional level of fabriakm.com Windows Server 2016."
+          "text": "Raise the domain functional level of fabriakm.com Windows Server 2016."
         },
         {
           "label": "E",
-          "Text": "Change Group1 to a distribution group"
+          "text": "Change Group1 to a distribution group"
         }
       ],
       "answer": [
@@ -766,11 +766,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -815,11 +815,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -864,11 +864,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -917,11 +917,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -957,19 +957,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Get-ADOrganizationalUnit-Filter “mobilePhone-Like ‘*514*’ ”"
+          "text": "Get-ADOrganizationalUnit-Filter “mobilePhone-Like ‘*514*’ ”"
         },
         {
           "label": "B",
-          "Text": "Get-ADUser-LDAPFilter “(mobilePhone= ‘*514*’)”"
+          "text": "Get-ADUser-LDAPFilter “(mobilePhone= ‘*514*’)”"
         },
         {
           "label": "C",
-          "Text": "Get-ADUser-Filter “mobilePhone-Like ‘*514*’ ”"
+          "text": "Get-ADUser-Filter “mobilePhone-Like ‘*514*’ ”"
         },
         {
           "label": "D",
-          "Text": "Get-ADOrganizationalUnit-LDAPFilter “(mobilePhone= ‘*514*’)”"
+          "text": "Get-ADOrganizationalUnit-LDAPFilter “(mobilePhone= ‘*514*’)”"
         }
       ],
       "answer": [
@@ -1003,19 +1003,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "On Computer1 run the secedit.exe command and specify the /export parameter. Edit GPO1, and then import a security template."
+          "text": "On Computer1 run the secedit.exe command and specify the /export parameter. Edit GPO1, and then import a security template."
         },
         {
           "label": "B",
-          "Text": "On Computer1, run the gpresult.exe command and specify the /x parameter. Edit GPO1, and then import a security template."
+          "text": "On Computer1, run the gpresult.exe command and specify the /x parameter. Edit GPO1, and then import a security template."
         },
         {
           "label": "C",
-          "Text": "On Computer1, run the secedit.exe command and specify the /export parameter. From Group Policy Management, run the Import Settings Wizard."
+          "text": "On Computer1, run the secedit.exe command and specify the /export parameter. From Group Policy Management, run the Import Settings Wizard."
         },
         {
           "label": "D",
-          "Text": "On Computer1, run the gpresult.exe command and specify the /x parameter. From Group Policy Management, run the Restore Group Policy Object Wizard."
+          "text": "On Computer1, run the gpresult.exe command and specify the /x parameter. From Group Policy Management, run the Restore Group Policy Object Wizard."
         }
       ],
       "answer": [
@@ -1053,23 +1053,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create an access control condition in Policy1."
+          "text": "Create an access control condition in Policy1."
         },
         {
           "label": "B",
-          "Text": "Create a managed service account and add the account to Permitted Accounts in Silo1."
+          "text": "Create a managed service account and add the account to Permitted Accounts in Silo1."
         },
         {
           "label": "C",
-          "Text": "Add the domain controllers to the Contoso\\AD_Admins group."
+          "text": "Add the domain controllers to the Contoso\\AD_Admins group."
         },
         {
           "label": "D",
-          "Text": "Add the privileged user accounts and the domain controllers to Permitted Accounts in Silo1."
+          "text": "Add the privileged user accounts and the domain controllers to Permitted Accounts in Silo1."
         },
         {
           "label": "E",
-          "Text": "Assign Silo1 to the privileged user accounts and the domain controllers."
+          "text": "Assign Silo1 to the privileged user accounts and the domain controllers."
         }
       ],
       "answer": [
@@ -1120,11 +1120,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1176,11 +1176,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1220,11 +1220,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1337,11 +1337,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1390,11 +1390,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1427,31 +1427,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "the Department attribute"
+          "text": "the Department attribute"
         },
         {
           "label": "B",
-          "Text": "the Description attribute"
+          "text": "the Description attribute"
         },
         {
           "label": "C",
-          "Text": "Permission"
+          "text": "Permission"
         },
         {
           "label": "D",
-          "Text": "Remote Desktop Services Profile"
+          "text": "Remote Desktop Services Profile"
         },
         {
           "label": "E",
-          "Text": "the User logon name attribute "
+          "text": "the User logon name attribute "
         },
         {
           "label": "F",
-          "Text": "Published Certificates "
+          "text": "Published Certificates "
         },
         {
           "label": "G",
-          "Text": "the Office attribute "
+          "text": "the Office attribute "
         }
       ],
       "answer": [
@@ -1488,27 +1488,27 @@
       "choices": [
         {
           "label": "A",
-          "Text": "dnscmd /DirectoryPartitionInfo"
+          "text": "dnscmd /DirectoryPartitionInfo"
         },
         {
           "label": "B",
-          "Text": "dcdiag.exe /test:DNS"
+          "text": "dcdiag.exe /test:DNS"
         },
         {
           "label": "C",
-          "Text": "dcdiag.exe /test:connectivity"
+          "text": "dcdiag.exe /test:connectivity"
         },
         {
           "label": "D",
-          "Text": "dnscmd /IpValidate"
+          "text": "dnscmd /IpValidate"
         },
         {
           "label": "E",
-          "Text": "dcdiag.exe /test:DnsRecordRegistration"
+          "text": "dcdiag.exe /test:DnsRecordRegistration"
         },
         {
           "label": "F",
-          "Text": "dnscmd /info"
+          "text": "dnscmd /info"
         }
       ],
       "answer": [
@@ -1552,31 +1552,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run the Delegation of Control Wizard on the Computers container."
+          "text": "Run the Delegation of Control Wizard on the Computers container."
         },
         {
           "label": "B",
-          "Text": "Run the redircmp.exe command."
+          "text": "Run the redircmp.exe command."
         },
         {
           "label": "C",
-          "Text": "Modify the Security settings of the technician’s user account."
+          "text": "Modify the Security settings of the technician’s user account."
         },
         {
           "label": "D",
-          "Text": "Add the technician to the Windows Authorization Access group."
+          "text": "Add the technician to the Windows Authorization Access group."
         },
         {
           "label": "E",
-          "Text": "Configure the technician’s user account as a manager service account."
+          "text": "Configure the technician’s user account as a manager service account."
         },
         {
           "label": "F",
-          "Text": "Run the Set-ADComputer cmdlet."
+          "text": "Run the Set-ADComputer cmdlet."
         },
         {
           "label": "G",
-          "Text": "Add the technician to the Domain Computers group."
+          "text": "Add the technician to the Domain Computers group."
         }
       ],
       "answer": [
@@ -1610,27 +1610,27 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Published Certificates"
+          "text": "Published Certificates"
         },
         {
           "label": "B",
-          "Text": "the Member of attribute"
+          "text": "the Member of attribute"
         },
         {
           "label": "C",
-          "Text": "the Office attribute"
+          "text": "the Office attribute"
         },
         {
           "label": "D",
-          "Text": "the Description attribute"
+          "text": "the Description attribute"
         },
         {
           "label": "E",
-          "Text": "Permissions"
+          "text": "Permissions"
         },
         {
           "label": "F",
-          "Text": "Remote Desktop Services Profile"
+          "text": "Remote Desktop Services Profile"
         }
       ],
       "answer": [
@@ -1671,19 +1671,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "B",
-          "Text": "Active Directory Sites and Services"
+          "text": "Active Directory Sites and Services"
         },
         {
           "label": "C",
-          "Text": "Active Directory Domains and Trusts"
+          "text": "Active Directory Domains and Trusts"
         },
         {
           "label": "D",
-          "Text": "Active Directory Federation Services"
+          "text": "Active Directory Federation Services"
         }
       ],
       "answer": [
@@ -1729,11 +1729,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1786,11 +1786,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes "
+          "text": "Yes "
         },
         {
           "label": "B",
-          "Text": "No "
+          "text": "No "
         }
       ],
       "answer": [
@@ -1835,11 +1835,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1880,31 +1880,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Raise the domain functional level of fabrikam.com to Windows Server 2016"
+          "text": "Raise the domain functional level of fabrikam.com to Windows Server 2016"
         },
         {
           "label": "B",
-          "Text": "Modify the scope of Group1 to Domain local"
+          "text": "Modify the scope of Group1 to Domain local"
         },
         {
           "label": "C",
-          "Text": "Assign the Domain Controllers group in fabrikam.com permissions to Group1"
+          "text": "Assign the Domain Controllers group in fabrikam.com permissions to Group1"
         },
         {
           "label": "D",
-          "Text": "Run the Set-LocalGroup cmdlet"
+          "text": "Run the Set-LocalGroup cmdlet"
         },
         {
           "label": "E",
-          "Text": "Change Group1 to a distribution group"
+          "text": "Change Group1 to a distribution group"
         },
         {
           "label": "F",
-          "Text": "Raise the domain functional level of contoso.com to Windows Server 2016"
+          "text": "Raise the domain functional level of contoso.com to Windows Server 2016"
         },
         {
           "label": "G",
-          "Text": "In both domains, run the adprep.exe command and specify the /domainprep parameter "
+          "text": "In both domains, run the adprep.exe command and specify the /domainprep parameter "
         }
       ],
       "answer": [
@@ -1950,11 +1950,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -1995,11 +1995,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2072,19 +2072,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the Object settings for OU1"
+          "text": "Modify the Object settings for OU1"
         },
         {
           "label": "B",
-          "Text": "Add Admin1 to the Enterprise Admins group"
+          "text": "Add Admin1 to the Enterprise Admins group"
         },
         {
           "label": "C",
-          "Text": "Delete Contact1"
+          "text": "Delete Contact1"
         },
         {
           "label": "D",
-          "Text": "Disable the Active Directory Recycle Bin"
+          "text": "Disable the Active Directory Recycle Bin"
         }
       ],
       "answer": [
@@ -2131,19 +2131,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-Date cmdlet."
+          "text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-Date cmdlet."
         },
         {
           "label": "B",
-          "Text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-ADAccountPassword cmdlet."
+          "text": "Run the Get-ADOrganizationalUnit cmdlet and pipe the output to the Set-ADAccountPassword cmdlet."
         },
         {
           "label": "C",
-          "Text": "Run the Get-ADUser cmdlet and pipe the output to the Set-ADAccountExpiration cmdlet."
+          "text": "Run the Get-ADUser cmdlet and pipe the output to the Set-ADAccountExpiration cmdlet."
         },
         {
           "label": "D",
-          "Text": "Create a Group Policy object (GPO) and link the GPO to the Temp OU. Modify the Account Lockout Policy of the GPO."
+          "text": "Create a Group Policy object (GPO) and link the GPO to the Temp OU. Modify the Account Lockout Policy of the GPO."
         }
       ],
       "answer": [
@@ -2186,19 +2186,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Raise the forest functional level"
+          "text": "Raise the forest functional level"
         },
         {
           "label": "B",
-          "Text": "Upgrade all of the domain controllers in the forest"
+          "text": "Upgrade all of the domain controllers in the forest"
         },
         {
           "label": "C",
-          "Text": "Upgrade all of the domain controllers in contoso.com"
+          "text": "Upgrade all of the domain controllers in contoso.com"
         },
         {
           "label": "D",
-          "Text": "Raise the domain functional level of eu.contoso.com"
+          "text": "Raise the domain functional level of eu.contoso.com"
         }
       ],
       "answer": [
@@ -2269,19 +2269,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Add User1 to the Backup Operators group of the domain"
+          "text": "Add User1 to the Backup Operators group of the domain"
         },
         {
           "label": "B",
-          "Text": "Modify the Security Settings of the local Group Policy on Computer1"
+          "text": "Modify the Security Settings of the local Group Policy on Computer1"
         },
         {
           "label": "C",
-          "Text": "Add User1 to the Power Users group on Computer1"
+          "text": "Add User1 to the Power Users group on Computer1"
         },
         {
           "label": "D",
-          "Text": "Add User1 to the Backup Operators group on Computer1"
+          "text": "Add User1 to the Backup Operators group on Computer1"
         }
       ],
       "answer": [
@@ -2340,11 +2340,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2372,11 +2372,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2404,11 +2404,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2445,19 +2445,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the Default Domain Policy and enable the Accounts: Administrator Account status setting."
+          "text": "Modify the Default Domain Policy and enable the Accounts: Administrator Account status setting."
         },
         {
           "label": "B",
-          "Text": "Modify the Default Domain Policy and configure the Restricted Groups setting."
+          "text": "Modify the Default Domain Policy and configure the Restricted Groups setting."
         },
         {
           "label": "C",
-          "Text": "Modify the Default Domain Controllers Policy and enable the Accounts: Administrator account status setting."
+          "text": "Modify the Default Domain Controllers Policy and enable the Accounts: Administrator account status setting."
         },
         {
           "label": "D",
-          "Text": "Modify the Default Domain Controllers Policy and configure the Restricted Groups setting."
+          "text": "Modify the Default Domain Controllers Policy and configure the Restricted Groups setting."
         }
       ],
       "answer": [
@@ -2491,19 +2491,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the scope of Group1 to Universal."
+          "text": "Modify the scope of Group1 to Universal."
         },
         {
           "label": "B",
-          "Text": "Raise the domain functional level contoso.com to Windows Server 2016."
+          "text": "Raise the domain functional level contoso.com to Windows Server 2016."
         },
         {
           "label": "C",
-          "Text": "Run the Set-LocalGroup cmdlet."
+          "text": "Run the Set-LocalGroup cmdlet."
         },
         {
           "label": "D",
-          "Text": "Change Group1 to a distribution group."
+          "text": "Change Group1 to a distribution group."
         }
       ],
       "answer": [
@@ -2533,11 +2533,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2574,35 +2574,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -2645,35 +2645,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -2720,19 +2720,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create an external trust from fabrikam.com to contoso.com. Enable Active Directory split permissions in fabrikam.com."
+          "text": "Create an external trust from fabrikam.com to contoso.com. Enable Active Directory split permissions in fabrikam.com."
         },
         {
           "label": "B",
-          "Text": "Create an external trust from contoso.com to fabrikam.com. Enable Active Directory split permissions in contoso.com."
+          "text": "Create an external trust from contoso.com to fabrikam.com. Enable Active Directory split permissions in contoso.com."
         },
         {
           "label": "C",
-          "Text": "Create a one-way forest trust from contoso.com to fabrikam.com that uses selective authentication."
+          "text": "Create a one-way forest trust from contoso.com to fabrikam.com that uses selective authentication."
         },
         {
           "label": "D",
-          "Text": "Create a one-way forest trust from fabrikam.com to contoso.com that uses selective authentication."
+          "text": "Create a one-way forest trust from fabrikam.com to contoso.com that uses selective authentication."
         }
       ],
       "answer": [
@@ -2766,11 +2766,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2798,35 +2798,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -2864,11 +2864,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -2908,19 +2908,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run the Enable-ADAccount cmdlet from Windows PowerShell."
+          "text": "Run the Enable-ADAccount cmdlet from Windows PowerShell."
         },
         {
           "label": "B",
-          "Text": "Perform an authoritative restore by running ntdutil.exe."
+          "text": "Perform an authoritative restore by running ntdutil.exe."
         },
         {
           "label": "C",
-          "Text": "Perform a tombstone reanimation by running ldp.exe."
+          "text": "Perform a tombstone reanimation by running ldp.exe."
         },
         {
           "label": "D",
-          "Text": "Recover a deleted object from the Active Directory Recycle Bin."
+          "text": "Recover a deleted object from the Active Directory Recycle Bin."
         }
       ],
       "answer": [
@@ -2954,35 +2954,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -3032,19 +3032,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Windows PowerShell, run the Set-ADReplicationSite cmdlet."
+          "text": "From Windows PowerShell, run the Set-ADReplicationSite cmdlet."
         },
         {
           "label": "B",
-          "Text": "From Active Directory Users and Computers, modify the Location Property of Server2."
+          "text": "From Active Directory Users and Computers, modify the Location Property of Server2."
         },
         {
           "label": "C",
-          "Text": "From Network Connections on Server2, modify the Internet Protocol Version 4 (TCP/IPv4) configuration."
+          "text": "From Network Connections on Server2, modify the Internet Protocol Version 4 (TCP/IPv4) configuration."
         },
         {
           "label": "D",
-          "Text": "From Windows PowerShell, run the Move-ADDirectoryServer cmdlet."
+          "text": "From Windows PowerShell, run the Move-ADDirectoryServer cmdlet."
         }
       ],
       "answer": [
@@ -3082,31 +3082,31 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Rdspnf"
+          "text": "Rdspnf"
         },
         {
           "label": "B",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "C",
-          "Text": "Dnscmd"
+          "text": "Dnscmd"
         },
         {
           "label": "D",
-          "Text": "Ldifde"
+          "text": "Ldifde"
         },
         {
           "label": "E",
-          "Text": "Netsh"
+          "text": "Netsh"
         },
         {
           "label": "F",
-          "Text": "Internet Information Services (IIS) Manager"
+          "text": "Internet Information Services (IIS) Manager"
         },
         {
           "label": "G",
-          "Text": "Repladmin "
+          "text": "Repladmin "
         }
       ],
       "answer": [
@@ -3168,11 +3168,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3224,11 +3224,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3264,11 +3264,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3304,11 +3304,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3344,11 +3344,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3384,11 +3384,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3437,11 +3437,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3482,19 +3482,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create a forms authentication provider, and then set the forms authentication credentials."
+          "text": "Create a forms authentication provider, and then set the forms authentication credentials."
         },
         {
           "label": "B",
-          "Text": "From Active Directory Administrative Center, create a Password Setting object (PSO)."
+          "text": "From Active Directory Administrative Center, create a Password Setting object (PSO)."
         },
         {
           "label": "C",
-          "Text": "Modify the Password Policy settings in a Group Policy object (GPO) that is linked to the domain, and then filter the GPO to Group1 only."
+          "text": "Modify the Password Policy settings in a Group Policy object (GPO) that is linked to the domain, and then filter the GPO to Group1 only."
         },
         {
           "label": "D",
-          "Text": "From Windows PowerShell, run the Set-ADDomain cmdlet, and then run the Set-ADAccountPassword cmdlet."
+          "text": "From Windows PowerShell, run the Set-ADDomain cmdlet, and then run the Set-ADAccountPassword cmdlet."
         }
       ],
       "answer": [
@@ -3540,19 +3540,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "The Default Domain Controllers Policy"
+          "text": "The Default Domain Controllers Policy"
         },
         {
           "label": "B",
-          "Text": "The local policy on each client computer"
+          "text": "The local policy on each client computer"
         },
         {
           "label": "C",
-          "Text": "The Default Domain Policy"
+          "text": "The Default Domain Policy"
         },
         {
           "label": "D",
-          "Text": "The local policy on each domain controller"
+          "text": "The local policy on each domain controller"
         }
       ],
       "answer": [
@@ -3586,19 +3586,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Windows PowerShell, run the Install-ADServiceAccount cmdlet."
+          "text": "From Windows PowerShell, run the Install-ADServiceAccount cmdlet."
         },
         {
           "label": "B",
-          "Text": "From the Services console, modify the Log On properties of the services."
+          "text": "From the Services console, modify the Log On properties of the services."
         },
         {
           "label": "C",
-          "Text": "From the Microsoft Application Compatibility Toolkit (ACT), create a shim."
+          "text": "From the Microsoft Application Compatibility Toolkit (ACT), create a shim."
         },
         {
           "label": "D",
-          "Text": "From Windows PowerShell, run the New-ADServiceAccount cmdlet."
+          "text": "From Windows PowerShell, run the New-ADServiceAccount cmdlet."
         }
       ],
       "answer": [
@@ -3632,11 +3632,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3668,11 +3668,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3704,19 +3704,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "repadmin.exe"
+          "text": "repadmin.exe"
         },
         {
           "label": "B",
-          "Text": "ntdsutil.exe"
+          "text": "ntdsutil.exe"
         },
         {
           "label": "C",
-          "Text": "dcdiag.exe"
+          "text": "dcdiag.exe"
         },
         {
           "label": "D",
-          "Text": "netdom.exe"
+          "text": "netdom.exe"
         }
       ],
       "answer": [
@@ -3759,19 +3759,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From a Group Policy Management, create and link a Group Policy object (GPO) to OU_Research. Modify the password policy in the GPO."
+          "text": "From a Group Policy Management, create and link a Group Policy object (GPO) to OU_Research. Modify the password policy in the GPO."
         },
         {
           "label": "B",
-          "Text": "From a Group Policy Management, create and link a Group Policy object (GPO) to the domain. Modify the password policy in the GPO. Filter the GPO to apply to G_Research only."
+          "text": "From a Group Policy Management, create and link a Group Policy object (GPO) to the domain. Modify the password policy in the GPO. Filter the GPO to apply to G_Research only."
         },
         {
           "label": "C",
-          "Text": "From Active Directory Users and Computers, modify the properties of the Password Settings Container."
+          "text": "From Active Directory Users and Computers, modify the properties of the Password Settings Container."
         },
         {
           "label": "D",
-          "Text": "From Active Directory Administrative Center, create a new Password Settings object (PSO)."
+          "text": "From Active Directory Administrative Center, create a new Password Settings object (PSO)."
         }
       ],
       "answer": [
@@ -3805,19 +3805,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "an external trust"
+          "text": "an external trust"
         },
         {
           "label": "B",
-          "Text": "a realm trust"
+          "text": "a realm trust"
         },
         {
           "label": "C",
-          "Text": "Active Directory Federation Services (AD FS)"
+          "text": "Active Directory Federation Services (AD FS)"
         },
         {
           "label": "D",
-          "Text": "a Web Application Proxy"
+          "text": "a Web Application Proxy"
         }
       ],
       "answer": [
@@ -3868,11 +3868,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3908,11 +3908,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3948,11 +3948,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -3996,11 +3996,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -4032,11 +4032,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -4080,19 +4080,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "On Server1, modify the properties of Service1."
+          "text": "On Server1, modify the properties of Service1."
         },
         {
           "label": "B",
-          "Text": "On DC1, run Add-ADComputerServiceAccount."
+          "text": "On DC1, run Add-ADComputerServiceAccount."
         },
         {
           "label": "C",
-          "Text": "On DC1, run New-ADServiceAccount."
+          "text": "On DC1, run New-ADServiceAccount."
         },
         {
           "label": "D",
-          "Text": "On DC1, run Add-KDSRootKey."
+          "text": "On DC1, run Add-KDSRootKey."
         }
       ],
       "answer": [
@@ -4126,35 +4126,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Dsadd quota"
+          "text": "Dsadd quota"
         },
         {
           "label": "B",
-          "Text": "Dsmod"
+          "text": "Dsmod"
         },
         {
           "label": "C",
-          "Text": "Active Directory Administrative Center"
+          "text": "Active Directory Administrative Center"
         },
         {
           "label": "D",
-          "Text": "Dsacls"
+          "text": "Dsacls"
         },
         {
           "label": "E",
-          "Text": "Dsamain"
+          "text": "Dsamain"
         },
         {
           "label": "F",
-          "Text": "Active Directory Users and Computers"
+          "text": "Active Directory Users and Computers"
         },
         {
           "label": "G",
-          "Text": "Ntdsutil"
+          "text": "Ntdsutil"
         },
         {
           "label": "H",
-          "Text": "Group Policy Management Console"
+          "text": "Group Policy Management Console"
         }
       ],
       "answer": [
@@ -4201,19 +4201,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "In GPO1, create a File preference that uses item-level targeting."
+          "text": "In GPO1, create a File preference that uses item-level targeting."
         },
         {
           "label": "B",
-          "Text": "In GPO1, create a Scheduled Tasks preference that uses item-level targeting."
+          "text": "In GPO1, create a Scheduled Tasks preference that uses item-level targeting."
         },
         {
           "label": "C",
-          "Text": "In GPO1, configure the File System security policy. Attach a WMI filter to GPO1."
+          "text": "In GPO1, configure the File System security policy. Attach a WMI filter to GPO1."
         },
         {
           "label": "D",
-          "Text": "In GPO1, add Script1.ps1 as a startup script. Attach a WMI filter to GPO1."
+          "text": "In GPO1, add Script1.ps1 as a startup script. Attach a WMI filter to GPO1."
         }
       ],
       "answer": [
@@ -4247,23 +4247,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Add Tech1 to the Group Policy Creator Owners group."
+          "text": "Add Tech1 to the Group Policy Creator Owners group."
         },
         {
           "label": "B",
-          "Text": "From Group Policy Management, modify the Delegation settings of the TestOU OU."
+          "text": "From Group Policy Management, modify the Delegation settings of the TestOU OU."
         },
         {
           "label": "C",
-          "Text": "Add Tech1 to the Protected Users group."
+          "text": "Add Tech1 to the Protected Users group."
         },
         {
           "label": "D",
-          "Text": "From Group Policy Management, modify the Delegation settings of the contoso.com container."
+          "text": "From Group Policy Management, modify the Delegation settings of the contoso.com container."
         },
         {
           "label": "E",
-          "Text": "Create a new universal security group and add Tech1 to the group."
+          "text": "Create a new universal security group and add Tech1 to the group."
         }
       ],
       "answer": [
@@ -4315,19 +4315,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Group Policy Management, click Starter GPOs, and then click Manage Backups."
+          "text": "From Group Policy Management, click Starter GPOs, and then click Manage Backups."
         },
         {
           "label": "B",
-          "Text": "From a command prompt, run the dcgpofix.exe command."
+          "text": "From a command prompt, run the dcgpofix.exe command."
         },
         {
           "label": "C",
-          "Text": "From Windows PowerShell, run the Copy-GPO cmdlet."
+          "text": "From Windows PowerShell, run the Copy-GPO cmdlet."
         },
         {
           "label": "D",
-          "Text": "Run ntdsutil.exe to perform a metadata cleanup and a semantic database analysis."
+          "text": "Run ntdsutil.exe to perform a metadata cleanup and a semantic database analysis."
         }
       ],
       "answer": [
@@ -4369,19 +4369,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create a Config.zap file and add a file to the File System node to the Computer Configuration node of GPO1."
+          "text": "Create a Config.zap file and add a file to the File System node to the Computer Configuration node of GPO1."
         },
         {
           "label": "B",
-          "Text": "Create a Config.xml file and add a software installation package to the User Configuration node of GPO1. "
+          "text": "Create a Config.xml file and add a software installation package to the User Configuration node of GPO1. "
         },
         {
           "label": "C",
-          "Text": "C. Create a Config.zap file and add a software installation package to the User Configuration node of GPO1."
+          "text": "C. Create a Config.zap file and add a software installation package to the User Configuration node of GPO1."
         },
         {
           "label": "D",
-          "Text": "Create a Config.xml file and add a software installation package to the Computer Configuration node of GPO1."
+          "text": "Create a Config.xml file and add a software installation package to the Computer Configuration node of GPO1."
         }
       ],
       "answer": [
@@ -4419,19 +4419,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Link the A2 GPO to the domain."
+          "text": "Link the A2 GPO to the domain."
         },
         {
           "label": "B",
-          "Text": "Modify the policy processing order for contoso.com."
+          "text": "Modify the policy processing order for contoso.com."
         },
         {
           "label": "C",
-          "Text": "Modify the policy processing order OU1."
+          "text": "Modify the policy processing order OU1."
         },
         {
           "label": "D",
-          "Text": "Modify the GPO Status of A1."
+          "text": "Modify the GPO Status of A1."
         }
       ],
       "answer": [
@@ -4478,19 +4478,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "a user preference and a WMI filter on GPO1."
+          "text": "a user preference and a WMI filter on GPO1."
         },
         {
           "label": "B",
-          "Text": "a computer preference that uses item-level targeting"
+          "text": "a computer preference that uses item-level targeting"
         },
         {
           "label": "C",
-          "Text": "a computer preference and WMI filter on GPO1"
+          "text": "a computer preference and WMI filter on GPO1"
         },
         {
           "label": "D",
-          "Text": "a user preference that uses item-level targeting"
+          "text": "a user preference that uses item-level targeting"
         }
       ],
       "answer": [
@@ -4524,35 +4524,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "B",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
         },
         {
           "label": "C",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "D",
-          "Text": "From the User Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the User Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "E",
-          "Text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
+          "text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
         },
         {
           "label": "F",
-          "Text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "G",
-          "Text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
         },
         {
           "label": "H",
-          "Text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
         }
       ],
       "answer": [
@@ -4590,35 +4590,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "B",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
         },
         {
           "label": "C",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "D",
-          "Text": "From the User Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the User Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "E",
-          "Text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
+          "text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
         },
         {
           "label": "F",
-          "Text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "G",
-          "Text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
         },
         {
           "label": "H",
-          "Text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
         }
       ],
       "answer": [
@@ -4656,35 +4656,35 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "B",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Security Settings."
         },
         {
           "label": "C",
-          "Text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From the Computer Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "D",
-          "Text": "From the User Configuration node of DCPolicy, modify Security Settings."
+          "text": "From the User Configuration node of DCPolicy, modify Security Settings."
         },
         {
           "label": "E",
-          "Text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
+          "text": "From the User Configuration node of DomainPolicy, modify Folder Redirection."
         },
         {
           "label": "F",
-          "Text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
+          "text": "From user Configuration node of DomainPolicy, modify Administrative Templates."
         },
         {
           "label": "G",
-          "Text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the User Configuration node of DomainPolicy, modify Windows Settings."
         },
         {
           "label": "H",
-          "Text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
+          "text": "From Preferences in the Computer Configuration node of DomainPolicy, modify Windows Settings."
         }
       ],
       "answer": [
@@ -4734,19 +4734,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "A1, A5, and A6"
+          "text": "A1, A5, and A6"
         },
         {
           "label": "B",
-          "Text": "A3, A1, A5, and A7"
+          "text": "A3, A1, A5, and A7"
         },
         {
           "label": "C",
-          "Text": "A3 and A7 only"
+          "text": "A3 and A7 only"
         },
         {
           "label": "D",
-          "Text": "A7 only"
+          "text": "A7 only"
         }
       ],
       "answer": [
@@ -4792,19 +4792,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "A1 and A5 only"
+          "text": "A1 and A5 only"
         },
         {
           "label": "B",
-          "Text": "A3, A1, and A5 only"
+          "text": "A3, A1, and A5 only"
         },
         {
           "label": "C",
-          "Text": "A3, A1, A5, and A4 only"
+          "text": "A3, A1, A5, and A4 only"
         },
         {
           "label": "D",
-          "Text": "A3, A1, A5, and A7"
+          "text": "A3, A1, A5, and A7"
         }
       ],
       "answer": [
@@ -4838,19 +4838,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the security settings of User1."
+          "text": "Modify the security settings of User1."
         },
         {
           "label": "B",
-          "Text": "Add User1 to the Group Policy Creator Owner group."
+          "text": "Add User1 to the Group Policy Creator Owner group."
         },
         {
           "label": "C",
-          "Text": "Modify the security settings of OU1."
+          "text": "Modify the security settings of OU1."
         },
         {
           "label": "D",
-          "Text": "Modify the security settings of GPO1."
+          "text": "Modify the security settings of GPO1."
         }
       ],
       "answer": [
@@ -4880,19 +4880,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). Run dcdiag.exe for each domain controller."
+          "text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). Run dcdiag.exe for each domain controller."
         },
         {
           "label": "B",
-          "Text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). View the Directory Service event log."
+          "text": "Set BurFlags in the registry, and then restart the File Replication Service (FRS). View the Directory Service event log."
         },
         {
           "label": "C",
-          "Text": "From Group Policy Management, view the Status tab for the domain."
+          "text": "From Group Policy Management, view the Status tab for the domain."
         },
         {
           "label": "D",
-          "Text": "Run repadmin.exe for each GPO."
+          "text": "Run repadmin.exe for each GPO."
         }
       ],
       "answer": [
@@ -4942,19 +4942,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the User Configuration node of GPO1, create an Internet Setting preference."
+          "text": "From the User Configuration node of GPO1, create an Internet Setting preference."
         },
         {
           "label": "B",
-          "Text": "From the User Configuration node of GPO1, configure the Certificate Services Client - Auto-enrollment settings."
+          "text": "From the User Configuration node of GPO1, configure the Certificate Services Client - Auto-enrollment settings."
         },
         {
           "label": "C",
-          "Text": "From the Computer Configuration node of GPO2, configure the Certificate Services Client - Certificate Enrollment Policy settings."
+          "text": "From the Computer Configuration node of GPO2, configure the Certificate Services Client - Certificate Enrollment Policy settings."
         },
         {
           "label": "D",
-          "Text": "From the Computer Configuration node of GPO2, create the Automatic Certificate Request Settings."
+          "text": "From the Computer Configuration node of GPO2, create the Automatic Certificate Request Settings."
         }
       ],
       "answer": [
@@ -4992,19 +4992,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Click Configure server discovery in Server Manager."
+          "text": "Click Configure server discovery in Server Manager."
         },
         {
           "label": "B",
-          "Text": "Run the Set-IpamConfiguration cmdlet."
+          "text": "Run the Set-IpamConfiguration cmdlet."
         },
         {
           "label": "C",
-          "Text": "Run the Invoke-IpamGpoProvisioning cmdlet."
+          "text": "Run the Invoke-IpamGpoProvisioning cmdlet."
         },
         {
           "label": "D",
-          "Text": "Click Provision the IPAM server in Server Manager."
+          "text": "Click Provision the IPAM server in Server Manager."
         }
       ],
       "answer": [
@@ -5047,19 +5047,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From File Explorer, copy the administrative templates from \\\\contoso.com\\SYSVOL\\contoso.com\\Policies to the PolicyDefinitions folder on Server1."
+          "text": "From File Explorer, copy the administrative templates from \\\\contoso.com\\SYSVOL\\contoso.com\\Policies to the PolicyDefinitions folder on Server1."
         },
         {
           "label": "B",
-          "Text": "From File Explorer, delete \\\\contoso.com\\SYSVOL\\contoso.com\\Policies\\PolicyDefinitions."
+          "text": "From File Explorer, delete \\\\contoso.com\\SYSVOL\\contoso.com\\Policies\\PolicyDefinitions."
         },
         {
           "label": "C",
-          "Text": "From File Explorer, delete the PolicyDefinitions folder from Server1."
+          "text": "From File Explorer, delete the PolicyDefinitions folder from Server1."
         },
         {
           "label": "D",
-          "Text": "From Group Policy Management Editor, configure the Filter Options for GPO1."
+          "text": "From Group Policy Management Editor, configure the Filter Options for GPO1."
         }
       ],
       "answer": [
@@ -5097,11 +5097,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5137,11 +5137,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5177,11 +5177,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5213,11 +5213,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5258,11 +5258,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5294,11 +5294,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5330,11 +5330,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -5370,19 +5370,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "WMI Filtering"
+          "text": "WMI Filtering"
         },
         {
           "label": "B",
-          "Text": "Item-level targeting"
+          "text": "Item-level targeting"
         },
         {
           "label": "C",
-          "Text": "Security Settings"
+          "text": "Security Settings"
         },
         {
           "label": "D",
-          "Text": "Security Filtering"
+          "text": "Security Filtering"
         }
       ],
       "answer": [
@@ -5424,19 +5424,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Computer Configuration/Policies/Administrative Templates/Network/network Connections"
+          "text": "Computer Configuration/Policies/Administrative Templates/Network/network Connections"
         },
         {
           "label": "B",
-          "Text": "User Configuration/Policies/Administrative Templates/Network/Network Connections"
+          "text": "User Configuration/Policies/Administrative Templates/Network/Network Connections"
         },
         {
           "label": "C",
-          "Text": "User Configuration/Preferences/Control Panel Settings/Network Options"
+          "text": "User Configuration/Preferences/Control Panel Settings/Network Options"
         },
         {
           "label": "D",
-          "Text": "Computer Configuration/Preferences/Control Panel Settings/Network Options"
+          "text": "Computer Configuration/Preferences/Control Panel Settings/Network Options"
         }
       ],
       "answer": [
@@ -5470,19 +5470,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the User Configuration node of GPO1, configure the Folder Redirection settings. Link a WMI filter to GPO1."
+          "text": "From the User Configuration node of GPO1, configure the Folder Redirection settings. Link a WMI filter to GPO1."
         },
         {
           "label": "B",
-          "Text": "From the Computer Configuration node of GPO1, configure the Network Connections settings. Link a WMI filter to GPO1."
+          "text": "From the Computer Configuration node of GPO1, configure the Network Connections settings. Link a WMI filter to GPO1."
         },
         {
           "label": "C",
-          "Text": "From the User Configuration node of GPO1, create a Group Policy preference that uses item-level targeting."
+          "text": "From the User Configuration node of GPO1, create a Group Policy preference that uses item-level targeting."
         },
         {
           "label": "D",
-          "Text": "From the Computer Configuration node of GPO1, create a Group Policy preference that uses item-level targeting."
+          "text": "From the Computer Configuration node of GPO1, create a Group Policy preference that uses item-level targeting."
         }
       ],
       "answer": [
@@ -5520,19 +5520,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From each client computer, run the gpresult.exe command and specify the /r parameter."
+          "text": "From each client computer, run the gpresult.exe command and specify the /r parameter."
         },
         {
           "label": "B",
-          "Text": "From a domain controller, run the gpupdate.exe command and specify the Force parameter."
+          "text": "From a domain controller, run the gpupdate.exe command and specify the Force parameter."
         },
         {
           "label": "C",
-          "Text": "From a domain controller, run the Invoke-GPUpdate cmdlet."
+          "text": "From a domain controller, run the Invoke-GPUpdate cmdlet."
         },
         {
           "label": "D",
-          "Text": "From each client, run the Get-Gpo cmdlet and specify the –all parameter."
+          "text": "From each client, run the Get-Gpo cmdlet and specify the –all parameter."
         }
       ],
       "answer": [
@@ -5570,23 +5570,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Back up Cont_GPO1. In fabrikam.com, create and link a new GPO by using the Group Policy Management Console (GPMC), and then run the Import Settings Wizard."
+          "text": "Back up Cont_GPO1. In fabrikam.com, create and link a new GPO by using the Group Policy Management Console (GPMC), and then run the Import Settings Wizard."
         },
         {
           "label": "B",
-          "Text": "Back up Cont_GPO1. In fabrikam.com, run the Restore-GPO cmdlet, and then run the New-GPLink cmdlet."
+          "text": "Back up Cont_GPO1. In fabrikam.com, run the Restore-GPO cmdlet, and then run the New-GPLink cmdlet."
         },
         {
           "label": "C",
-          "Text": "Back up Cont_GPO1. In fabrikam.com run the Import-GPO cmdlet, and then run the New-GPLink cmdlet."
+          "text": "Back up Cont_GPO1. In fabrikam.com run the Import-GPO cmdlet, and then run the New-GPLink cmdlet."
         },
         {
           "label": "D",
-          "Text": "Copy\\\\contoso.com\\SysVol\\contoso.com\\Policies to \\\\fabrikam.com\\SysVol\\ fabrikam.com\\Policies. In fabrikam.com, run the New-GPLink cmdlet."
+          "text": "Copy\\\\contoso.com\\SysVol\\contoso.com\\Policies to \\\\fabrikam.com\\SysVol\\ fabrikam.com\\Policies. In fabrikam.com, run the New-GPLink cmdlet."
         },
         {
           "label": "E",
-          "Text": "Back up Cont_GPO1. In fabrikam.com, create and link a new GPO by using the Group Policy Management Console (GPMC), and then run the Restore Group Policy Object Wizard."
+          "text": "Back up Cont_GPO1. In fabrikam.com, create and link a new GPO by using the Group Policy Management Console (GPMC), and then run the Restore Group Policy Object Wizard."
         }
       ],
       "answer": [
@@ -5633,19 +5633,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "A1 and A7 only"
+          "text": "A1 and A7 only"
         },
         {
           "label": "B",
-          "Text": "A3, A1, A5, A6 and A7"
+          "text": "A3, A1, A5, A6 and A7"
         },
         {
           "label": "C",
-          "Text": "A3, A5, A1, and A7 only"
+          "text": "A3, A5, A1, and A7 only"
         },
         {
           "label": "D",
-          "Text": "A7 only"
+          "text": "A7 only"
         }
       ],
       "answer": [
@@ -5688,19 +5688,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Configure Software Settings in a Group Policy object (GPO) and enable a WMI filter."
+          "text": "Configure Software Settings in a Group Policy object (GPO) and enable a WMI filter."
         },
         {
           "label": "B",
-          "Text": "Configure a Group Policy setting to modify the security of the LocalStorage registry value."
+          "text": "Configure a Group Policy setting to modify the security of the LocalStorage registry value."
         },
         {
           "label": "C",
-          "Text": "Create an administrative template file that contains the LocalStorage registry setting, and then add the administrative template to a Group Policy object (GPO)."
+          "text": "Create an administrative template file that contains the LocalStorage registry setting, and then add the administrative template to a Group Policy object (GPO)."
         },
         {
           "label": "D",
-          "Text": "Configure a Group Policy preference that uses item-level targeting."
+          "text": "Configure a Group Policy preference that uses item-level targeting."
         }
       ],
       "answer": [
@@ -5743,19 +5743,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Right-click FileServersOU and click Group Policy Update…"
+          "text": "Right-click FileServersOU and click Group Policy Update…"
         },
         {
           "label": "B",
-          "Text": "Right-click the GPO link for GPO1 and click Enforced."
+          "text": "Right-click the GPO link for GPO1 and click Enforced."
         },
         {
           "label": "C",
-          "Text": "Right-click Group Policy Results and click Group Policy Results Wizard…"
+          "text": "Right-click Group Policy Results and click Group Policy Results Wizard…"
         },
         {
           "label": "D",
-          "Text": "Right-click FileServersOU and click Refresh."
+          "text": "Right-click FileServersOU and click Refresh."
         }
       ],
       "answer": [
@@ -5805,19 +5805,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "A1, A5, A6 and A4"
+          "text": "A1, A5, A6 and A4"
         },
         {
           "label": "B",
-          "Text": "A3, A1, A4, and A7"
+          "text": "A3, A1, A4, and A7"
         },
         {
           "label": "C",
-          "Text": "A3, A1, A5 and A4 "
+          "text": "A3, A1, A5 and A4 "
         },
         {
           "label": "D",
-          "Text": "A4 only"
+          "text": "A4 only"
         }
       ],
       "answer": [
@@ -5847,19 +5847,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Open Local Group Policy Editor. From the View menu, modify the Customize settings."
+          "text": "Open Local Group Policy Editor. From the View menu, modify the Customize settings."
         },
         {
           "label": "B",
-          "Text": "Open Local Group Policy Editor. From the File menu, modify the Options settings."
+          "text": "Open Local Group Policy Editor. From the File menu, modify the Options settings."
         },
         {
           "label": "C",
-          "Text": "Open Local Users and Groups. Create a new group. Run New-GPO."
+          "text": "Open Local Users and Groups. Create a new group. Run New-GPO."
         },
         {
           "label": "D",
-          "Text": "Run mmc.exe. Add the Group Policy Object Editor snap-in and change the Group Policy object (GPO)."
+          "text": "Run mmc.exe. Add the Group Policy Object Editor snap-in and change the Group Policy object (GPO)."
         }
       ],
       "answer": [
@@ -5902,27 +5902,27 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Group Policy Management, click Default Domain Policy under Contoso.com, and then open the Scope tab."
+          "text": "From Group Policy Management, click Default Domain Policy under Contoso.com, and then open the Scope tab."
         },
         {
           "label": "B",
-          "Text": "From a command prompt, run dcdiag.exe."
+          "text": "From a command prompt, run dcdiag.exe."
         },
         {
           "label": "C",
-          "Text": "From a command prompt, run repadmin.exe."
+          "text": "From a command prompt, run repadmin.exe."
         },
         {
           "label": "D",
-          "Text": "From Windows PowerShell, run the Get-GPOReport cmdlet."
+          "text": "From Windows PowerShell, run the Get-GPOReport cmdlet."
         },
         {
           "label": "E",
-          "Text": "From Group Policy Management, click Default Domain Policy under Contoso.com, and then open the Details tab."
+          "text": "From Group Policy Management, click Default Domain Policy under Contoso.com, and then open the Details tab."
         },
         {
           "label": "F",
-          "Text": "From a command prompt, run gpresult.exe."
+          "text": "From a command prompt, run gpresult.exe."
         }
       ],
       "answer": [
@@ -5958,23 +5958,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Security Group"
+          "text": "Security Group"
         },
         {
           "label": "B",
-          "Text": "Processing Mode"
+          "text": "Processing Mode"
         },
         {
           "label": "C",
-          "Text": "Operating System"
+          "text": "Operating System"
         },
         {
           "label": "D",
-          "Text": "Environment Variable"
+          "text": "Environment Variable"
         },
         {
           "label": "E",
-          "Text": "Domain"
+          "text": "Domain"
         }
       ],
       "answer": [
@@ -6022,19 +6022,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Link an existing GPO from the domain to OU1"
+          "text": "Link an existing GPO from the domain to OU1"
         },
         {
           "label": "B",
-          "Text": "Create a new GPO and link the GPO to OU1"
+          "text": "Create a new GPO and link the GPO to OU1"
         },
         {
           "label": "C",
-          "Text": "Add an administrative template to GPO1"
+          "text": "Add an administrative template to GPO1"
         },
         {
           "label": "D",
-          "Text": "Edit the User Rights Assignment in GPO1"
+          "text": "Edit the User Rights Assignment in GPO1"
         }
       ],
       "answer": [
@@ -6076,19 +6076,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Enable the link of GPO1"
+          "text": "Enable the link of GPO1"
         },
         {
           "label": "B",
-          "Text": "Enforce GPO1"
+          "text": "Enforce GPO1"
         },
         {
           "label": "C",
-          "Text": "Disable Block inheritance"
+          "text": "Disable Block inheritance"
         },
         {
           "label": "D",
-          "Text": "Remove the security filtering"
+          "text": "Remove the security filtering"
         }
       ],
       "answer": [
@@ -6139,19 +6139,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "1"
+          "text": "1"
         },
         {
           "label": "B",
-          "Text": "2"
+          "text": "2"
         },
         {
           "label": "C",
-          "Text": "3"
+          "text": "3"
         },
         {
           "label": "D",
-          "Text": "4"
+          "text": "4"
         }
       ],
       "answer": [
@@ -6181,19 +6181,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "secedit with the /configure switch"
+          "text": "secedit with the /configure switch"
         },
         {
           "label": "B",
-          "Text": "Invoke-Gpupdate with the –Boot switch"
+          "text": "Invoke-Gpupdate with the –Boot switch"
         },
         {
           "label": "C",
-          "Text": "gpupdate with the /force switch"
+          "text": "gpupdate with the /force switch"
         },
         {
           "label": "D",
-          "Text": "Invoke-Gpupdate with the –Sync switch"
+          "text": "Invoke-Gpupdate with the –Sync switch"
         }
       ],
       "answer": [
@@ -6240,19 +6240,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the members of the Group Policy Creator Owners group."
+          "text": "Modify the members of the Group Policy Creator Owners group."
         },
         {
           "label": "B",
-          "Text": "Configure the Group Policy filtering options."
+          "text": "Configure the Group Policy filtering options."
         },
         {
           "label": "C",
-          "Text": "On DC1, delete the PolicyDefinitions folder from the C:\\Windows\\SYSVOL\\sysvol\\Contoso.com\\Policies folder."
+          "text": "On DC1, delete the PolicyDefinitions folder from the C:\\Windows\\SYSVOL\\sysvol\\Contoso.com\\Policies folder."
         },
         {
           "label": "D",
-          "Text": "On DC1, delete the PolicyDefinitions folder from C:\\Windows."
+          "text": "On DC1, delete the PolicyDefinitions folder from C:\\Windows."
         }
       ],
       "answer": [
@@ -6290,19 +6290,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "The permissions on GPO1"
+          "text": "The permissions on GPO1"
         },
         {
           "label": "B",
-          "Text": "The Enforced setting of GPO1"
+          "text": "The Enforced setting of GPO1"
         },
         {
           "label": "C",
-          "Text": "The permissions on the Computers container"
+          "text": "The permissions on the Computers container"
         },
         {
           "label": "D",
-          "Text": "The permissions on the domain object of contoso.com"
+          "text": "The permissions on the domain object of contoso.com"
         }
       ],
       "answer": [
@@ -6340,19 +6340,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Group Policy Management Editor, configure item-level targeting in GPO1."
+          "text": "From Group Policy Management Editor, configure item-level targeting in GPO1."
         },
         {
           "label": "B",
-          "Text": "From File Explorer, delete \\\\contoso.com\\SYSVOL\\contoso.com\\Policies\\PolicyDefinitions."
+          "text": "From File Explorer, delete \\\\contoso.com\\SYSVOL\\contoso.com\\Policies\\PolicyDefinitions."
         },
         {
           "label": "C",
-          "Text": "From Group Policy Management, configure Security Filtering for GPO1."
+          "text": "From Group Policy Management, configure Security Filtering for GPO1."
         },
         {
           "label": "D",
-          "Text": "From Group Policy Management Editor, configure the Filter Options for GPO1."
+          "text": "From Group Policy Management Editor, configure the Filter Options for GPO1."
         }
       ],
       "answer": [
@@ -6390,19 +6390,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Link the A2 GPO to the domain."
+          "text": "Link the A2 GPO to the domain."
         },
         {
           "label": "B",
-          "Text": "Configure the Enforced setting for the A1 link on OU1."
+          "text": "Configure the Enforced setting for the A1 link on OU1."
         },
         {
           "label": "C",
-          "Text": "Modify Security Settings for A1."
+          "text": "Modify Security Settings for A1."
         },
         {
           "label": "D",
-          "Text": "Block inheritance on OU1."
+          "text": "Block inheritance on OU1."
         }
       ],
       "answer": [
@@ -6441,19 +6441,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create a Group Policy object (GPO) linked to OU1. Modify the Computer Configuration\\Windows Settings\\Security Settings\\Local Policies\\User Rights Assignment settings."
+          "text": "Create a Group Policy object (GPO) linked to OU1. Modify the Computer Configuration\\Windows Settings\\Security Settings\\Local Policies\\User Rights Assignment settings."
         },
         {
           "label": "B",
-          "Text": "On each new server deployed to OU1, configure Computer Configuration\\Policies\\Windows Settings\\Security Settings for Local Computer Policy\\NonAdministrators Policy."
+          "text": "On each new server deployed to OU1, configure Computer Configuration\\Policies\\Windows Settings\\Security Settings for Local Computer Policy\\NonAdministrators Policy."
         },
         {
           "label": "C",
-          "Text": "Create a Group Policy object (GPO) linked to OU1. Modify the Computer Configuration\\Policies\\Windows Settings\\Security Settings\\System Services settings."
+          "text": "Create a Group Policy object (GPO) linked to OU1. Modify the Computer Configuration\\Policies\\Windows Settings\\Security Settings\\System Services settings."
         },
         {
           "label": "D",
-          "Text": "From the Local Computer Policy on each new server deployed to OU1, configure Computer Configuration\\Policies\\Windows Settings\\Security Settings."
+          "text": "From the Local Computer Policy on each new server deployed to OU1, configure Computer Configuration\\Policies\\Windows Settings\\Security Settings."
         }
       ],
       "answer": [
@@ -6488,19 +6488,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "secedit with the /analyze switch"
+          "text": "secedit with the /analyze switch"
         },
         {
           "label": "B",
-          "Text": "Invoke-Gpupdate with the –Boot switch"
+          "text": "Invoke-Gpupdate with the –Boot switch"
         },
         {
           "label": "C",
-          "Text": "gpupdate with the /wait switch"
+          "text": "gpupdate with the /wait switch"
         },
         {
           "label": "D",
-          "Text": "gpupdate with the /Sync switch"
+          "text": "gpupdate with the /Sync switch"
         }
       ],
       "answer": [
@@ -6543,19 +6543,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Issuance Requirements"
+          "text": "Issuance Requirements"
         },
         {
           "label": "B",
-          "Text": "Request Handling"
+          "text": "Request Handling"
         },
         {
           "label": "C",
-          "Text": "Cryptography"
+          "text": "Cryptography"
         },
         {
           "label": "D",
-          "Text": "Subject Name"
+          "text": "Subject Name"
         }
       ],
       "answer": [
@@ -6577,19 +6577,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Enterprise root"
+          "text": "Enterprise root"
         },
         {
           "label": "B",
-          "Text": "Enterprise subordinate"
+          "text": "Enterprise subordinate"
         },
         {
           "label": "C",
-          "Text": "Standalone root"
+          "text": "Standalone root"
         },
         {
           "label": "D",
-          "Text": "Standalone subordinate"
+          "text": "Standalone subordinate"
         }
       ],
       "answer": [
@@ -6615,19 +6615,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Key recovery agent"
+          "text": "Key recovery agent"
         },
         {
           "label": "B",
-          "Text": "CRL publication interval"
+          "text": "CRL publication interval"
         },
         {
           "label": "C",
-          "Text": "Delta CRL publication interval"
+          "text": "Delta CRL publication interval"
         },
         {
           "label": "D",
-          "Text": "Certificate templates."
+          "text": "Certificate templates."
         }
       ],
       "answer": [
@@ -6661,19 +6661,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the properties of CA1, modify the Security settings."
+          "text": "From the properties of CA1, modify the Security settings."
         },
         {
           "label": "B",
-          "Text": "From the properties of CA1, modify the Request Handling settings."
+          "text": "From the properties of CA1, modify the Request Handling settings."
         },
         {
           "label": "C",
-          "Text": "From the properties of the Computer template, modify the Key Attestation settings."
+          "text": "From the properties of the Computer template, modify the Key Attestation settings."
         },
         {
           "label": "D",
-          "Text": "From the properties of Cont_Computers, modify the Cryptography settings."
+          "text": "From the properties of Cont_Computers, modify the Cryptography settings."
         }
       ],
       "answer": [
@@ -6715,27 +6715,27 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the CA properties, modify the Policy Module settings."
+          "text": "From the CA properties, modify the Policy Module settings."
         },
         {
           "label": "B",
-          "Text": "From the Certificate Templates console, modify the Security settings of the Administrator certificate template."
+          "text": "From the Certificate Templates console, modify the Security settings of the Administrator certificate template."
         },
         {
           "label": "C",
-          "Text": "From the CA properties, modify the security settings."
+          "text": "From the CA properties, modify the security settings."
         },
         {
           "label": "D",
-          "Text": "From the CA properties, modify the Enrollment Agents settings."
+          "text": "From the CA properties, modify the Enrollment Agents settings."
         },
         {
           "label": "E",
-          "Text": "From the CA properties, modify the Certificate Managers Settings."
+          "text": "From the CA properties, modify the Certificate Managers Settings."
         },
         {
           "label": "F",
-          "Text": "From the Certificate Templates console, modify the Security settings of the User certificate template."
+          "text": "From the Certificate Templates console, modify the Security settings of the User certificate template."
         }
       ],
       "answer": [
@@ -6771,19 +6771,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "The Cryptography settings"
+          "text": "The Cryptography settings"
         },
         {
           "label": "B",
-          "Text": "The Request Handling settings"
+          "text": "The Request Handling settings"
         },
         {
           "label": "C",
-          "Text": "The Basic Constraints extension"
+          "text": "The Basic Constraints extension"
         },
         {
           "label": "D",
-          "Text": "The Security settings"
+          "text": "The Security settings"
         }
       ],
       "answer": [
@@ -6821,19 +6821,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "The Publication Settings for the CA."
+          "text": "The Publication Settings for the CA."
         },
         {
           "label": "B",
-          "Text": "The Security Settings for Template1."
+          "text": "The Security Settings for Template1."
         },
         {
           "label": "C",
-          "Text": "The Request Handling properties for Template1."
+          "text": "The Request Handling properties for Template1."
         },
         {
           "label": "D",
-          "Text": "The Request Handling properties for the CA."
+          "text": "The Request Handling properties for the CA."
         }
       ],
       "answer": [
@@ -6879,19 +6879,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Stop the Active Directory Certificate Services (AD CS) service."
+          "text": "Stop the Active Directory Certificate Services (AD CS) service."
         },
         {
           "label": "B",
-          "Text": "Run the Restore-CARoleService cmdlet and specify the –Force parameter."
+          "text": "Run the Restore-CARoleService cmdlet and specify the –Force parameter."
         },
         {
           "label": "C",
-          "Text": "Stop the Active Directory Domain Services (AD DS) service."
+          "text": "Stop the Active Directory Domain Services (AD DS) service."
         },
         {
           "label": "D",
-          "Text": "Run the Restore-CARoleService cmdlet and specify the path to a valid CA key."
+          "text": "Run the Restore-CARoleService cmdlet and specify the path to a valid CA key."
         }
       ],
       "answer": [
@@ -6925,19 +6925,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Modify the Policy Module for CA1."
+          "text": "Modify the Policy Module for CA1."
         },
         {
           "label": "B",
-          "Text": "Modify the Exit Module for CA1."
+          "text": "Modify the Exit Module for CA1."
         },
         {
           "label": "C",
-          "Text": "Install a standalone subordinate CA."
+          "text": "Install a standalone subordinate CA."
         },
         {
           "label": "D",
-          "Text": "Install an enterprise subordinate CA."
+          "text": "Install an enterprise subordinate CA."
         }
       ],
       "answer": [
@@ -6975,23 +6975,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Add a new certificate template to issue."
+          "text": "Add a new certificate template to issue."
         },
         {
           "label": "B",
-          "Text": "Modify the Authority Information Access (AIA) of the CA."
+          "text": "Modify the Authority Information Access (AIA) of the CA."
         },
         {
           "label": "C",
-          "Text": "Configure an enrollment agent."
+          "text": "Configure an enrollment agent."
         },
         {
           "label": "D",
-          "Text": "Install a standalone subordinate CA."
+          "text": "Install a standalone subordinate CA."
         },
         {
           "label": "E",
-          "Text": "Modify the CRL distribution point (CDP) of the CA."
+          "text": "Modify the CRL distribution point (CDP) of the CA."
         }
       ],
       "answer": [
@@ -7035,23 +7035,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the Certification Authority console, modify the Auditing settings for the CA."
+          "text": "From the Certification Authority console, modify the Auditing settings for the CA."
         },
         {
           "label": "B",
-          "Text": "From the Certification Authority console, modify the Security settings for the CA."
+          "text": "From the Certification Authority console, modify the Security settings for the CA."
         },
         {
           "label": "C",
-          "Text": "From Local Group Policy Editor, configure auditing for policy change."
+          "text": "From Local Group Policy Editor, configure auditing for policy change."
         },
         {
           "label": "D",
-          "Text": "From the Certification Authority console, modify the Certificate Managers settings for the CA."
+          "text": "From the Certification Authority console, modify the Certificate Managers settings for the CA."
         },
         {
           "label": "E",
-          "Text": "From Local Group Policy Editor, configure auditing for object access."
+          "text": "From Local Group Policy Editor, configure auditing for object access."
         }
       ],
       "answer": [
@@ -7107,23 +7107,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Certificate Enrollment Policy Web Service "
+          "text": "Certificate Enrollment Policy Web Service "
         },
         {
           "label": "B",
-          "Text": "Certificate Authority Web Enrollment "
+          "text": "Certificate Authority Web Enrollment "
         },
         {
           "label": "C",
-          "Text": "Online Responder "
+          "text": "Online Responder "
         },
         {
           "label": "D",
-          "Text": "Certificate Enrollment Web Service "
+          "text": "Certificate Enrollment Web Service "
         },
         {
           "label": "E",
-          "Text": "Network Device Enrollment Service "
+          "text": "Network Device Enrollment Service "
         }
       ],
       "answer": [
@@ -7171,19 +7171,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Compatibility Settings – Certification Authority to Windows Server 2016 "
+          "text": "Compatibility Settings – Certification Authority to Windows Server 2016 "
         },
         {
           "label": "B",
-          "Text": "Compatibility Settings – Certificate recipient to Windows 10/Windows Server 2016 "
+          "text": "Compatibility Settings – Certificate recipient to Windows 10/Windows Server 2016 "
         },
         {
           "label": "C",
-          "Text": "Cryptographic provider to Microsoft Platform Crypto Provider"
+          "text": "Cryptographic provider to Microsoft Platform Crypto Provider"
         },
         {
           "label": "D",
-          "Text": "Minimum key size to 4096 "
+          "text": "Minimum key size to 4096 "
         }
       ],
       "answer": [
@@ -7226,19 +7226,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Configure the CRL Distribution Point extension by adding a location that has the Publish CRLs to this location check box and the Publish Delta CRLs to this location check box selected."
+          "text": "Configure the CRL Distribution Point extension by adding a location that has the Publish CRLs to this location check box and the Publish Delta CRLs to this location check box selected."
         },
         {
           "label": "B",
-          "Text": "Configure the Authority Information Access (AIA) extension by adding a location that has the Include in the AIA extension of issued certificates check box selected."
+          "text": "Configure the Authority Information Access (AIA) extension by adding a location that has the Include in the AIA extension of issued certificates check box selected."
         },
         {
           "label": "C",
-          "Text": "Configure the Authority Information Access (AIA) extension by adding a location that has the Include in the online certificate status protocol (OCSP) extension check box selected."
+          "text": "Configure the Authority Information Access (AIA) extension by adding a location that has the Include in the online certificate status protocol (OCSP) extension check box selected."
         },
         {
           "label": "D",
-          "Text": "Configure the CRL Distribution Point extension by adding a location that has the Include in the CDP extension of issued certificates check box selected."
+          "text": "Configure the CRL Distribution Point extension by adding a location that has the Include in the CDP extension of issued certificates check box selected."
         }
       ],
       "answer": [
@@ -7285,19 +7285,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Set-AdfsFarmInformation"
+          "text": "Set-AdfsFarmInformation"
         },
         {
           "label": "B",
-          "Text": "Update-AdfsRelyingPartyTrust"
+          "text": "Update-AdfsRelyingPartyTrust"
         },
         {
           "label": "C",
-          "Text": "Set-AdfsProperties"
+          "text": "Set-AdfsProperties"
         },
         {
           "label": "D",
-          "Text": "Invoke-AdfsFarmBehaviorLevelRaise"
+          "text": "Invoke-AdfsFarmBehaviorLevelRaise"
         }
       ],
       "answer": [
@@ -7331,23 +7331,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "389"
+          "text": "389"
         },
         {
           "label": "B",
-          "Text": "443"
+          "text": "443"
         },
         {
           "label": "C",
-          "Text": "3389"
+          "text": "3389"
         },
         {
           "label": "D",
-          "Text": "8531"
+          "text": "8531"
         },
         {
           "label": "E",
-          "Text": "49443"
+          "text": "49443"
         }
       ],
       "answer": [
@@ -7378,23 +7378,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Remote Access"
+          "text": "Remote Access"
         },
         {
           "label": "B",
-          "Text": "Active Directory Federation Services"
+          "text": "Active Directory Federation Services"
         },
         {
           "label": "C",
-          "Text": "Web Server (IIS)"
+          "text": "Web Server (IIS)"
         },
         {
           "label": "D",
-          "Text": "DirectAccess and VPN (RAS)"
+          "text": "DirectAccess and VPN (RAS)"
         },
         {
           "label": "E",
-          "Text": "Network Policy and Access Services"
+          "text": "Network Policy and Access Services"
         }
       ],
       "answer": [
@@ -7417,19 +7417,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Web application proxy"
+          "text": "Web application proxy"
         },
         {
           "label": "B",
-          "Text": "Relying-party server"
+          "text": "Relying-party server"
         },
         {
           "label": "C",
-          "Text": "Federation server"
+          "text": "Federation server"
         },
         {
           "label": "D",
-          "Text": "Claims-provider server"
+          "text": "Claims-provider server"
         }
       ],
       "answer": [
@@ -7467,19 +7467,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From Active Directory Rights Management, update the Service Connection Point (SCP) for RMS1."
+          "text": "From Active Directory Rights Management, update the Service Connection Point (SCP) for RMS1."
         },
         {
           "label": "B",
-          "Text": "From DNS, create an alias (CNAME) record for RMS2."
+          "text": "From DNS, create an alias (CNAME) record for RMS2."
         },
         {
           "label": "C",
-          "Text": "From DNS, modify the service location (SRV) record for RMS1."
+          "text": "From DNS, modify the service location (SRV) record for RMS1."
         },
         {
           "label": "D",
-          "Text": "From RMS2, register a service principal name (SPN) in Active Directory."
+          "text": "From RMS2, register a service principal name (SPN) in Active Directory."
         }
       ],
       "answer": [
@@ -7509,11 +7509,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -7541,19 +7541,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "On Web1, add site bindings."
+          "text": "On Web1, add site bindings."
         },
         {
           "label": "B",
-          "Text": "On Web1, add handler mappings."
+          "text": "On Web1, add handler mappings."
         },
         {
           "label": "C",
-          "Text": "On ADFS1, enable an endpoint."
+          "text": "On ADFS1, enable an endpoint."
         },
         {
           "label": "D",
-          "Text": "On ADFS1, add a claims provider trust."
+          "text": "On ADFS1, add a claims provider trust."
         }
       ],
       "answer": [
@@ -7583,19 +7583,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Configure super users in the AD RMS deployment."
+          "text": "Configure super users in the AD RMS deployment."
         },
         {
           "label": "B",
-          "Text": "Manually configure the AD RMS cluster key password."
+          "text": "Manually configure the AD RMS cluster key password."
         },
         {
           "label": "C",
-          "Text": "Back up the AD-RMS-protected files by using Windows Server Backup."
+          "text": "Back up the AD-RMS-protected files by using Windows Server Backup."
         },
         {
           "label": "D",
-          "Text": "Configure key archival on the CA."
+          "text": "Configure key archival on the CA."
         }
       ],
       "answer": [
@@ -7633,23 +7633,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "From the web server, enable HTTP Redirect on the Web Application Proxy server."
+          "text": "From the web server, enable HTTP Redirect on the Web Application Proxy server."
         },
         {
           "label": "B",
-          "Text": "Configure the Web Application Proxy to perform preauthentication by using Oauth2."
+          "text": "Configure the Web Application Proxy to perform preauthentication by using Oauth2."
         },
         {
           "label": "C",
-          "Text": "From the Remote Access Management Console, publish the websites. Configure pass-through authentication and select Enable HTTP to HTTPS redirection."
+          "text": "From the Remote Access Management Console, publish the websites. Configure pass-through authentication and select Enable HTTP to HTTPS redirection."
         },
         {
           "label": "D",
-          "Text": "On external DNS name servers, create DNS entries that point to the private IP address of the web server."
+          "text": "On external DNS name servers, create DNS entries that point to the private IP address of the web server."
         },
         {
           "label": "E",
-          "Text": "On external DNS name servers, create DNS entries that point to the public IP address of the Web Application Proxy. "
+          "text": "On external DNS name servers, create DNS entries that point to the public IP address of the Web Application Proxy. "
         }
       ],
       "answer": [
@@ -7684,19 +7684,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Create a local user account on Server1 and add the account to the Administrators group on Server1."
+          "text": "Create a local user account on Server1 and add the account to the Administrators group on Server1."
         },
         {
           "label": "B",
-          "Text": "Create a domain user account and add the account to the Administrators group on Server1."
+          "text": "Create a domain user account and add the account to the Administrators group on Server1."
         },
         {
           "label": "C",
-          "Text": "Create a domain user account and add the account to the Domain Users group in the domain."
+          "text": "Create a domain user account and add the account to the Domain Users group in the domain."
         },
         {
           "label": "D",
-          "Text": "Create a domain user account and add the account to the Account Operators group in the domain."
+          "text": "Create a domain user account and add the account to the Account Operators group in the domain."
         }
       ],
       "answer": [
@@ -7726,19 +7726,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Active Directory Certificate Services"
+          "text": "Active Directory Certificate Services"
         },
         {
           "label": "B",
-          "Text": "Active Directory Federation Services"
+          "text": "Active Directory Federation Services"
         },
         {
           "label": "C",
-          "Text": "Active Directory Lightweight Directory Services"
+          "text": "Active Directory Lightweight Directory Services"
         },
         {
           "label": "D",
-          "Text": "Active Directory Rights Management Services"
+          "text": "Active Directory Rights Management Services"
         }
       ],
       "answer": [
@@ -7780,19 +7780,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Update the Active Directory schema."
+          "text": "Update the Active Directory schema."
         },
         {
           "label": "B",
-          "Text": "Register a Service Connection Point (SCP)."
+          "text": "Register a Service Connection Point (SCP)."
         },
         {
           "label": "C",
-          "Text": "Modify the Security settings of the computer account of Server1."
+          "text": "Modify the Security settings of the computer account of Server1."
         },
         {
           "label": "D",
-          "Text": "Upgrade one domain controller to Windows Server 2016."
+          "text": "Upgrade one domain controller to Windows Server 2016."
         }
       ],
       "answer": [
@@ -7830,23 +7830,23 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Remote Access Management on Server2"
+          "text": "Remote Access Management on Server2"
         },
         {
           "label": "B",
-          "Text": "Remote Access Management on Server1"
+          "text": "Remote Access Management on Server1"
         },
         {
           "label": "C",
-          "Text": "AD FS Management on Server2"
+          "text": "AD FS Management on Server2"
         },
         {
           "label": "D",
-          "Text": "AD FS Management on Server1"
+          "text": "AD FS Management on Server1"
         },
         {
           "label": "E",
-          "Text": "Routing and Remote Access on Server1"
+          "text": "Routing and Remote Access on Server1"
         }
       ],
       "answer": [
@@ -7894,19 +7894,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "In contoso.com, import the trusted user domain file from adat1.adatum.com"
+          "text": "In contoso.com, import the trusted user domain file from adat1.adatum.com"
         },
         {
           "label": "B",
-          "Text": "In adatum.com, import the trusted publishing domain file from adat1.adatum.com"
+          "text": "In adatum.com, import the trusted publishing domain file from adat1.adatum.com"
         },
         {
           "label": "C",
-          "Text": "In contoso.com, import the trusted publishing domain file from cont1.contoso.com"
+          "text": "In contoso.com, import the trusted publishing domain file from cont1.contoso.com"
         },
         {
           "label": "D",
-          "Text": "In adatum.com, import the trusted user domain file from cont1.contoso.com"
+          "text": "In adatum.com, import the trusted user domain file from cont1.contoso.com"
         }
       ],
       "answer": [
@@ -7940,11 +7940,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -7976,11 +7976,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -8008,19 +8008,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Run New-AdfsApplicationGroup "
+          "text": "Run New-AdfsApplicationGroup "
         },
         {
           "label": "B",
-          "Text": "Add a web API application  "
+          "text": "Add a web API application  "
         },
         {
           "label": "C",
-          "Text": "Run Add-AdfsNativeClientApplication "
+          "text": "Run Add-AdfsNativeClientApplication "
         },
         {
           "label": "D",
-          "Text": "Run Add-AdfsWebApiApplication "
+          "text": "Run Add-AdfsWebApiApplication "
         }
       ],
       "answer": [
@@ -8063,19 +8063,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "WebServer2 "
+          "text": "WebServer2 "
         },
         {
           "label": "B",
-          "Text": "WebServer1"
+          "text": "WebServer1"
         },
         {
           "label": "C",
-          "Text": "ADFS1"
+          "text": "ADFS1"
         },
         {
           "label": "D",
-          "Text": "ADFS2"
+          "text": "ADFS2"
         }
       ],
       "answer": [
@@ -8122,19 +8122,19 @@
       "choices": [
         {
           "label": "A",
-          "Text": "decommissioning"
+          "text": "decommissioning"
         },
         {
           "label": "B",
-          "Text": "user exclusion"
+          "text": "user exclusion"
         },
         {
           "label": "C",
-          "Text": "lockbox exclusion"
+          "text": "lockbox exclusion"
         },
         {
           "label": "D",
-          "Text": "Application Exclusion"
+          "text": "Application Exclusion"
         }
       ],
       "answer": [
@@ -8181,11 +8181,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -8246,11 +8246,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -8311,11 +8311,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -8376,11 +8376,11 @@
       "choices": [
         {
           "label": "A",
-          "Text": "Yes"
+          "text": "Yes"
         },
         {
           "label": "B",
-          "Text": "No"
+          "text": "No"
         }
       ],
       "answer": [
@@ -8421,15 +8421,15 @@
       "choices": [
         {
           "label": "A",
-          "Text": "a security policy"
+          "text": "a security policy"
         },
         {
           "label": "B",
-          "Text": "a trust policy"
+          "text": "a trust policy"
         },
         {
           "label": "C",
-          "Text": "an exclusion policy"
+          "text": "an exclusion policy"
         }
       ],
       "answer": [
