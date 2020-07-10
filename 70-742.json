@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-10T20:23:48.991Z",
+  "createdAt": "2020-07-10T20:53:32.162Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -25,6 +25,10 @@
     {
       "variant": 0,
       "question": [
+        {
+          "variant": 1,
+          "text": " "
+        },
         {
           "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
@@ -72,6 +76,10 @@
         {
           "variant": 1,
           "text": " "
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -98,11 +106,20 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
       "question": [
+        {
+          "variant": 1,
+          "text": " "
+        },
         {
           "variant": 1,
           "text": "You work for a company named Contoso, Ltd."
@@ -181,7 +198,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -231,7 +253,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -292,7 +319,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -304,6 +336,18 @@
         {
           "variant": 1,
           "text": "You need to secure several high-privilege user accounts to meet the following requirements:"
+        },
+        {
+          "variant": 1,
+          "text": "Prevent authentication by using NTLM."
+        },
+        {
+          "variant": 1,
+          "text": "Use Kerberos to verify authentication request to any resources."
+        },
+        {
+          "variant": 1,
+          "text": "Prevent the users from signing in to a client computer if the computer is disconnected from the domain."
         },
         {
           "variant": 1,
@@ -334,7 +378,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -384,7 +433,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -430,7 +484,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -508,7 +567,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -559,7 +623,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -625,7 +694,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -686,7 +760,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
+          "text": "https://mcpmag.com/articles/2015/03/05/rejoin-a-computer-from-a-domain.aspx"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -737,7 +820,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -780,7 +868,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -829,7 +917,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -878,7 +966,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -928,7 +1016,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -978,7 +1071,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1024,7 +1122,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -1079,7 +1182,12 @@
         true,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1132,6 +1240,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "http://support.microsoft.com/kb/243327/en-us"
@@ -1192,7 +1304,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1239,71 +1356,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "The"
-        },
-        {
-          "variant": 1,
-          "text": "Get-ADGroup"
-        },
-        {
-          "variant": 1,
-          "text": "cmdlet"
-        },
-        {
-          "variant": 1,
-          "text": "does"
-        },
-        {
-          "variant": 1,
-          "text": "not"
-        },
-        {
-          "variant": 1,
-          "text": "include"
-        },
-        {
-          "variant": 1,
-          "text": "the"
-        },
-        {
-          "variant": 1,
-          "text": "MemberOf"
-        },
-        {
-          "variant": 1,
-          "text": "property."
-        },
-        {
-          "variant": 1,
-          "text": "The"
-        },
-        {
-          "variant": 1,
-          "text": "command"
-        },
-        {
-          "variant": 1,
-          "text": "above"
-        },
-        {
-          "variant": 1,
-          "text": "is,"
-        },
-        {
-          "variant": 1,
-          "text": "therefore,"
-        },
-        {
-          "variant": 1,
-          "text": "not"
-        },
-        {
-          "variant": 1,
-          "text": "valid."
-        },
-        {
-          "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1356,7 +1409,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1409,7 +1462,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1468,7 +1521,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -1524,7 +1582,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1596,6 +1659,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://www.itprotoday.com/active-directory/delegating-privileges-active-directory"
         }
       ]
@@ -1649,7 +1716,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1697,7 +1764,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -1708,7 +1780,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image4.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image3.jpg"
         },
         {
           "variant": 1,
@@ -1748,7 +1820,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1765,7 +1837,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image4.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image3.jpg"
         },
         {
           "variant": 1,
@@ -1805,7 +1877,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1822,7 +1894,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image5.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image4.jpg"
         },
         {
           "variant": 1,
@@ -1854,7 +1926,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1924,7 +1996,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Reference:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -1969,7 +2041,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2014,7 +2086,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2101,7 +2173,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2160,7 +2232,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2215,7 +2287,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2298,6 +2370,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/back-up-files-and-directories"
         }
       ]
@@ -2356,7 +2432,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2388,7 +2469,16 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
+          "text": "https://webactivedirectory.com/2011/07/18/simple-powershell-script-to-bulk-update-or-modify-active-directory-user-attributes/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2423,7 +2513,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2471,7 +2561,16 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
+          "text": "https://www.grouppolicy.biz/2010/01/how-to-use-group-policy-preferences-to-secure-local-administrator-groups/"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2517,7 +2616,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2552,7 +2656,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2623,7 +2727,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2694,7 +2798,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -2746,7 +2850,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2782,7 +2891,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2844,7 +2958,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2864,6 +2983,10 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -2880,7 +3003,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -2908,6 +3036,10 @@
         {
           "variant": 1,
           "text": "What should you do?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -2934,7 +3066,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3000,7 +3137,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3015,7 +3157,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image6.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image5.jpg"
         },
         {
           "variant": 1,
@@ -3032,6 +3174,10 @@
         {
           "variant": 1,
           "text": "What should you do?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -3058,7 +3204,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3126,6 +3277,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://blogs.technet.microsoft.com/tristank/2006/05/08/3-simple-rules-to-kerberos-authenticationdelegation-spns/"
         }
       ]
@@ -3147,15 +3302,15 @@
         },
         {
           "variant": 1,
-          "text": "Local Computer Policy"
+          "text": "-Local Computer Policy"
         },
         {
           "variant": 1,
-          "text": "Local Computer\\User1 Policy"
+          "text": "-Local Computer\\User1 Policy"
         },
         {
           "variant": 1,
-          "text": "Local Computer\\Administrators Policy"
+          "text": "-Local Computer\\Administrators Policy"
         },
         {
           "variant": 1,
@@ -3184,7 +3339,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3240,7 +3400,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3280,7 +3445,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3320,7 +3490,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3360,7 +3535,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3403,7 +3583,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -3456,7 +3636,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -3508,7 +3688,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3566,7 +3751,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3612,7 +3802,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3648,7 +3843,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3684,7 +3884,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3733,7 +3938,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -3785,7 +3990,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3834,7 +4044,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -3884,7 +4094,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3908,6 +4123,10 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -3924,7 +4143,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -3964,7 +4188,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4012,7 +4241,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4048,7 +4282,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -4059,7 +4298,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image7.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image6.jpg"
         },
         {
           "variant": 1,
@@ -4106,7 +4345,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4175,7 +4419,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -4227,7 +4471,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -4279,6 +4528,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "http://www.itprotoday.com/management-mobility/what-group-policy-creator-owners-group"
@@ -4341,7 +4594,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4395,7 +4653,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4410,7 +4673,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image8.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image7.jpg"
         },
         {
           "variant": 1,
@@ -4446,6 +4709,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/15/group-policy-basics-part-2-understanding-which-gpos-to-apply/"
@@ -4504,7 +4771,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4570,7 +4842,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4590,6 +4867,10 @@
         {
           "variant": 1,
           "text": "What should you do?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -4636,7 +4917,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4702,7 +4988,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4717,7 +5008,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image9.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image8.jpg"
         },
         {
           "variant": 1,
@@ -4725,7 +5016,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image10.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image9.jpg"
         },
         {
           "variant": 1,
@@ -4760,7 +5051,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4775,7 +5071,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image11.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image10.jpg"
         },
         {
           "variant": 1,
@@ -4783,7 +5079,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image10.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image9.jpg"
         },
         {
           "variant": 1,
@@ -4818,7 +5114,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4864,7 +5165,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4906,7 +5212,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -4968,7 +5279,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5021,7 +5337,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -5042,7 +5358,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image12.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image11.jpg"
         },
         {
           "variant": 1,
@@ -5073,7 +5389,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5113,7 +5434,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5153,7 +5479,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5193,7 +5524,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5232,7 +5568,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -5274,7 +5610,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5310,7 +5651,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5330,6 +5676,10 @@
         {
           "variant": 1,
           "text": "Does this meet the goal?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -5346,7 +5696,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5396,7 +5751,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5450,7 +5810,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5496,7 +5861,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5546,7 +5916,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -5601,7 +5976,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5616,7 +5996,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image11.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image10.jpg"
         },
         {
           "variant": 1,
@@ -5624,7 +6004,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image10.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image9.jpg"
         },
         {
           "variant": 1,
@@ -5662,7 +6042,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -5717,7 +6097,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -5769,7 +6149,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5788,7 +6173,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image13.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image12.jpg"
         },
         {
           "variant": 1,
@@ -5796,7 +6181,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image14.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image13.jpg"
         },
         {
           "variant": 1,
@@ -5831,7 +6216,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5874,6 +6264,10 @@
         true
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://www.windowscentral.com/how-apply-local-group-policy-settings-specific-users-windows-10"
@@ -5938,7 +6332,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -5992,7 +6391,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -6048,7 +6447,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6063,7 +6467,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image15.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image14.jpg"
         },
         {
           "variant": 1,
@@ -6105,6 +6509,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/powershell/module/grouppolicy/set-gplink?view=win10-ps"
         }
       ]
@@ -6118,7 +6526,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image16.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image15.jpg"
         },
         {
           "variant": 1,
@@ -6138,7 +6546,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image17.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image16.jpg"
         }
       ],
       "choices": [
@@ -6165,7 +6573,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6210,7 +6623,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "Reference:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -6231,7 +6644,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image18.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image17.jpg"
         },
         {
           "variant": 1,
@@ -6266,7 +6679,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6281,7 +6699,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image19.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image18.jpg"
         },
         {
           "variant": 1,
@@ -6316,7 +6734,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6331,7 +6754,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image20.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image19.jpg"
         },
         {
           "variant": 1,
@@ -6366,7 +6789,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6381,7 +6809,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image21.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image20.jpg"
         },
         {
           "variant": 1,
@@ -6417,6 +6845,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/archive/blogs/musings_of_a_technical_tam/group-policy-basics-part-2-understanding-which-gpos-to-apply"
@@ -6470,6 +6902,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://social.technet.microsoft.com/Forums/ie/en-US/e9d3a8d3-5301-4961-96be-99f586c6fc1c/using-ad-to-allow-a-user-to-startstop-a-service?forum=winserverDS"
         }
       ]
@@ -6515,6 +6951,10 @@
         true
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpupdate"
@@ -6569,7 +7009,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6603,7 +7048,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6641,7 +7091,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6687,7 +7142,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -6751,7 +7211,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6797,7 +7262,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6847,7 +7317,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6905,7 +7380,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -6951,7 +7431,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -7009,7 +7494,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -7035,6 +7520,10 @@
         {
           "variant": 1,
           "text": "Which two actions should you perform? Each correct answer presents part of the solution."
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -7069,7 +7558,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -7090,7 +7579,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image22.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image21.jpg"
         },
         {
           "variant": 1,
@@ -7141,6 +7630,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://www.ejbca.org/docs/Part_2__Microsoft_Certification_Authority_and_Group_Policies.html"
         }
       ]
@@ -7158,7 +7651,7 @@
         },
         {
           "variant": 1,
-          "text": "Cryptographic provider: Microsoft Strong Cryptographic Provider \nCompatibility Settings-Certification Authority: Windows server 2012 R2 \nCompatibility Settings-Certificate recipient: Windows 8.1 /Windows Server 2012 R2"
+          "text": "-Cryptographic provider: Microsoft Strong Cryptographic Provider \n-Compatibility Settings-Certification Authority: Windows server 2012 R2 \n-Compatibility Settings-Certificate recipient: Windows 8.1 /Windows Server 2012 R2"
         },
         {
           "variant": 1,
@@ -7198,6 +7691,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/tpm-key-attestation"
@@ -7253,6 +7750,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://www.poweradmin.com/blog/deploying-active-directory-certificate-services-and-online-responder/"
@@ -7311,7 +7812,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -7362,7 +7868,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7378,6 +7889,10 @@
         {
           "variant": 1,
           "text": "Which server role or role service should you install on Server1?"
+        },
+        {
+          "variant": 1,
+          "text": " "
         }
       ],
       "choices": [
@@ -7409,7 +7924,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7443,7 +7963,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7493,7 +8018,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7525,7 +8055,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7567,7 +8102,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7609,7 +8149,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 1,
@@ -7664,7 +8209,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7710,7 +8260,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7752,7 +8307,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7806,7 +8366,12 @@
         false,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -7862,6 +8427,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "In"
@@ -8148,7 +8717,16 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
+          "text": "https://winintro.ru/rms_help.en/html/59c802d0-3982-432c-b06f-3e148dca0166.htm"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8184,7 +8762,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8220,7 +8803,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8265,6 +8853,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/powershell/module/adfs/add-adfswebapiapplication?view=win10-ps"
         }
       ]
@@ -8278,7 +8870,7 @@
         },
         {
           "variant": 0,
-          "text": "https://start.opensourceexams.org/exams/70-742/images/image23.jpg"
+          "text": "https://start.opensourceexams.org/exams/70-742/images/image22.jpg"
         },
         {
           "variant": 1,
@@ -8320,7 +8912,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -8379,7 +8971,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -8425,7 +9017,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     },
     {
       "variant": 0,
@@ -8482,6 +9079,10 @@
         false
       ],
       "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        },
         {
           "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
@@ -8549,6 +9150,10 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "Explanation"
+        },
+        {
+          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/configure-a-federation-server-with-device-registration-service"
         },
         {
@@ -8614,7 +9219,7 @@
       "explanation": [
         {
           "variant": 1,
-          "text": "References:"
+          "text": "Explanation"
         },
         {
           "variant": 1,
@@ -8661,7 +9266,12 @@
         false,
         true
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "Explanation"
+        }
+      ]
     }
   ]
 }

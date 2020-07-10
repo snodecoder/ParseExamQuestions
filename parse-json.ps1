@@ -374,7 +374,7 @@ try {
       }
       elseif ( $paragraphs[$i].text -like $Selector.explanation ) { # Add to explanation property
           $textExplanation = $true # Ensures all in-question-buffer is stored in Explanation array.
-          #$exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
+          $exam.test[$questid].explanation += AddTextVariant -variant Normal -text $paragraphs[$i].text
       }
 
 ##### POSSIBLE ANSWERS #####
