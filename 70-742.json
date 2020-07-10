@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-08T19:40:45.093Z",
+  "createdAt": "2020-07-08T21:27:35.807Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -1131,7 +1131,12 @@
         true,
         false
       ],
-      "explanation": null
+      "explanation": [
+        {
+          "variant": 1,
+          "text": "http://support.microsoft.com/kb/243327/en-us"
+        }
+      ]
     },
     {
       "variant": 0,
