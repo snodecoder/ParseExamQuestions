@@ -6,7 +6,7 @@
     "name": "Snodecoder",
     "image": "http://www.example.com/image.png"
   },
-  "createdAt": "2020-07-08T21:27:35.807Z",
+  "createdAt": "2020-07-10T20:23:48.991Z",
   "code": "70-742",
   "time": 120,
   "pass": 75,
@@ -2353,8 +2353,8 @@
         }
       ],
       "answer": [
-        false,
-        true
+        true,
+        false
       ],
       "explanation": null
     },
@@ -5150,8 +5150,8 @@
         }
       ],
       "answer": [
-        true,
-        false
+        false,
+        true
       ],
       "explanation": null
     },
@@ -5190,8 +5190,8 @@
         }
       ],
       "answer": [
-        false,
-        true
+        true,
+        false
       ],
       "explanation": null
     },
@@ -7864,6 +7864,234 @@
       "explanation": [
         {
           "variant": 1,
+          "text": "In"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "External"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "box,"
+        },
+        {
+          "variant": 1,
+          "text": "enter"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "external"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "for"
+        },
+        {
+          "variant": 1,
+          "text": "this"
+        },
+        {
+          "variant": 1,
+          "text": "application;"
+        },
+        {
+          "variant": 1,
+          "text": "for"
+        },
+        {
+          "variant": 1,
+          "text": "example,"
+        },
+        {
+          "variant": 1,
+          "text": "https://sp.contoso.com/app1/."
+        },
+        {
+          "variant": 1,
+          "text": "In"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "Backend"
+        },
+        {
+          "variant": 1,
+          "text": "server"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "box,"
+        },
+        {
+          "variant": 1,
+          "text": "enter"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "of"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "backend"
+        },
+        {
+          "variant": 1,
+          "text": "server."
+        },
+        {
+          "variant": 1,
+          "text": "Note"
+        },
+        {
+          "variant": 1,
+          "text": "that"
+        },
+        {
+          "variant": 1,
+          "text": "this"
+        },
+        {
+          "variant": 1,
+          "text": "value"
+        },
+        {
+          "variant": 1,
+          "text": "is"
+        },
+        {
+          "variant": 1,
+          "text": "automatically"
+        },
+        {
+          "variant": 1,
+          "text": "entered"
+        },
+        {
+          "variant": 1,
+          "text": "when"
+        },
+        {
+          "variant": 1,
+          "text": "you"
+        },
+        {
+          "variant": 1,
+          "text": "enter"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "external"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "and"
+        },
+        {
+          "variant": 1,
+          "text": "you"
+        },
+        {
+          "variant": 1,
+          "text": "should"
+        },
+        {
+          "variant": 1,
+          "text": "change"
+        },
+        {
+          "variant": 1,
+          "text": "it"
+        },
+        {
+          "variant": 1,
+          "text": "only"
+        },
+        {
+          "variant": 1,
+          "text": "if"
+        },
+        {
+          "variant": 1,
+          "text": "the"
+        },
+        {
+          "variant": 1,
+          "text": "backend"
+        },
+        {
+          "variant": 1,
+          "text": "server"
+        },
+        {
+          "variant": 1,
+          "text": "URL"
+        },
+        {
+          "variant": 1,
+          "text": "is"
+        },
+        {
+          "variant": 1,
+          "text": "different;"
+        },
+        {
+          "variant": 1,
+          "text": "for"
+        },
+        {
+          "variant": 1,
+          "text": "example,"
+        },
+        {
+          "variant": 1,
+          "text": "http://sp/app1/."
+        },
+        {
+          "variant": 1,
           "text": "https://docs.microsoft.com/en-us/windows-server/remote/remote-access/web-application-proxy/publishing-applications-using-ad-fs-preauthentication"
         }
       ]
@@ -8197,16 +8425,7 @@
         true,
         false
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "References:"
-        },
-        {
-          "variant": 1,
-          "text": "https://books.google.co.za/books?id=gjR-BAAAQBAJ&pg=PA397&lpg=PA397&dq=configure+a+partners+forest+as+a+trusted+publishing+domain+-+AD"
-        }
-      ]
+      "explanation": null
     },
     {
       "variant": 0,
@@ -8442,12 +8661,7 @@
         false,
         true
       ],
-      "explanation": [
-        {
-          "variant": 1,
-          "text": "https://books.google.co.za/books?id=G9Y5DwAAQBAJ&pg=PA385&lpg=PA385&dq=rights-protected+content+-+exclusion"
-        }
-      ]
+      "explanation": null
     }
   ]
 }
