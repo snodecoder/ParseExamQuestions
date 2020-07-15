@@ -1,27 +1,5 @@
-{
-  "title": "Identity with Windows Server 2016",
-  "description": "161 questions available in Multiple Choice en Multiple Answer format.",
-  "author": {
-    "id": "00001",
-    "name": "Snodecoder",
-    "image": "http://www.example.com/image.png"
-  },
-  "createdAt": "2020-07-10T20:53:32.162Z",
-  "code": "70-742",
-  "time": 120,
-  "pass": 75,
-  "image": "http://www.example.com/image.png",
-  "cover": [
-    {
-      "variant": 2,
-      "text": "Identity with Windows Server 2016"
-    },
-    {
-      "variant": 1,
-      "text": "161 questions available in Multiple Choice en Multiple Answer format."
-    }
-  ],
-  "test": [
+  {
+  [
     {
       "variant": 0,
       "question": [

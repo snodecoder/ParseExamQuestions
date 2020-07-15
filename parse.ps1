@@ -2,7 +2,7 @@ $OldWord = "742.docx"
 $folderPath = "C:\Codeprojects\ParseWordDocument\"
 $mediaFolder = "C:\Codeprojects\ParseWordDocument\docx\word\media\"
 $imageFolder = $folderPath + "images\"
-$Outputformat = "Word" # Enter 'CSV' or 'Word' if you would like CSV or DOCX output format
+$Outputformat = "CSV" # Enter 'CSV' or 'Word' if you would like CSV or DOCX output format
 $examNumber = "70-742"
 $CSVFormat = "QuestionType;Question;Description;correct option number;Option 1;Option 2;Option 3;Option 4;Option 5;Option 6;Option 7;Option 8;Option 9;Option 10;Option 11;Option 12;"
 
