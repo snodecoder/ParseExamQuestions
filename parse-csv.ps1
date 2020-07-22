@@ -46,7 +46,7 @@ param (
   ,$examTime = 120 # Maximum time for exam
   ,$examPass = 75 # Minimum percentage to pass exam
   ,$imageURLPrefix = "https://start.opensourceexams.org/exams/$($examCode)/images/"
-  ,$WordFileName = "742.docx"
+  ,$WordFileName = "converted742.docx"
   ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
 )
 
@@ -58,9 +58,9 @@ try{
   ###      Global Variables      ###
   ##################################
   $Selector = New-Object psobject -Property @{
-    question = "QUESTION*"
-    ;explanation = "Explanation*"
-    ;correct = "Correct Answer*"
+    question = "Question #*"
+    ;explanation = "References*"
+    ;correct = "Correct Answer:*"
     ;section = "Section*"
     ;options = @(
       "A.*"
@@ -78,20 +78,26 @@ try{
     )
     ;filter = @(
       "*gratisexam*"
+      ,"*topic*"
       ,"*Note: This question*"
       ,"*Start of repeated scenario*"
       ,"*End of repeated scenario*"
       ,"*After you answer a question in this section*"
+    )
+    ;type = @(
+      "*hotspot*"
+      ,"*drag drop*"
     )
   } # End of Selector object
 
   ################################
   ### <<< End of Edit Area <<< ###
   ################################
-  $mediaFolder = $folderPath + "$($WordFileName.Remove(3,5))\word\media\"
+  $mediaFolder = $folderPath + "$($WordFileName.TrimEnd(".docx"))\word\media\"
   $imageFolder = $folderPath + "images\"
   $WarningPreference = 'Continue'
 
+  
 
 
   ### Load Modules ###
@@ -222,8 +228,8 @@ $tempOptions = $null
 ########## PROCESS TEXT ##########
   # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
   for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
-    # write-host "starting round $($i)" # Turn on for Debugging
-$i
+    #write-host "Processing paragraph: $($i)." # Turn on for Debugging
+    
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
 
 ##### IMAGES #####
@@ -232,6 +238,7 @@ $i
           # Skip it, non-relevant image
         }
         else {  # Store imagelink in text for current question. Copy image file to export folder, upload this to tje $imageURLPrefix location on your webserver
+        $i
           $QuestionObject.question += "<img src='$($imageURLPrefix + $paragraphs[$i].Pictures.FileName)' style='max-width: 100%;'>"
           Copy-Item -Path ($mediaFolder + $paragraphs[$i].Pictures.FileName) -Destination ($imageFolder + $paragraphs[$i].Pictures.FileName) -ErrorAction Ignore # Copy image to export folder for upload to server
         }
@@ -239,6 +246,10 @@ $i
 
 ##### FILTER #####
       elseif ( Like -string $paragraphs[$i].text -arrayStrings $Selector.filter ) { # Uses Like Function to search if current text exists in array of text. -> Filter unwanted text
+        # skip it
+      }
+
+      elseif ( $paragraphs[$i].text.Length -like 0 ) {
         # skip it
       }
 
@@ -259,18 +270,22 @@ $i
         elseif ( $CorrectAnswer.Length -gt 1) {
           $QuestionObject.type = "multiple choice" # When multiple answers must be given
         }
+        $textExplanation = $true 
       }
 
 ##### EXPLANATION #####
       elseif ( $textExplanation ) { # Add to Explanation Array
 
-        if ( $paragraphs[$i].text -like "*http*") { # Place HTTP/HTTPS links on new line
+        if ( $paragraphs[$i].Text -like "*https://books.google.co.*") {
+          $textExplanation = $false
+        }
+        elseif ( $paragraphs[$i].text -like "*http*") { # Place HTTP/HTTPS links on new line
           $subStrings = $paragraphs[$i].Text.Split(" ")
           foreach ($string in $subStrings) {
             $QuestionObject.explanation += "<a href='$($string)'>Link</a>"
           }
         }
-        else {
+        elseif ( $paragraphs[$i].text.Length -gt 0 ) {
           $QuestionObject.explanation += "<p>$($paragraphs[$i].text)</p>"
         }
       }
@@ -295,17 +310,32 @@ $i
       
       $index++
 
+      if ($index -like 25) {
+        $i
+      }
       for ($ii = 0; $ii -lt $tempOptions.Count; $ii++) {
         $item = "option$($ii+1)"
         $QuestionObject.$item = $tempOptions[$ii]
       }
+      if ( ! (Like $QuestionObject.question $Selector.type) ) { # do not export hot spot / drag drop questions
 
-      $QuestionObject.score1 = 1.0
-      $exam += $QuestionObject
+        # add extra points when multiple answers are corect
+        #$numberAnswers = $QuestionObject.answer1.Length
+        #for ($ii = 1; $ii -le $numberAnswers; $ii++) {
+        #  $item = "score$($ii)" 
+        #}
+        $QuestionObject.score1 = 1.0
+
+        if ($QuestionObject.question.length -gt 0) {
+          $exam += $QuestionObject 
+        }
+        
+      }
+
+      # Reset for next question
       $QuestionObject = [Question]::new()
       $textExplanation = $false # reset the textexplanation value
       $tempOptions = @()
-
     }
 ##### START LOOP AGAIN #####
 
@@ -334,11 +364,18 @@ catch{
 ########## FINISHED PROCESSING DOCUMENT ##########
 
 
+[array]$Output = @()
 
+foreach ($item in $exam) {
 
+  if ($item.question.length -gt 0) {
+    $Output += $item
+  }
+
+}
 
 ########## Convert Exam to JSON and Export it ##########
-$exam | Export-Csv -path ($folderPath + "$($examCode).CSV") -IncludeTypeInformation -Delimiter ";" -UseQuotes Never
+$exam | Export-Csv -path ($folderPath + "$($examCode).CSV") -Delimiter ";" -UseQuotes Never -Encoding unicode
 
 
 #  $CSV | Out-File -FilePath ($folderPath + "$($examCode).CSV") -Force
