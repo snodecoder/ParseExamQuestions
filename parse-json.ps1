@@ -24,11 +24,12 @@
 
 
 .INPUTS
-  You input a .docx Word document
+  You input a .docx Word document.
 .OUTPUTS
-  .JSON file
+  You get a .JSON file.
 .NOTES
-  General notes
+  I've had success converting several PDF exams to .docx (with https://www.sejda.com/), and then finally to .JSON. Be aware that tweaking of the edit area in this script +   tweaking of the .docx file will be necessary to get a good final result. 
+  
 #>
 
 ###############################
@@ -37,16 +38,16 @@
 ###############################
 param (
   $examAuthorId = "00001"
-  ,$examAuthorName = "Snodecoder"
-  ,$examAuthorImage = "http://www.example.com/image.png"
-  ,$examCode= "70-742"
-  ,$examTitle = "Identity with Windows Server 2016"
-  ,$examDescription = "161 questions available in Multiple Choice en Multiple Answer format."
-  ,$examImage = "http://www.example.com/image.png"
+  ,$examAuthorName = "The Author"
+  ,$examAuthorImage = "https://www.example.com/image.png"
+  ,$examCode= "00-000"
+  ,$examTitle = "Exam Title"
+  ,$examDescription = "160 questions available in Multiple Choice en Multiple Answer format."
+  ,$examImage = "https://www.example.com/image.png"
   ,$examTime = 120 # Maximum time for exam
   ,$examPass = 75 # Minimum percentage to pass exam
-  ,$imageURLPrefix = "https://start.opensourceexams.org/exams/$($examCode)/images/"
-  ,$WordFileName = "742.docx"
+  ,$imageURLPrefix = "https://www.example.com/$($examCode)/images/"
+  ,$WordFileName = "examFile.docx"
   ,$folderPath = "C:\Codeprojects\ParseWordDocument\"
 )
 
