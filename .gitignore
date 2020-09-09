@@ -1,6 +1,8 @@
 old/*
 742/*
 *.docx
-
+*.xls
+*.csv
 docx/*
 images/*
+private/*
