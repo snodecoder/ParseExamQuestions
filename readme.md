@@ -4,6 +4,9 @@ Parse Word Document to JSON
 ## DESCRIPTION
 Defines an Object structure from the predefined JSON structure created by Exam Simulator(https://github.com/exam-simulator).
 Processes a Word Document paragraph by paragraph, strips unnecessary data, stores wanted data in objects, outputs JSON file.
+Make sure that there is no variance in the source file in how for example a new question starts. If the script detects something it cannot process, it will output the last question  it was working on so you can verify and adjust the source file. When you've corrected the issue in the source file, you can then run the script again. If the script succesfully ran until the end, then you should have a clean output. 
+  
+*** TIP *** When you find errors in your output file or anthyng out of order that you would like to change, try doing so in the source file. Most of the time you will find another issue later on that requires you to make a adjustment to the source file and rerun it. By making all your afjustments in the source file, you prevent repeatedly changing your output file.
 
 ## EXAMPLE
 How to use:
@@ -30,4 +33,9 @@ You input a .docx Word document.
 You get a.JSON file
 
 ## NOTES
-I've had success converting several PDF exams to .docx (with https://www.sejda.com/), and then finally to .JSON. Be aware that tweaking of the edit area in this script +   tweaking of the .docx file will be necessary to get a good final result. 
+To convert a PDF document to an editable word document, simply right click on the PDF file and choose Open With -> Word. Et voila!
+No more hassle with mediocore online 'free' conversions, haha thanks MS!
+
+Be aware that tweaking of the edit area in this script +   tweaking of the .docx file will be necessary to get a good final result. 
+
+I mostly use the conversion to CSV nowadays, together with the free mobile app MTestM. The best working exam practice app I found so far (that enables you to bulk import questions)

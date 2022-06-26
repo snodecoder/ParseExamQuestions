@@ -34,14 +34,16 @@
 ### >>> Start Edit Area >>> ###
 ###    Default Parameters   ###
 ###############################
+# Adds the general information for your practice exam.
+
 param (
-  $examCode= "az900"
-  ,$examTitle = "AZ900"
+  $examCode= "AZ104"
+  ,$examTitle = "AZ104"
   ,$examDescription = "Practice questions in Multiple Choice en Multiple Answer format."
   ,$examDuration = 120 # Maximum time for exam
   ,$examKeywords = "Azure, Fundamentals"
   ,$imageURLPrefix = "https://start.opensourceexams.org/exams/$($examCode)/images/"
-  ,$WordFileName = "az900.docx"
+  ,$WordFileName = "$($examCode).docx"
   ,$folderPath = "C:\CodeProjects\ParseWordDocument\"
 )
 
@@ -52,11 +54,16 @@ try{
   ### >>> Continue Edit Area >>> ###
   ###      Global Variables      ###
   ##################################
+  # This is where you tell the script how the recognize the start of a new question, explanation answer, etc..
+  # Make sure that there is no variance in the source file in how for example a new question starts. If the script detects something it cannot process, it will output the last question  it was working on so you can verify and adjust the source file. When you've corrected the issue in the source file, you can then run the script again. If the script succesfully ran until the end, then you should have a clean output.
+
+  # *** TIP *** When you find errors in your output file or anthyng out of order that you would like to change, try doing so in the source file. Most of the time you will find another issue later on that requires you to make a adjustment to the source file and rerun it. By making all your afjustments in the source file, you prevent repeatedly changing your output file.
+
   $Selector = New-Object psobject -Property @{
-    question = "Question *"
-    ;explanation = "References*"
-    ;correct = "Correct Answer:*"
-    ;section = "Section:*"
+    question = "New Question *"
+    ;explanation = "Explanation:*"
+    ;correct = " Answer:*"
+    ;section = "- (Exam Topic*"
     ;options = @(
       "A.*"
       ,"B.*"
@@ -78,7 +85,6 @@ try{
       ,"*Start of repeated scenario*"
       ,"*End of repeated scenario*"
       ,"*After you answer a question in this section*"
-      ,"Explanation*"
     )
     ;type = @(
       "*hotspot*"
