@@ -42,11 +42,12 @@ param (
   ,$examDescription = "Practice questions in Multiple Choice en Multiple Answer format."
   ,$examDuration = 120 # Maximum time for exam
   ,$examKeywords = "Azure, Fundamentals"
-  ,$imageURLPrefix = "https://start.opensourceexams.org/exams/$($examCode)/images/"
+  ,$imageURLPrefix = "https://files.doorhetgeluid.nl/exams/$($examCode)/images/"
   ,$WordFileName = "$($examCode).docx"
   ,$folderPath = "C:\CodeProjects\ParseWordDocument\"
 )
 
+$ErrorActionPreference = 'Stop'
 
 
 try{
@@ -60,10 +61,11 @@ try{
   # *** TIP *** When you find errors in your output file or anthyng out of order that you would like to change, try doing so in the source file. Most of the time you will find another issue later on that requires you to make a adjustment to the source file and rerun it. By making all your afjustments in the source file, you prevent repeatedly changing your output file.
 
   $Selector = New-Object psobject -Property @{
-    question = "New Question *"
+    question = "Question #*"
+    
+    ;correct = "Correct Answer:*"
     ;explanation = "Explanation:*"
-    ;correct = " Answer:*"
-    ;section = "- (Exam Topic*"
+    #;section = "- (Exam Topic*"
     ;options = @(
       "A.*"
       ,"B.*"
@@ -85,6 +87,9 @@ try{
       ,"*Start of repeated scenario*"
       ,"*End of repeated scenario*"
       ,"*After you answer a question in this section*"
+      ,"*Passing Certification Exams Ma de Easy*"
+      ,"Passing Certification Exams Made Easy*"
+      ,"visit - https://www.surepassexam.com*"
     )
     ;type = @(
       "*hotspot*"
@@ -107,7 +112,7 @@ try{
   $PSWriteWord = Get-InstalledModule -Name PSWriteWord -ErrorAction SilentlyContinue # Check if PSWriteWord is installed
 
   if (!$PSWriteWord) {
-    Install-Module -Name PSWriteWord -Force
+    Install-Module -Name PSWriteWord -Force -Scope CurrentUser
   }
   Import-Module PSWriteWord -Force
 
@@ -231,7 +236,7 @@ $tempOptions = $null
   # Store all the Question parts per Question in Objects, store Objects in $QuestionArray
   for ( $i=0; $i -lt $paragraphs.Count; $i++ ) {
 
-    #write-host "Processing paragraph: $($i)." # Turn on for Debugging
+    write-host "Processing paragraph: $($i)." # Turn on for Debugging
 
     if ( !($paragraphs[$i].text -like $Selector.question) ) { # If NOT start of new question, continue
 
@@ -263,7 +268,7 @@ $tempOptions = $null
 
 ##### CORRECT ANSWERs #####
       elseif ( $paragraphs[$i].text -like $Selector.correct ) { # Correct answer: Convert correct answers to boolean array and store in $exam
-        $CorrectAnswer = ($paragraphs[$i].text).replace("Correct Answer: ","")
+        $CorrectAnswer = $paragraphs[$i].text.Replace("Correct Answer:","").trim()
         $QuestionObject.answer1 = $CorrectAnswer
 
         # Determine type of question
@@ -360,15 +365,15 @@ catch{
   Write-Warning -Message "$($_): in executing Paragraph: $($i) conversion."
 
   Write-Host "Question summary: " -ForegroundColor Blue
-  $exam.test[$questid]
+  $QuestionObject
   Write-Host "Question: Text" -ForegroundColor Blue
-  $exam.test[$questid].question | Format-Table
+  $QuestionObject.question | Format-Table
   Write-Host "Question: Choices" -ForegroundColor Blue
-  $exam.test[$questid].choices | Format-Table
+  $QuestionObject.choices | Format-Table
   Write-Host "Question: Answers" -ForegroundColor Blue
-  $exam.test[$questid].answer | Format-List
+  $QuestionObject.answer | Format-List
   Write-Host "Question: Explanation" -ForegroundColor Blue
-  $exam.test[$questid].explanation
+  $QuestionObject.explanation
 
   Write-Host "Please fix consistency problem in structure .docx file." -ForegroundColor Red
   Write-Host "Mostly this is caused by a question part (for example 'Correct Answer: A') that does not have it's own 'line', fix by placing question part on a new line with enter."
@@ -408,7 +413,7 @@ Keywords;$($examKeywords)$(printSemiColon $ColumnCount `n)"
 
 $header | Out-File -FilePath ($folderPath + "$($examCode).csv") -Force
 
-$CSV = $exam | ConvertTo-Csv -Delimiter ";" -UseQuotes Never
+$CSV = $exam | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
 $CSV | Out-File -FilePath ($folderPath + "$($examCode).csv") -Append
 
 #$CSV | Export-Csv -path ($folderPath + "$($examCode).CSV") -Delimiter ";" -UseQuotes Never -Encoding unicode
