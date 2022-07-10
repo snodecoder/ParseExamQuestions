@@ -36,15 +36,7 @@ $Selector = New-Object psobject -Property @{
       ,"*.png"
     )
     ;filter = @(
-      "*gratisexam*"
-      ,"*topic*"
-      ,"*Note: This question*"
-      ,"*Start of repeated scenario*"
-      ,"*End of repeated scenario*"
-      ,"*After you answer a question in this section*"
-      ,"*Passing Certification Exams Ma de Easy*"
-      ,"Passing Certification Exams Made Easy*"
-      ,"visit - https://www.surepassexam.com*"
+      "Note: This question is part of a series of questions that present the same scenario. Each question in the series contains a unique solution that might meet the stated goals. Some question sets might have more than one correct solution, while others might not have a correct solution.<BR>After you answer a question in this section, you will NOT be able to return to it. As a result, these questions will not appear in the review screen.<BR>"
       ,"âœ‘"
       ,"×’â‚¬`"&gt"
     )
@@ -245,13 +237,16 @@ try{
             Copy-Item -Path "$htmlImagesFilePath$imageFileName" -Destination "$ImagePath$imageFileName" -Force
 
             # Update Image url to a publicly available url.
-            if ($text.contains($image.src)) { $text = $text.replace("$($image.src)", ($imageURLPrefix + $imageFileName))}
+            if ($text.contains($image.src)) { $text = $text.replace("$($image.src)`"", "$($imageURLPrefix + $imageFileName)`" style='max-width: 100%;' ")}
         }
         
         if ( !($text.StartsWith("<p>"))) { $text = $text.Insert(0, "<p>")}
         if ( !($text.EndsWith("</p>"))) { $text = $text + "</p>"}
         
         # Store result
+        foreach ($filter in $Selector.filter) {
+          if ($text.contains($filter)) { $text = $text.replace($filter, "")}
+        }
         $questionobject.question += $text
 
 
