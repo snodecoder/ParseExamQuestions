@@ -1,8 +1,8 @@
 class Question # Question constructor
 {
-  [string]$index  
+  [string]$index
   [string]$topic
-  [string]$type  
+  [string]$type
   [string]$question
   [string]$option0
   [string]$option1
@@ -28,7 +28,7 @@ class Question # Question constructor
     $this.topic
     $this.type
     $this.question
-    $this.option0    
+    $this.option0
     $this.option1
     $this.option2
     $this.option3
@@ -41,7 +41,7 @@ class Question # Question constructor
     $this.answer1
     $this.answer2
     $this.answer3
-    $this.score0    
+    $this.score0
     $this.score1
     $this.score2
     $this.score3
@@ -50,7 +50,7 @@ class Question # Question constructor
 
 $Selector = New-Object psobject -Property @{
     question = "Question #*"
-    
+
     ;correct = "Correct Answer:*"
     ;explanation = "Explanation:*"
     #;section = "- (Exam Topic*"
@@ -92,7 +92,8 @@ $Selector = New-Object psobject -Property @{
 
 # Add the working directory to the environment path.
 # This is required for the ChromeDriver to work.
-$workingPath = 'C:\selenium'
+$workingPath = "$PSScriptRoot/selenium"
+Write-Host "Set envPath to $workingPath"
 if (($env:Path -split ';') -notcontains $workingPath) {
     $env:Path += ";$workingPath"
 }
@@ -106,7 +107,7 @@ function Get-SeleniumElements($xPath, $className) {
     try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)) }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::ClassName($className)) }
-        
+
         if ($result.count -gt 0) { return $result}
         else { return $null}
     }
@@ -119,7 +120,7 @@ function Click-SeleniumElementButton ($xPath, $className) {
     try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElement([OpenQA.Selenium.By]::XPath($xPath)).click() }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElement([OpenQA.Selenium.By]::ClassName($className)).click() }
-        
+
         if ($result.count -gt 0) { return $result}
         else { return $null}
     }
@@ -132,7 +133,7 @@ function Get-SeleniumElementsText ($xPath, $className) {
     try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)).Text }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElement([OpenQA.Selenium.By]::ClassName($className)).Text }
-        
+
         if ($result.count -gt 0) { return $result}
         else { return $null}
     }
@@ -181,10 +182,10 @@ function Get-SeleniumElementAttribute ($xPath, $className, $attribute) {
 
 
 function Get-SeleniumElementHref ($xPath, $className) {
-    try {       
+    try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)).GetAttribute('href') }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::ClassName($className)).GetAttribute('href') }
-        
+
         if ($result.count -gt 0) { return $result}
         else { return $null}
     }
@@ -194,10 +195,10 @@ function Get-SeleniumElementHref ($xPath, $className) {
 }
 
 function Get-SeleniumElementSrc ($xPath) {
-    try {       
+    try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)).GetAttribute('src') }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::ClassName($className)).GetAttribute('src') }
-        
+
         if ($result.count -gt 0) { return $result}
         else { return $null}
     }
@@ -207,12 +208,12 @@ function Get-SeleniumElementSrc ($xPath) {
 }
 
 function Get-SeleniumElementChildren ($xPath, $ClassName) {
-    try { 
+    try {
         if ($xPath.length -gt 0) {          $element = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)) }
         elseif ($className.length -gt 0) {  $element = $ChromeDriver.FindElements([OpenQA.Selenium.By]::ClassName($className)) }
 
         if ($element.Count -gt 0) {         $result = $element.FindElements([OpenQA.Selenium.By]::XPath(".//*")) }
-        
+
         if ($result.count -gt 0) { return $result }
         else { return $null}
     }
@@ -230,6 +231,5 @@ function Remove-SpecialCharacters ( $string) {
     $regex = '[^\p{L}\p{Nd}'
     $regexString = $regex + $ExcludeCharacters
     $string -replace $regexString, ''
-  
+
   }
-  
