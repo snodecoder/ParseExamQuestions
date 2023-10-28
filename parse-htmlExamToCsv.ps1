@@ -1,5 +1,6 @@
 param (
-  $htmlSourceFilePath = ".\exam\az104.html"
+  $url = "https://www.examtopics.com/exams/microsoft/az-140/view/"
+  ,$htmlSourceFilePath = ".\exam\az104.html"
   ,$htmlImagesFilePath = ".\exam\az104_files\"
   ,$examCode= "AZ104"
   ,$examTitle = "AZ104"
@@ -11,7 +12,7 @@ param (
   ,$folderPath = "C:\CodeProjects\ParseWordDocument\"
   ,$ImagePath = "Z:\IIS_Files\exams\"
 )
-
+invoke-webrequest -Uri 
 if (! (Test-Path "$ImagePath$examCode") ) { New-Item -Path $ImagePath -Name $examCode -ItemType Directory }
 if (Test-Path "$imagePath$examCode") { $imagePath = "$imagePath$examCode\"}
 
