@@ -92,7 +92,7 @@ $Selector = New-Object psobject -Property @{
 
 # Add the working directory to the environment path.
 # This is required for the ChromeDriver to work.
-$workingPath = "$PSScriptRoot/selenium"
+$workingPath = "$PSScriptRoot\selenium"
 Write-Host "Set envPath to $workingPath"
 if (($env:Path -split ';') -notcontains $workingPath) {
     $env:Path += ";$workingPath"
@@ -103,7 +103,7 @@ Import-Module $workingPath\WebDriver.dll
 $ChromeDriver = New-Object OpenQA.Selenium.Chrome.ChromeDriver
 $chromeDriver.manage().timeouts().implicitWait = [System.TimeSpan]::FromSeconds([int]3)
 
-function Get-SeleniumElements($xPath, $className) {
+function Get-SeleniumElement($xPath, $className) {
     try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)) }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::ClassName($className)) }
@@ -129,7 +129,7 @@ function Click-SeleniumElementButton ($xPath, $className) {
     }
 }
 
-function Get-SeleniumElementsText ($xPath, $className) {
+function Get-SeleniumElementText ($xPath, $className) {
     try {
         if ($xPath.length -gt 0) {          $result = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPath($xPath)).Text }
         elseif ($className.length -gt 0) {  $result = $ChromeDriver.FindElement([OpenQA.Selenium.By]::ClassName($className)).Text }

@@ -3,6 +3,7 @@ old/*
 *.docx
 *.xls
 *.csv
+*.txt
 docx/*
 images/*
 private/*

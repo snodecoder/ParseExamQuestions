@@ -2,7 +2,7 @@
 param (
   $examCode= "AZ-140"
   ,$examTitle = $examCode
-  ,$examDescription = "Practice questions in Multiple Choice en Multiple Answer format."
+  ,$examDescription = "Last updated on: $(Get-Date)"
   ,$examDuration = 120 # Maximum time for exam
   ,$examKeywords = "AVD, Azure, Fundamentals"
   ,[int] $TotalPages = 1379 # update this to the total number of pages found when opening $url_discussion
@@ -16,6 +16,7 @@ $DebugPreference = 'Continue'
 [array]$DiscussionLinks = @()
 [array]$Exam = @()
 [array]$ProcessQuestionsManually = @()
+[array]$ExamManual = @()
 $logfile = ".\errorlog.txt"
 
 # Launch a browser and go to URL
@@ -87,21 +88,25 @@ for ($page = 1; $page -le $TotalPages; $page++)
 } # end for loop $page
 Write-Host "Found: $($DiscussionLinks.Count) links to discussions for examcode: $($ExamCode)."
 
+$DiscussionLinks | Out-File -FilePath ".\$examCode-links.txt" -Force
+
 
 
 
 
 # ETA Calculation
 $start = Get-Date
-get-content -Path ".\az140-links.txt" | ForEach-Object { $discussionLinks += $_ }
+[array]$DiscussionLinks = @()
+get-content -Path ".\$examCode-links.txt" | ForEach-Object { $discussionLinks += $_ }
 
  #$link = $DiscussionLinks[0] # for debug
-for ($Page = 0; $page -lt $TotalPages; $page++)
+for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
 {
 
     try {
         # Progress Tracking
         $prct = $page / $DiscussionLinks.Count
+        if ($page -eq 0) { $prct = 1} # for first page set prct to 1
 
         $elapsed = (Get-Date) - $start
         $totalTime = ($elapsed.TotalSeconds) / $prct
@@ -118,12 +123,12 @@ for ($Page = 0; $page -lt $TotalPages; $page++)
         $ChromeDriver.Navigate().GoToURL($DiscussionLinks[$page])
 
         # Proces question index
-        $QuestionInfo = (Get-SeleniumElementText -xPath "/html/body/div[2]/div/div[3]/div/div[1]/div[1]/div").ReplaceLineEndings("`n").split("`n")
+        $QuestionInfo = (Get-SeleniumElementText -xPath "/html/body/div[2]/div/div[5]/div/div[1]/div[1]/div").ReplaceLineEndings("`n").split("`n")
         $QuestionObject.index = $QuestionInfo[0] -replace '([^0-9])+'
         $QuestionObject.topic = $QuestionInfo[1] -replace '([^0-9])+'
 
         # Process Question Text
-        $QuestionObject.question = Get-SeleniumElementAttribute -xPath "/html/body/div[2]/div/div[3]/div/div[1]/div[2]/p" -attribute "innerHTML"
+        $QuestionObject.question = Get-SeleniumElementAttribute -xPath "/html/body/div[2]/div/div[5]/div/div[1]/div[2]/p" -attribute "innerHTML"
         $QuestionObject.question = $QuestionObject.question -replace '([^a-zA-Z0-9!-~ ])'
         $QuestionObject.question = $QuestionObject.question.Replace("<img src=""","<img src=""$($url_Base)")
 
@@ -142,7 +147,7 @@ for ($Page = 0; $page -lt $TotalPages; $page++)
 
         # Process Correct Answer
         Click-SeleniumElementButton -className "reveal-solution"
-        $CorrectAnswers = Get-SeleniumElementsText -className "correct-answer"
+        $CorrectAnswers = Get-SeleniumElementText -className "correct-answer"
 
         if ($CorrectAnswers.Length -eq 0 -and $QuestionOptions.count -eq 0)
         {
@@ -179,7 +184,11 @@ for ($Page = 0; $page -lt $TotalPages; $page++)
         $QuestionObject | Out-String | Out-File -FilePath $logfile -Append -Force
     }
 
-    if ($QuestionObject.type -eq "drap and drop") { $ProcessQuestionsManually += $QuestionObject}
+    if ($QuestionObject.type -eq "drap and drop") { 
+        $ProcessQuestionsManually += "Index: $($QuestionObject.index)"
+        $ProcessQuestionsManually += $DiscussionLinks[$page]
+        $ExamManual += $QuestionObject
+    }
     else { $Exam += $QuestionObject}
 
 }
@@ -226,9 +235,13 @@ for ($Page = 0; $page -lt $TotalPages; $page++)
 
 
 
-   $header | Out-File -FilePath ($folderPath + "$examCode.csv") -Force
+   $header | Out-File -FilePath ".\$examCode.csv" -Force
    $CSV = $exam | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
-   $CSV | Out-File -FilePath ".\$examCode.csv" -Append
+   $CSV | Out-File -FilePath ".\$examCode.csv" -Force
+   $ProcessQuestionsManually | Out-File -FilePath ".\ProcessQuestionsManually-$examCode.txt" -Force
+
+   $CSVmanual = $ExamManual | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
+   $CSVmanual | Out-File -FilePath ".\$examCode-manual.csv" -Force
 
 # Close browser
  #$ChromeDriver.Quit()
