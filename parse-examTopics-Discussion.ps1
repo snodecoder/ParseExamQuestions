@@ -12,7 +12,7 @@
 #>
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory=$true, HelpMessage = "Provide the examcode, for example 'AZ-140'. This will be used to crawl Examtopics for all the exam questions relevant for your exam")]
+    [Parameter(Mandatory=$true, HelpMessage = "Provide the examcode, for example 'cis-ham'. This will be used to crawl Examtopics for all the exam questions relevant for your exam")]
     [String] $examCode
     ,
     [Parameter(Mandatory=$false, HelpMessage = "Provide a description for the exam")]
@@ -21,7 +21,7 @@ param (
     [Parameter(Mandatory=$true, HelpMessage = "Provide maximum time for the exam in minutes, for example '120'")]
     [int] $ExamDuration
     ,
-    [Parameter(Mandatory=$true, HelpMessage = "Provide keywords for the exam, for example 'AVD, Azure, Fundamentals'")]
+    [Parameter(Mandatory=$true, HelpMessage = "Provide keywords for the exam, for example 'Certified Implementation Specialist – Hardware Asset Management Popu'")]
     [String] $ExamKeywords
 )
 
