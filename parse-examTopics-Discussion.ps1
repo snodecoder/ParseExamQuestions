@@ -1,11 +1,28 @@
+<#
+.SYNOPSIS
+    Parse questions and answers from examtopics.com
+.DESCRIPTION
+    Parse questions and answers from examtopics.com, export them as CSV file. The CSV is formatted to be compatible with MTestM exam testing app (available for Android & iOS)
+.NOTES
+    This script has a dependency on having the latest Selenium Chrome Webdriver installed in the repository (the same version as the Google Chrome browser installed on your device). If you get an error while running initialize.ps1, please update the Seleniuem Chrome Webdriver from https://googlechromelabs.github.io/chrome-for-testing/
+.LINK
 
+.EXAMPLE
+
+#>
+[CmdletBinding()]
 param (
-  $examCode= "AZ-140"
-  ,$examTitle = $examCode
-  ,$examDescription = "Last updated on: $(Get-Date)"
-  ,$examDuration = 120 # Maximum time for exam
-  ,$examKeywords = "AVD, Azure, Fundamentals"
-  ,[int] $TotalPages = 1379 # update this to the total number of pages found when opening $url_discussion
+    [Parameter(Mandatory=$true, HelpMessage = "Provide the examcode, for example 'AZ-140'. This will be used to crawl Examtopics for all the exam questions relevant for your exam")]
+    [String] $examCode
+    ,
+    [Parameter(Mandatory=$false, HelpMessage = "Provide a description for the exam")]
+    [String] $examDescription = "Last updated on: $(Get-Date)"
+    ,
+    [Parameter(Mandatory=$true, HelpMessage = "Provide maximum time for the exam in minutes, for example '120'")]
+    [int] $ExamDuration
+    ,
+    [Parameter(Mandatory=$true, HelpMessage = "Provide keywords for the exam, for example 'AVD, Azure, Fundamentals'")]
+    [String] $ExamKeywords
 )
 
 $DebugPreference = 'Continue'
@@ -25,16 +42,15 @@ $url_discussion = "$url_base/discussions/microsoft/"
 
 $ChromeDriver.Navigate().GoToURL($url_discussion)
 
-# Login
+# Define how the login functionality of the website is configured, this is used for automated login.
 $BTN_login = "/html/body/div[1]/div/div/div/div[2]/div/div[1]/ul/li[1]/a"
 $ChromeDriver.FindElements([OpenQA.Selenium.By]::xPath($BTN_login)).click()
 $FORM_user = '//*[@id="login-modal"]/div/div/div[2]/div/form/div[1]/div/input'
 $FORM_pass = '//*[@id="login-modal"]/div/div/div[2]/div/form/div[2]/div[1]/input'
 $FORM_login = '//*[@id="login-modal"]/div/div/div[2]/div/form/button'
 
-
-[string]$username = "snodecoder"
-[string]$password = "WM?ejHbpsn.49QV"
+[string]$username = Read-Host -Prompt "Please enter your username"
+[string]$password = Read-Host -Prompt "Please enter your password" -MaskInput
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_user)).SendKeys($username)
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_pass)).SendKeys($password)
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_login)).Click()
@@ -43,6 +59,8 @@ $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_login)).Click()
 $start = Get-Date
 
 # Search Discussions for examcode, retrieve urls to questions
+[int] $TotalPages = $ChromeDriver.FindElements([OpenQA.Selenium.By]::xPath('/html/body/div[2]/div/div[3]/div/span/span[1]/strong[2]')).Text
+
 for ($page = 1; $page -le $TotalPages; $page++)
 {
     # Progress Tracking
@@ -184,7 +202,7 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
         $QuestionObject | Out-String | Out-File -FilePath $logfile -Append -Force
     }
 
-    if ($QuestionObject.type -eq "drap and drop") { 
+    if ($QuestionObject.type -eq "drap and drop") {
         $ProcessQuestionsManually += "Index: $($QuestionObject.index)"
         $ProcessQuestionsManually += $DiscussionLinks[$page]
         $ExamManual += $QuestionObject
@@ -223,7 +241,7 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
    ########## Convert Exam to CSV and Export it ##########
    $ColumnCount = ($exam | Get-Member -MemberType Property).count
 
-   $header = "Title;$($examTitle)$(printSemiColon $ColumnCount `n)`
+   $header = "Title;$($ExamCode)$(printSemiColon $ColumnCount `n)`
    Description;$($examDescription)$(printSemiColon $ColumnCount `n)`
    Duration;$($examDuration)$(printSemiColon $ColumnCount `n)`
    Keywords;$($examKeywords)$(printSemiColon $ColumnCount `n)"
@@ -243,6 +261,8 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
    $CSVmanual = $ExamManual | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
    $CSVmanual | Out-File -FilePath ".\$examCode-manual.csv" -Force
 
+   Write-Host "Completed the extraction of all the relevant exam questions from Examtopics. Install the app MTestM on your mobile device (Android & iOS) and import the CSV file there."
+   Read-Host -Prompt "Press any key to exit.."
 # Close browser
- #$ChromeDriver.Quit()
+ $ChromeDriver.Quit()
 
