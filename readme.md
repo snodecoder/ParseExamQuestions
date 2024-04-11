@@ -13,6 +13,8 @@ The questions will be exported in CSV format, compatible with the exam testing a
 
 *** TIP *** When you find errors in your output file or anything out of order that you would like to change, try doing so by tweaking the code instead of the CSV. Most of the time you will find another issue later on that requires you to make a adjustment to the source file and rerun it. By making all your adjustments in the source file, you prevent repeatedly changing your output file.
 
+*** Note *** This script was designed to be run on Windows, adjustments will be needed for running this on Linux or MacOS.
+
 ## EXAMPLE
 How to use:
 
