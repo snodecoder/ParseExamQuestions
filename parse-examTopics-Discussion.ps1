@@ -13,15 +13,18 @@
 [CmdletBinding()]
 param (
     [Parameter(Mandatory=$true, HelpMessage = "Provide the examcode, for example 'cis-ham'. This will be used to crawl Examtopics for all the exam questions relevant for your exam")]
-    [String] $examCode
+    [String] $examCode = "EX200"
+    ,
+    [Parameter(Mandatory=$true, HelpMessage = "Provide the provider of the exam, for example 'microsoft'. This will be used to crawl Examtopics for all the exam questions relevant for your exam")]
+    [String] $examProvider = "redhat"
     ,
     [Parameter(Mandatory=$false, HelpMessage = "Provide a description for the exam")]
     [String] $examDescription = "Last updated on: $(Get-Date)"
     ,
-    [Parameter(Mandatory=$true, HelpMessage = "Provide maximum time for the exam in minutes, for example '120'")]
-    [int] $ExamDuration
+    [Parameter(Mandatory=$false, HelpMessage = "Provide maximum time for the exam in minutes, for example '120'")]
+    [int] $ExamDuration = 120
     ,
-    [Parameter(Mandatory=$true, HelpMessage = "Provide keywords for the exam, for example 'Certified Implementation Specialist – Hardware Asset Management Popu'")]
+    [Parameter(Mandatory=$false, HelpMessage = "Provide keywords for the exam, for example 'Certified Implementation Specialist – Hardware Asset Management Popu'")]
     [String] $ExamKeywords
 )
 
@@ -36,9 +39,11 @@ $DebugPreference = 'Continue'
 [array]$ExamManual = @()
 $logfile = ".\errorlog.txt"
 
+if ($null -eq $ExamKeywords) { $ExamKeywords = "$examProvider $examCode" }
+
 # Launch a browser and go to URL
 $url_base = "https://www.examtopics.com"
-$url_discussion = "$url_base/discussions/microsoft/"
+$url_discussion = "$url_base/discussions/$examProvider/"
 
 $ChromeDriver.Navigate().GoToURL($url_discussion)
 
@@ -51,6 +56,7 @@ $FORM_login = '//*[@id="login-modal"]/div/div/div[2]/div/form/button'
 
 [string]$username = Read-Host -Prompt "Please enter your username"
 [string]$password = Read-Host -Prompt "Please enter your password" -MaskInput
+
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_user)).SendKeys($username)
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_pass)).SendKeys($password)
 $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_login)).Click()
@@ -59,7 +65,7 @@ $ChromeDriver.FindElement([OpenQA.Selenium.By]::xPath($FORM_login)).Click()
 $start = Get-Date
 
 # Search Discussions for examcode, retrieve urls to questions
-[int] $TotalPages = $ChromeDriver.FindElements([OpenQA.Selenium.By]::xPath('/html/body/div[2]/div/div[3]/div/span/span[1]/strong[2]')).Text
+[int] $TotalPages = $ChromeDriver.FindElements([OpenQA.Selenium.By]::xPath('/html/body/div[2]/div/div[4]/div/span/span[1]/strong[2]')).Text
 
 for ($page = 1; $page -le $TotalPages; $page++)
 {
@@ -93,8 +99,8 @@ for ($page = 1; $page -le $TotalPages; $page++)
     }
 
     # Continue to next page if available
-    $BTN_NextPage = "/html/body/div[2]/div/div[6]/div/span/span[2]/a"
-    if ($page -gt 1) { $BTN_NextPage = "/html/body/div[2]/div/div[6]/div/span/span[2]/a[2]" }
+    $BTN_NextPage = "/html/body/div[2]/div/div[4]/div/span/span[2]/a"
+    if ($page -gt 1) { $BTN_NextPage = "/html/body/div[2]/div/div[4]/div/span/span[2]/a[2]" }
 
     $NextPage = $ChromeDriver.FindElements([OpenQA.Selenium.By]::XPATH($BTN_NextPage))
 
@@ -104,7 +110,7 @@ for ($page = 1; $page -le $TotalPages; $page++)
     elseif ($nextPage.count -eq 0) { Read-Host -Prompt "This should be the end and all questions should be stored in Buffer. Press any key to continue"}
 
 } # end for loop $page
-Write-Host "Found: $($DiscussionLinks.Count) links to discussions for examcode: $($ExamCode)."
+Write-Progress -Activity $activity -Completed -Status "Found: $($DiscussionLinks.Count) links to discussions for examcode: $($ExamCode)."
 
 $DiscussionLinks | Out-File -FilePath ".\$examCode-links.txt" -Force
 
@@ -141,12 +147,12 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
         $ChromeDriver.Navigate().GoToURL($DiscussionLinks[$page])
 
         # Proces question index
-        $QuestionInfo = (Get-SeleniumElementText -xPath "/html/body/div[2]/div/div[5]/div/div[1]/div[1]/div").ReplaceLineEndings("`n").split("`n")
+        $QuestionInfo = (Get-SeleniumElementText -xPath "/html/body/div[2]/div/div[4]/div/div[1]/div[1]/div").ReplaceLineEndings("`n").split("`n")
         $QuestionObject.index = $QuestionInfo[0] -replace '([^0-9])+'
         $QuestionObject.topic = $QuestionInfo[1] -replace '([^0-9])+'
 
         # Process Question Text
-        $QuestionObject.question = Get-SeleniumElementAttribute -xPath "/html/body/div[2]/div/div[5]/div/div[1]/div[2]/p" -attribute "innerHTML"
+        $QuestionObject.question = Get-SeleniumElementAttribute -xPath "/html/body/div[2]/div/div[4]/div/div[1]/div[2]/p" -attribute "innerHTML"
         $QuestionObject.question = $QuestionObject.question -replace '([^a-zA-Z0-9!-~ ])'
         $QuestionObject.question = $QuestionObject.question.Replace("<img src=""","<img src=""$($url_Base)")
 
@@ -202,7 +208,7 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
         $QuestionObject | Out-String | Out-File -FilePath $logfile -Append -Force
     }
 
-    if ($QuestionObject.type -eq "drap and drop") {
+    if ($QuestionObject.type -eq "drap and drop" -or $null -eq $QuestionObject.type) {
         $ProcessQuestionsManually += "Index: $($QuestionObject.index)"
         $ProcessQuestionsManually += $DiscussionLinks[$page]
         $ExamManual += $QuestionObject
@@ -210,59 +216,54 @@ for ($Page = 0; $page -lt $DiscussionLinks.Count; $page++)
     else { $Exam += $QuestionObject}
 
 }
-    read-host -Prompt "press key to exit"
-   # $buffer += "</body></html>"
-   $exam.count
+Write-Progress -Activity $activity -Completed -Status "Processed: $($DiscussionLinks.Count) links to discussions for examcode: $($ExamCode)."
 
 
-   [array]$Output = @()
+[array]$Output = @()
 
-   foreach ($item in $exam) {
+foreach ($item in $exam) {
 
-     if ($item.question.length -gt 0) {
-       $Output += $item
-     }
+    if ($item.question.length -gt 0) {
+        $Output += $item
+    }
+}
 
-   }
+function printSemiColon ($columnCount)
+{
+    [string]$output = ""
 
+    for ($i=0; $i -lt ($columnCount -2); $i++)
+    {
+        $output += ";"
+    }
+    return
+}
 
-   function printSemiColon ($columnCount)
-   {
-     [string]$output = ""
+########## Convert Exam to CSV and Export it ##########
+$ColumnCount = ($exam | Get-Member -MemberType Property).count
 
-     for ($i=0; $i -lt ($columnCount -2); $i++)
-     {
-       $output += ";"
-     }
-     return
-
-   }
-
-   ########## Convert Exam to CSV and Export it ##########
-   $ColumnCount = ($exam | Get-Member -MemberType Property).count
-
-   $header = "Title;$($ExamCode)$(printSemiColon $ColumnCount `n)`
-   Description;$($examDescription)$(printSemiColon $ColumnCount `n)`
-   Duration;$($examDuration)$(printSemiColon $ColumnCount `n)`
-   Keywords;$($examKeywords)$(printSemiColon $ColumnCount `n)"
+$header = "Title;$($ExamCode)$(printSemiColon $ColumnCount `n)`
+Description;$($examDescription)$(printSemiColon $ColumnCount `n)`
+Duration;$($examDuration)$(printSemiColon $ColumnCount `n)`
+Keywords;$($examKeywords)$(printSemiColon $ColumnCount `n)"
 
 
-   for($i=0; $i -lt $exam.Count; $i++) {
+for($i=0; $i -lt $exam.Count; $i++) {
     $exam[$i].question = "<p>$($exam[$i].question)</p>"
-   }
+}
 
 
+$header | Out-File -FilePath ".\$examCode.csv" -Force
+$CSV = $exam | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
+$CSV | Out-File -FilePath ".\$examCode.csv" -Force
+$ProcessQuestionsManually | Out-File -FilePath ".\ProcessQuestionsManually-$examCode.txt" -Force
 
-   $header | Out-File -FilePath ".\$examCode.csv" -Force
-   $CSV = $exam | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
-   $CSV | Out-File -FilePath ".\$examCode.csv" -Force
-   $ProcessQuestionsManually | Out-File -FilePath ".\ProcessQuestionsManually-$examCode.txt" -Force
+$CSVmanual = $ExamManual | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
+$CSVmanual | Out-File -FilePath ".\$examCode-manual.csv" -Force
 
-   $CSVmanual = $ExamManual | ConvertTo-Csv -Delimiter ";" -NoTypeInformation
-   $CSVmanual | Out-File -FilePath ".\$examCode-manual.csv" -Force
+Write-Host "Completed the extraction of all the relevant exam questions from Examtopics. Install the app MTestM on your mobile device (Android & iOS) and import the CSV file there."
+Read-Host -Prompt "Press any key to exit.."
 
-   Write-Host "Completed the extraction of all the relevant exam questions from Examtopics. Install the app MTestM on your mobile device (Android & iOS) and import the CSV file there."
-   Read-Host -Prompt "Press any key to exit.."
 # Close browser
- $ChromeDriver.Quit()
+$ChromeDriver.Quit()
 
